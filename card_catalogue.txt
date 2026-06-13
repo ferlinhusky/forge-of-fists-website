@@ -1,0 +1,1708 @@
+========================================================================
+  FORGE OF FISTS — COMPLETE CARD CATALOGUE
+  Auto-generated from engine/cards.py
+========================================================================
+
+
+========================================================================
+  CONQUEST
+========================================================================
+
+  ── MONARCHS ──
+
+  BATALAN THE WHITE
+  ─────────────────
+  Type:     Monarch
+  Subtype:  
+  Stats:    Wrath 8 | Vigor 13 | Bounty 12
+  Keywords: RAGE, INEXHAUSTIBLE
+  Abilities:
+    • When Batalan attacks, he does 2 damage to himself.
+
+  BEGBA DOUM
+  ──────────
+  Type:     Monarch
+  Subtype:  
+  Stats:    Wrath 4 | Vigor 15 | Bounty 12
+  Abilities:
+    • (X AP, Exhaust): Forge a beast with value X.
+
+
+  ── CAPITOLS ──
+
+  GENESIS KEEP
+  ────────────
+  Type:     Capitol
+  Subtype:  Plains
+  Stats:    Vigor 25 | Bounty 10
+  Abilities:
+    • (0 AP, Exhaust): Gain 1 AP for each friendly beast.
+
+  WARD'S HILL
+  ───────────
+  Type:     Capitol
+  Subtype:  Hill
+  Stats:    Vigor 25 | Bounty 10
+  Abilities:
+    • (0 AP, Exhaust): Gain 1 AP for each friendly professional.
+
+
+  ── IMPROVEMENTS ──
+
+  GENTLEMEN'S CLUB
+  ────────────────
+  Type:     Improvement
+  Subtype:  Social
+  Cost:     1 AP
+  Stats:    Vigor 2 | Bounty 1
+  Abilities:
+    • (0 AP, Exhaust): Gain 1 AP for each friendly noble.
+
+  IMPRESSMENT OFFICE
+  ──────────────────
+  Type:     Improvement
+  Subtype:  Military
+  Cost:     3 AP
+  Stats:    Vigor 3 | Bounty 4
+  Abilities:
+    • (1 AP, Exhaust): FORGE an Unwashed Masses.
+
+
+  ── CULTS ──
+
+  TRUE BASTARDS
+  ─────────────
+  Type:     Cult
+  Subtype:  —
+  Cost:     2 AP
+  Bounty:   0
+  Abilities:
+    • Whenever a friendly unit or character destroys an enemy in combat, it readies.
+
+
+  ── CHARACTERS ──
+
+  STABLEMASTER
+  ────────────
+  Type:     Character
+  Subtype:  Peasant
+  Cost:     1 AP
+  Stats:    Wrath 1 | Vigor 1 | Bounty 1
+  Abilities:
+    • (3 AP, Exhaust): FORGE an Outriders if you control any nobles.
+
+  STEELROUGH
+  ──────────
+  Type:     Character
+  Subtype:  Artisan
+  Cost:     2 AP
+  Stats:    Wrath 3 | Vigor 2 | Bounty 1
+  Abilities:
+    • (4 AP, Exhaust): FORGE a Cast-iron Cannon.
+
+  DISFIGURED DUKE
+  ───────────────
+  Type:     Character
+  Subtype:  Noble
+  Cost:     3 AP
+  Stats:    Wrath 4 | Vigor 3 | Bounty 3
+  Abilities:
+    • Friendly Beasts get +1/+1.
+    • (3 AP, Exhaust): FORGE a Badlands Brute.
+
+  VEILED BARON
+  ────────────
+  Type:     Character
+  Subtype:  Noble
+  Cost:     4 AP
+  Stats:    Wrath 4 | Vigor 4 | Bounty 4
+  Abilities:
+    • Friendly Professionals get +1/+1.
+    • (2 AP, Exhaust): FORGE a Border Company.
+
+
+  ── UNITS ──
+
+  SWIFT SHRIKE
+  ────────────
+  Type:     Unit
+  Subtype:  Beast
+  Cost:     1 AP
+  Stats:    Wrath 1 | Vigor 1 | Bounty 1
+  Keywords: RUSH
+
+  BORDER COMPANY
+  ──────────────
+  Type:     Unit
+  Subtype:  Professional
+  Cost:     2 AP
+  Stats:    Wrath 2 | Vigor 3 | Bounty 1
+
+  BADLANDS BRUTE
+  ──────────────
+  Type:     Unit
+  Subtype:  Beast
+  Cost:     3 AP
+  Stats:    Wrath 4 | Vigor 3 | Bounty 2
+  Keywords: SALVO 2
+
+  OUTRIDERS
+  ─────────
+  Type:     Unit
+  Subtype:  Professional
+  Cost:     3 AP
+  Stats:    Wrath 3 | Vigor 2 | Bounty 2
+  Keywords: CHARGE 1, RUSH
+
+  CAST-IRON CANNON
+  ────────────────
+  Type:     Unit
+  Subtype:  Artillery
+  Cost:     4 AP
+  Stats:    Wrath 1 | Vigor 1 | Bounty 4
+  Keywords: ORDNANCE, SALVO 5
+
+
+  ── EVENTS ──
+
+  BORDER SQUABBLE
+  ───────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     2 AP
+  Bounty:   0
+  Abilities:
+    • Move a ready, friendly non-guardian professional unit from your realm to the Wilderness. It remains ready.
+  Liquidate Value: 3 AP
+
+  I STAB AT THEE!
+  ───────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     2 AP
+  Bounty:   0
+  Abilities:
+    • Choose a friendly character and an enemy character. Each deals damage to the other equal to their wrath.
+  Liquidate Value: 3 AP
+
+  ROYAL EDICT
+  ───────────
+  Type:     Event
+  Subtype:  —
+  Cost:     3 AP
+  Bounty:   0
+  Abilities:
+    • Deal damage equal to your monarch's wrath to target unit in the Outland.
+  Liquidate Value: 4 AP
+
+  BURN IT ALL
+  ───────────
+  Type:     Event
+  Subtype:  —
+  Cost:     4 AP
+  Bounty:   0
+  Abilities:
+    • Destroy up to two improvements.
+  Liquidate Value: 4 AP
+
+
+  ── ITEMS ──
+
+  MARK OF DEATH
+  ─────────────
+  Type:     Item
+  Subtype:  Beast
+  Cost:     1 AP
+  Bounty:   0
+  Abilities:
+    • Attach to a Beast: Attached beast gets +3/+0. Destroy it after it next attacks.
+
+  SIGNET RING
+  ───────────
+  Type:     Item
+  Subtype:  Character
+  Cost:     1 AP
+  Bounty:   0
+  Abilities:
+    • Attach to a Character: Attached character gains the type noble and gets +1/+0.
+  Liquidate Value: 3 AP
+
+  POX OIL
+  ───────
+  Type:     Item
+  Subtype:  Professional
+  Cost:     2 AP
+  Bounty:   0
+  Abilities:
+    • Attach to a Professional: When attached professional deals damage to a target, you may discard this card to deal 4 extra damage to that target.
+  Liquidate Value: 3 AP
+
+  SHORTBOW
+  ────────
+  Type:     Item
+  Subtype:  Professional
+  Cost:     2 AP
+  Bounty:   0
+  Abilities:
+    • Attach to a Professional: Attached Professional gets SALVO 1.
+  Liquidate Value: 3 AP
+
+
+========================================================================
+  COMMUNITY
+========================================================================
+
+  ── MONARCHS ──
+
+  CRUL BLACKMOON
+  ──────────────
+  Type:     Monarch
+  Subtype:  
+  Stats:    Wrath 6 | Vigor 14 | Bounty 12
+  Abilities:
+    • (1 AP, Exhaust): Forge a Naïve Newcomer.
+
+  KIN PACO
+  ────────
+  Type:     Monarch
+  Subtype:  
+  Stats:    Wrath 4 | Vigor 15 | Bounty 12
+  Keywords: KINSHIP
+  Abilities:
+    • Kin Paco has all character types and is not affected by events or abilities.
+
+
+  ── CAPITOLS ──
+
+  ASALA-SALA
+  ──────────
+  Type:     Capitol
+  Subtype:  Desert
+  Stats:    Vigor 20 | Bounty 10
+  Abilities:
+    • (0 AP, Exhaust): Gain 1 for each friendly terrain.
+
+  MAT-MAT-SIN
+  ───────────
+  Type:     Capitol
+  Subtype:  Plains
+  Stats:    Vigor 20 | Bounty 10
+  Abilities:
+    • (1 AP, Exhaust): TUTOR for a terrain.
+
+
+  ── IMPROVEMENTS ──
+
+  MUCK BRIDGE
+  ───────────
+  Type:     Improvement
+  Subtype:  Civil
+  Cost:     1 AP
+  Stats:    Vigor 1 | Bounty 1
+  Abilities:
+    • Whenever you play a peasant from your hand, gain 1 AP.
+
+  HYPNODOME
+  ─────────
+  Type:     Improvement
+  Subtype:  Sacred
+  Cost:     2 AP
+  Stats:    Vigor 4 | Bounty 2
+  Abilities:
+    • (1 AP, Exhaust): FORGE a Naïve Newcomer.
+
+  LOITERING GROUND
+  ────────────────
+  Type:     Improvement
+  Subtype:  Civil
+  Cost:     2 AP
+  Stats:    Vigor 1 | Bounty 1
+  Abilities:
+    • (1 AP, Exhaust): FORGE an Unwashed Masses.
+
+  DRYHOUSE
+  ────────
+  Type:     Improvement
+  Subtype:  Economic
+  Cost:     3 AP
+  Stats:    Vigor 2 | Bounty 1
+  Abilities:
+    • (2 AP, Exhaust): Restore a peasant to full health.
+
+  COMMUNAL LODGING
+  ────────────────
+  Type:     Improvement
+  Subtype:  Civil
+  Cost:     5 AP
+  Stats:    Vigor 6 | Bounty 4
+  Abilities:
+    • All friendly peasants have kinship.
+
+
+  ── CULTS ──
+
+  CHILDREN OF EA
+  ──────────────
+  Type:     Cult
+  Subtype:  —
+  Cost:     4 AP
+  Bounty:   0
+  Abilities:
+    • Friendly Peasants get +1/+1 for each friendly Spirit.
+
+
+  ── CHARACTERS ──
+
+  FISHERMAN
+  ─────────
+  Type:     Character
+  Subtype:  Peasant
+  Cost:     1 AP
+  Stats:    Wrath 1 | Vigor 1 | Bounty 1
+  Abilities:
+    • (0 AP, Exhaust): Gain 1 AP for each friendly lake, river and coast.
+
+  HE WHO SUSTAINS
+  ───────────────
+  Type:     Character
+  Subtype:  Peasant, Farmer
+  Cost:     1 AP
+  Stats:    Wrath 1 | Vigor 1 | Bounty 1
+  Abilities:
+    • (0 AP, Exhaust): Gain 1 AP for each friendly card in play named He Who Sustains.
+
+  SUSPICIOUS SHEPHERD
+  ───────────────────
+  Type:     Character
+  Subtype:  Peasant, Shepherd
+  Cost:     1 AP
+  Stats:    Wrath 1 | Vigor 1 | Bounty 1
+  Abilities:
+    • (0 AP, Exhaust): Gain 1 AP for each friendly Hill, Valley and Forest.
+
+  SULTANA COLLECTOR
+  ─────────────────
+  Type:     Character
+  Subtype:  Peasant, Farmer
+  Cost:     2 AP
+  Stats:    Wrath 1 | Vigor 3 | Bounty 1
+  Abilities:
+    • (0 AP, Exhaust): Gain 2 AP for each friendly Grove.
+
+  RED-EARED ONE
+  ─────────────
+  Type:     Character
+  Subtype:  Spirit
+  Cost:     3 AP
+  Stats:    Wrath 2 | Vigor 4 | Bounty 3
+  Abilities:
+    • Whenever you Harvest a Grove, gain 2 AP.
+    • Friendly Terrain gains: (0 AP, Exhaust) Dispose of this card. Gain 3 AP.
+
+  STONEMASON
+  ──────────
+  Type:     Character
+  Subtype:  Artisan
+  Cost:     3 AP
+  Stats:    Wrath 2 | Vigor 4 | Bounty 2
+  Abilities:
+    • Friendly improvements cost 1 AP less for each friendly peasant, but not less than 1.
+
+  BUBBLING NAN
+  ────────────
+  Type:     Character
+  Subtype:  Spirit
+  Cost:     5 AP
+  Stats:    Wrath 2 | Vigor 6 | Bounty 3
+  Abilities:
+    • Friendly rivers are also 1/4 units, in addition to their other types, until this card leaves play.
+
+  MAID MOSSY
+  ──────────
+  Type:     Character
+  Subtype:  Spirit
+  Cost:     5 AP
+  Stats:    Wrath 4 | Vigor 5 | Bounty 3
+  Abilities:
+    • Friendly forests are also 3/3 units with Guardian, in addition to their other types, until this card leaves play.
+
+  LORD STONEDROP
+  ──────────────
+  Type:     Character
+  Subtype:  Spirit
+  Cost:     6 AP
+  Stats:    Wrath 4 | Vigor 6 | Bounty 3
+  Abilities:
+    • Friendly Mountains have "(1 AP, Exhaust) Deal 2 damage to a unit in the Wilderness." until this card leaves play.
+
+
+  ── UNITS ──
+
+  NAIVE NEWCOMER
+  ──────────────
+  Type:     Unit
+  Subtype:  Peasant
+  Cost:     1 AP
+  Stats:    Wrath 1 | Vigor 1 | Bounty 1
+  Keywords: KINSHIP
+
+  BALEAZAINTZA
+  ────────────
+  Type:     Unit
+  Subtype:  Sea Beast
+  Cost:     5 AP
+  Stats:    Wrath 5 | Vigor 6 | Bounty 3
+
+
+  ── EVENTS ──
+
+  FABRIC OF SOCIETY
+  ─────────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     2 AP
+  Bounty:   0
+  Abilities:
+    • Heal 5 damage from your Capitol. Take another action.
+  Liquidate Value: 3 AP
+
+  COORDINATED ATTACK
+  ──────────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     6 AP
+  Bounty:   0
+  Abilities:
+    • All friendly units gain the subtype Ally until this card resolves. Ready target friendly unit. It gains Kinship and attacks immediately.
+  Liquidate Value: 4 AP
+
+
+  ── ITEMS ──
+
+  TIE THAT BINDS
+  ──────────────
+  Type:     Item
+  Subtype:  Character
+  Cost:     1 AP
+  Bounty:   0
+  Abilities:
+    • Attach to a character: Attached character gains Kinship.
+  Liquidate Value: 3 AP
+
+
+========================================================================
+  CREED
+========================================================================
+
+  ── MONARCHS ──
+
+  LORD WILLSIT
+  ────────────
+  Type:     Monarch
+  Subtype:  
+  Stats:    Wrath 4 | Vigor 12 | Bounty 12
+  Abilities:
+    • (1 AP, Exhaust): FORGE a Mounted Messiah.
+
+  MONDA VESEL
+  ───────────
+  Type:     Monarch
+  Subtype:  
+  Stats:    Wrath 2 | Vigor 14 | Bounty 12
+  Abilities:
+    • (2 AP, Exhaust): TUTOR for a Clergy.
+
+
+  ── CAPITOLS ──
+
+  MACMARTEN ROCK
+  ──────────────
+  Type:     Capitol
+  Subtype:  Mountain
+  Stats:    Vigor 25 | Bounty 10
+  Abilities:
+    • Whenever a friendly clergy leaves play, shuffle it into your deck.
+
+  MOTHER'S HOUSE
+  ──────────────
+  Type:     Capitol
+  Subtype:  Valley
+  Stats:    Vigor 25 | Bounty 10
+  Abilities:
+    • (0 AP, Exhaust): Gain 1 AP for each friendly clergy.
+
+
+  ── IMPROVEMENTS ──
+
+  LONELY RECTORY
+  ──────────────
+  Type:     Improvement
+  Subtype:  Sacred
+  Cost:     1 AP
+  Stats:    Vigor 1 | Bounty 1
+  Abilities:
+    • If you control a clergy, sacred cards cost 1 less to play from hand, but not less than 1.
+
+  PERISHED CHURCH
+  ───────────────
+  Type:     Improvement
+  Subtype:  Sacred
+  Cost:     3 AP
+  Stats:    Vigor 3 | Bounty 3
+  Abilities:
+    • (3 AP, Exhaust): Discard three cards and then draw three cards.
+
+  ALTERED JUNCTION
+  ────────────────
+  Type:     Improvement
+  Subtype:  Sacred, Mountain
+  Cost:     4 AP
+  Stats:    Vigor 10 | Bounty 4
+  Abilities:
+    • Whenever you Contemplate, friendly clergy get +1/0 until the end of your next action.
+    • (3 AP, Exhaust): CONTEMPLATE 3.
+
+  AQUATHEDRAL
+  ───────────
+  Type:     Improvement
+  Subtype:  Sacred, Port
+  Cost:     5 AP
+  Stats:    Vigor 6 | Bounty 4
+  Abilities:
+    • (0 AP, Exhaust): Gain 1 AP for each friendly Peasant.
+    • (X AP, Exhaust): CONTEMPLATE X.
+
+  SPHINX OF BLACK QUARTZ
+  ──────────────────────
+  Type:     Improvement
+  Subtype:  Sacred
+  Cost:     6 AP
+  Stats:    Vigor 8 | Bounty 4
+  Keywords: IMBUE
+  Abilities:
+    • Cards in your hand have IMBUE.
+
+
+  ── CULTS ──
+
+  EMBERCROWNS
+  ───────────
+  Type:     Cult
+  Subtype:  —
+  Cost:     3 AP
+  Abilities:
+    • Whenever you play a clergy, you may immediately take another action.
+
+
+  ── CHARACTERS ──
+
+  WILLING SUBJECT
+  ───────────────
+  Type:     Character
+  Subtype:  Alchemist
+  Cost:     1 AP
+  Stats:    Wrath 3 | Vigor 1 | Bounty 2
+  Abilities:
+    • When this card leaves play, deal damage equal to this card's wrath to an enemy Unit.
+
+  PRIEST (DECEASED)
+  ─────────────────
+  Type:     Character
+  Subtype:  Clergy
+  Cost:     2 AP
+  Stats:    Wrath 1 | Vigor 3 | Bounty 1
+  Abilities:
+    • Friendly Peasants get +0/+1.
+    • (1 AP, Exhaust): FORGE an Unwashed Masses.
+
+  ALOOF GENIUS
+  ────────────
+  Type:     Character
+  Subtype:  Clergy
+  Cost:     3 AP
+  Stats:    Wrath 2 | Vigor 2 | Bounty 3
+  Abilities:
+    • When played and when this card leaves play, Research 3.
+
+  NAKED BISHOP
+  ────────────
+  Type:     Character
+  Subtype:  Clergy
+  Cost:     3 AP
+  Stats:    Wrath 4 | Vigor 3 | Bounty 2
+  Abilities:
+    • Friendly peasants in the Wilderness get +1/+0.
+    • (1 AP, Exhaust): FORGE an Unwashed Masses.
+
+  ABBESS OF DECEIT
+  ────────────────
+  Type:     Character
+  Subtype:  Clergy
+  Cost:     4 AP
+  Stats:    Wrath 3 | Vigor 4 | Bounty 3
+  Abilities:
+    • When played gain AP equal to the number of peasants in the Wilderness.
+    • (1 AP, Exhaust): FORGE an Unwashed Masses.
+
+  HOMUNCULIST
+  ───────────
+  Type:     Character
+  Subtype:  Alchemist
+  Cost:     5 AP
+  Stats:    Wrath 4 | Vigor 6 | Bounty 3
+  Abilities:
+    • (3 AP, Exhaust): Return a Character from your discard to your Realm.
+
+  JACQI UKAMPI
+  ─────────────
+  Type:     Character
+  Subtype:  Noble, Clergy
+  Cost:     10 AP
+  Stats:    Wrath 7 | Vigor 6 | Bounty 4
+  Keywords: IMBUE
+  Abilities:
+    • When played, Contemplate 3. Immune to  SALVO  damage.
+
+
+  ── UNITS ──
+
+  MOUNTED MESSIAH
+  ───────────────
+  Type:     Unit
+  Subtype:  Peasant, Knight
+  Cost:     1 AP
+  Stats:    Wrath 2 | Vigor 1 | Bounty 1
+  Abilities:
+    • When this unit attacks a Peasant, it gets +1/+0 until end of combat.
+
+  TRUE VISIONARY
+  ──────────────
+  Type:     Unit
+  Subtype:  Peasant
+  Cost:     2 AP
+  Stats:    Wrath 1 | Vigor 2 | Bounty 1
+  Keywords: SALVO 3
+
+
+  ── EVENTS ──
+
+  TIL WE MEET AGAIN
+  ─────────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     1 AP
+  Bounty:   0
+  Abilities:
+    • Return a Character to its owner's hand.
+  Liquidate Value: 3 AP
+
+  ILL EXCOMMUNICATION
+  ───────────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     2 AP
+  Bounty:   0
+  Abilities:
+    • Opponent reveals their hand; you choose a card from it. Opponent discards that card.
+  Liquidate Value: 3 AP
+
+  UNWITTING SUBJECT
+  ─────────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     2 AP
+  Bounty:   0
+  Abilities:
+    • Contemplate 3
+  Liquidate Value: 3 AP
+
+  WHAT HAVE I DONE?
+  ─────────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     3 AP
+  Bounty:   0
+  Abilities:
+    • Draw a card for each character in your discard, up to 3.
+  Liquidate Value: 4 AP
+
+  LIMITLESS VISION
+  ────────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     8 AP
+  Bounty:   0
+  Keywords: IMBUE
+  Abilities:
+    • For the rest of the game, play with the top two cards of your deck face up. When you would draw a card, instead choose between the two.
+  Liquidate Value: 4 AP
+
+
+========================================================================
+  TRADE
+========================================================================
+
+  ── MONARCHS ──
+
+  GREEN QUEEN CHELISE
+  ───────────────────
+  Type:     Monarch
+  Subtype:  
+  Stats:    Wrath 2 | Vigor 14 | Bounty 12
+  Abilities:
+    • (1 AP): FORGE an Undermen.
+
+  VAYA MYKOLO
+  ───────────
+  Type:     Monarch
+  Subtype:  
+  Stats:    Wrath 4 | Vigor 14 | Bounty 12
+  Abilities:
+    • If you control five or more merchants, friendly merchants produce double AP. 
+
+
+  ── CAPITOLS ──
+
+  NELUCIFERA
+  ──────────
+  Type:     Capitol
+  Subtype:  Coast
+  Stats:    Vigor 20 | Bounty 10
+  Abilities:
+    • Whenever you play a merchant, draw a card.
+
+  ZOSTERA
+  ───────
+  Type:     Capitol
+  Subtype:  Desert
+  Stats:    Vigor 25 | Bounty 10
+  Abilities:
+    • Friendly Merchants get +1/+1.
+
+
+  ── IMPROVEMENTS ──
+
+  ARCADIAN LANDING
+  ─────────────────
+  Type:     Improvement
+  Subtype:  Port
+  Cost:     1 AP
+  Stats:    Vigor 2 | Bounty 2
+  Abilities:
+    • (2 AP, Exhaust): FORGE a Catarrack.
+
+  BARASHAN MARKET
+  ───────────────
+  Type:     Improvement
+  Subtype:  Economic
+  Cost:     1 AP
+  Stats:    Vigor 3 | Bounty 1
+  Abilities:
+    • (0 AP, Exhaust): Gain 1 AP for each friendly merchant.
+
+  WETLANDS WHARF
+  ──────────────
+  Type:     Improvement
+  Subtype:  Port
+  Cost:     2 AP
+  Stats:    Vigor 3 | Bounty 1
+  Abilities:
+    • Friendly Naval units get +1/+1.
+
+  EXCHEQUER'S OFFICE
+  ──────────────────
+  Type:     Improvement
+  Subtype:  Economic
+  Cost:     3 AP
+  Stats:    Vigor 2 | Bounty 2
+  Abilities:
+    • (0 AP, Exhaust): Gain  1 AP for each friendly non-Sacred Improvement, other than this one..
+
+  TOO-TALL GUILDHALL
+  ──────────────────
+  Type:     Improvement
+  Subtype:  Economic
+  Cost:     4 AP
+  Stats:    Vigor 3 | Bounty 2
+  Abilities:
+    • Friendly Artisans cost 1 AP less to play, but not less than 1 AP.
+
+  WORKHOUSE
+  ─────────
+  Type:     Improvement
+  Subtype:  Economic
+  Cost:     4 AP
+  Stats:    Vigor 3 | Bounty 1
+  Abilities:
+    • (0 AP, Exhaust): Gain 2 AP for each friendly peasant, then discard or dispose of a peasant.
+
+  DEEPWATER HARBOR
+  ────────────────
+  Type:     Improvement
+  Subtype:  Shipyard
+  Cost:     5 AP
+  Stats:    Vigor 5 | Bounty 4
+  Abilities:
+    • Whenever a friendly Unit in the Open Sea is destroyed, return it to your hand.
+
+
+  ── CHARACTERS ──
+
+  COROLORAN VINTNER
+  ─────────────────
+  Type:     Character
+  Subtype:  Coroloran, Merchant
+  Cost:     1 AP
+  Stats:    Wrath 1 | Vigor 1 | Bounty 1
+  Abilities:
+    • (0 AP, Exhaust): Gain 1 AP for each friendly clergy.
+
+  WEEVIL TAMER
+  ────────────
+  Type:     Character
+  Subtype:  Merchant
+  Cost:     1 AP
+  Stats:    Wrath 1 | Vigor 1 | Bounty 1
+  Abilities:
+    • (0 AP, Exhaust): Gain 1 AP for each friendly peasant.
+
+  SPICERIEN
+  ─────────
+  Type:     Character
+  Subtype:  Amaguran, Merchant
+  Cost:     2 AP
+  Stats:    Wrath 1 | Vigor 2 | Bounty 1
+  Keywords: CREW
+  Abilities:
+    • (0 AP, Exhaust): Gain 1 AP for each trade vessel.
+
+  GEMARIEN
+  ────────
+  Type:     Character
+  Subtype:  Amaguran, Merchant
+  Cost:     3 AP
+  Stats:    Wrath 2 | Vigor 3 | Bounty 2
+  Keywords: CREW
+  Abilities:
+    • (0 AP, Exhaust): Gain 2 AP for each friendly Noble and Courtier.
+
+  LUMBERING OAF
+  ─────────────
+  Type:     Character
+  Subtype:  Merchant
+  Cost:     4 AP
+  Stats:    Wrath 5 | Vigor 2 | Bounty 2
+  Abilities:
+    • (0 AP, Exhaust): Gain 2 AP for each friendly Artisan.
+
+  SEASIDE SHIPWRIGHTS
+  ───────────────────
+  Type:     Character
+  Subtype:  Artisan
+  Cost:     4 AP
+  Stats:    Wrath 3 | Vigor 4 | Bounty 2
+  Abilities:
+    • Forging Vessels costs 1 AP less, but not less than  1 AP.
+
+  STERN ADMIRAL
+  ─────────────
+  Type:     Character
+  Subtype:  Noble
+  Cost:     6 AP
+  Stats:    Wrath 6 | Vigor 3 | Bounty 3
+  Keywords: CREW
+  Abilities:
+    • Friendly naval units get +1/+1.
+
+  CAT-EYED MAN
+  ────────────
+  Type:     Character
+  Subtype:  Coroloran, Merchant
+  Cost:     7 AP
+  Stats:    Wrath 7 | Vigor 6 | Bounty 3
+  Abilities:
+    • When this card attacks, gain 1 AP for each friendly Merchant.
+
+
+  ── UNITS ──
+
+  UNDERMEN
+  ────────
+  Type:     Unit
+  Subtype:  Professional
+  Cost:     1 AP
+  Stats:    Wrath 1 | Vigor 1 | Bounty 1
+  Keywords: CREW
+
+  CATARRACK
+  ─────────
+  Type:     Unit
+  Subtype:  Trade, Vessel
+  Cost:     2 AP
+  Stats:    Wrath 1 | Vigor 2 | Bounty 1
+  Keywords: SALVO 1
+
+  GOLDEN GULL
+  ───────────
+  Type:     Unit
+  Subtype:  Naval, Vessel
+  Cost:     3 AP
+  Stats:    Wrath 4 | Vigor 2 | Bounty 2
+
+
+  ── EVENTS ──
+
+  DEAD SLOW AHEAD
+  ───────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     2 AP
+  Bounty:   0
+  Abilities:
+    • Gain 1 AP for each trade unit.
+  Liquidate Value: 3 AP
+
+  CAPITOL INVESTMENT
+  ──────────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     6 AP
+  Bounty:   0
+  Abilities:
+    • Deal X damage to an enemy capitol, where X is the number of friendly merchants.
+  Liquidate Value: 4 AP
+
+
+========================================================================
+  DIPLOMACY
+========================================================================
+
+  ── MONARCHS ──
+
+  CASARA VALARA
+  ─────────────
+  Type:     Monarch
+  Subtype:  
+  Stats:    Wrath 4 | Vigor 14 | Bounty 12
+  Abilities:
+    • Begin the game with 4 action points.
+    • (0 AP, Exhaust) Veto. Deal 2 damage to this card.
+
+  VIKTOR VALARA
+  ─────────────
+  Type:     Monarch
+  Subtype:  
+  Stats:    Wrath 4 | Vigor 14 | Bounty 12
+  Abilities:
+    • (0 AP, Exhaust Gain 1 AP for each friendly Courtier.
+
+
+  ── CAPITOLS ──
+
+  BICARA TOWNSHIP
+  ───────────────
+  Type:     Capitol
+  Subtype:  Plains
+  Stats:    Vigor 40 | Bounty 10
+  Abilities:
+    • Every card in your deck must be from the same faction as your Monarch, or neutral. 
+Whenever you Veto, gain 2 Bounty.
+
+  RAHASA
+  ──────
+  Type:     Capitol
+  Subtype:  Hill
+  Stats:    Vigor 10 | Bounty 10
+  Abilities:
+    • At the start of the game, your deck may have up to 6 cards from unaligned factions.
+
+
+  ── IMPROVEMENTS ──
+
+  NEUTRAL GROUND
+  ──────────────
+  Type:     Improvement
+  Subtype:  Diplomatic
+  Cost:     1 AP
+  Stats:    Vigor 1 | Bounty 1
+  Keywords: GUARDIAN, TRUCE
+  Abilities:
+    • When this card leaves play, deal 2 damage to target enemy Unit.
+
+  EMBASSY
+  ───────
+  Type:     Improvement
+  Subtype:  Diplomatic
+  Cost:     3 AP
+  Stats:    Vigor 3 | Bounty 2
+  Abilities:
+    • (2 AP, Exhaust): Tutor a card from an unaligned faction.
+
+  COUNCIL CHAMBER
+  ───────────────
+  Type:     Improvement
+  Subtype:  Legal
+  Cost:     4 AP
+  Stats:    Vigor 5 | Bounty 2
+  Abilities:
+    • Units cost 1 AP more to play.
+    • (0 AP, Exhaust): If you control no Units, gain 3 AP.
+
+  UPPER COURT
+  ───────────
+  Type:     Improvement
+  Subtype:  Legal
+  Cost:     5 AP
+  Stats:    Vigor 6 | Bounty 3
+  Abilities:
+    • When played, name a Character in a Realm. If that Character leaves its Realm, destroy it.
+
+
+  ── CHARACTERS ──
+
+  OBVIOUS OBSERVER
+  ────────────────
+  Type:     Character
+  Subtype:  Courtier
+  Cost:     1 AP
+  Stats:    Wrath 1 | Vigor 1 | Bounty 1
+  Abilities:
+    • (X AP, Exhaust): Look at the top X cards of an opponent's deck: return them to the top of the deck in any order.
+
+  CHURLISH INQUISITOR
+  ───────────────────
+  Type:     Character
+  Subtype:  Courtier
+  Cost:     2 AP
+  Stats:    Wrath 3 | Vigor 2 | Bounty 2
+  Abilities:
+    • When played, choose target player. When that player plays a card from an aligned faction, deal 1 damage to their Capitol.
+
+  COURTESAN
+  ─────────
+  Type:     Character
+  Subtype:  Courtier
+  Cost:     2 AP
+  Stats:    Wrath 0 | Vigor 2 | Bounty 2
+  Abilities:
+    • When this card leaves play, destroy target enemy noble.
+
+  SALACIOUS SCRIBES
+  ─────────────────
+  Type:     Character
+  Subtype:  Courtier
+  Cost:     2 AP
+  Stats:    Wrath 0 | Vigor 3 | Bounty 2
+  Abilities:
+    • While this card is in the Outland, all enemy bounties are worth +1.
+
+  ERUDITE TRANSLATOR
+  ──────────────────
+  Type:     Character
+  Subtype:  Courtier
+  Cost:     3 AP
+  Stats:    Wrath 0 | Vigor 4 | Bounty 2
+  Abilities:
+    • This card gets +2/+0 for each friendly unaligned faction card in play.
+
+  FACE IN THE CROWD
+  ─────────────────
+  Type:     Character
+  Subtype:  Spy
+  Cost:     3 AP
+  Stats:    Wrath 1 | Vigor 1 | Bounty 1
+  Keywords: REFLEX
+  Abilities:
+    • When played, you may VETO. If you do, take another action.
+
+  MASTER ORATOR
+  ─────────────
+  Type:     Character
+  Subtype:  Courtier
+  Cost:     3 AP
+  Stats:    Wrath 2 | Vigor 3 | Bounty 2
+  Keywords: GUARDIAN
+  Abilities:
+    • When played, you may return a Character to its owner's Realm.
+
+  BACKALLEY EMISSARY
+  ──────────────────
+  Type:     Character
+  Subtype:  Noble, Ambassador
+  Cost:     4 AP
+  Stats:    Wrath 4 | Vigor 3 | Bounty 3
+  Abilities:
+    • (4 AP, Exhaust): Tutor for any Character in your deck, then discard a card.
+
+  UNSETTLING VISITOR
+  ──────────────────
+  Type:     Character
+  Subtype:  Coroloran, Ambassador
+  Cost:     4 AP
+  Stats:    Wrath 4 | Vigor 5 | Bounty 2
+  Keywords: REFLEX
+  Abilities:
+    • When played, select a random card from an enemy's hand and look at it.
+
+  VICEROY
+  ───────
+  Type:     Character
+  Subtype:  Noble
+  Cost:     6 AP
+  Stats:    Wrath 5 | Vigor 6 | Bounty 3
+  Keywords: GUARDIAN, TRUCE
+
+  FLASHY ASSASSIN
+  ───────────────
+  Type:     Character
+  Subtype:  Spy
+  Cost:     7 AP
+  Stats:    Wrath 1 | Vigor 2 | Bounty 5
+  Keywords: REFLEX
+  Abilities:
+    • When played, you may destroy an enemy character. If you do, return this card to your hand.
+
+
+  ── EVENTS ──
+
+  LACED WITH POISON
+  ─────────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     1 AP
+  Bounty:   0
+  Abilities:
+    • Exhaust an enemy character.
+  Liquidate Value: 3 AP
+
+  LIES! LIES! LIES!
+  ─────────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     2 AP
+  Bounty:   0
+  Keywords: REFLEX
+  Abilities:
+    • Veto
+
+  MAN ON THE INSIDE
+  ─────────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     2 AP
+  Bounty:   0
+  Abilities:
+    • Truce.
+    • Exhaust target improvement.
+  Liquidate Value: 4 AP
+
+  DECISIONS, DECISIONS
+  ────────────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     3 AP
+  Bounty:   0
+  Abilities:
+    • Target enemy must forfeit a character of their choice.
+  Liquidate Value: 4 AP
+
+  WE'RE DONE HERE
+  ───────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     6 AP
+  Bounty:   0
+  Abilities:
+    • Exhaust all enemy characters and units.
+  Liquidate Value: 4 AP
+
+
+========================================================================
+  NEUTRAL
+========================================================================
+
+  ── IMPROVEMENTS ──
+
+  BREEDING CONCERN
+  ────────────────
+  Type:     Improvement
+  Subtype:  Military
+  Cost:     1 AP
+  Stats:    Vigor 1 | Bounty 1
+  Abilities:
+    • Friendly Beasts get +0/+1.
+
+  ABATTOIR
+  ────────
+  Type:     Improvement
+  Subtype:  Economic
+  Cost:     2 AP
+  Stats:    Vigor 2 | Bounty 2
+  Abilities:
+    • Gain 1 AP whenever you destroy an enemy unit or character.
+
+  MUD YARDS
+  ─────────
+  Type:     Improvement
+  Subtype:  Seaside, Shipyard
+  Cost:     2 AP
+  Stats:    Vigor 2 | Bounty 3
+  Abilities:
+    • (3 AP, Exhaust): FORGE a Balinger.
+    • (4 AP, Exhaust): FORGE a Flying Zin.
+
+  WORKSHOP
+  ────────
+  Type:     Improvement
+  Subtype:  Artisan
+  Cost:     2 AP
+  Stats:    Vigor 3 | Bounty 2
+  Abilities:
+    • (6 AP, Exhaust): FORGE a Fen Fortress.
+
+  HOUSE OF WARSHIP
+  ────────────────
+  Type:     Improvement
+  Subtype:  Sacred, Artisan
+  Cost:     3 AP
+  Stats:    Vigor 4 | Bounty 2
+  Abilities:
+    • (2 AP, Exhaust): FORGE a Ship of Fools.
+
+  STRICKEN BARRACKS
+  ─────────────────
+  Type:     Improvement
+  Subtype:  Military
+  Cost:     3 AP
+  Stats:    Vigor 3 | Bounty 2
+  Abilities:
+    • Friendly professionals get RUSH.
+
+  FETID HOLLER
+  ────────────
+  Type:     Improvement
+  Subtype:  Civil
+  Cost:     4 AP
+  Stats:    Vigor 4 | Bounty 2
+  Abilities:
+    • (2 AP, Exhaust): FORGE a Feral Folk.
+
+  HIGH WALLS
+  ──────────
+  Type:     Improvement
+  Subtype:  Military
+  Cost:     5 AP
+  Stats:    Vigor 8 | Bounty 1
+  Keywords: GUARDIAN
+
+  COBSTONE CITADEL
+  ────────────────
+  Type:     Improvement
+  Subtype:  Military
+  Cost:     7 AP
+  Stats:    Vigor 6 | Bounty 3
+  Abilities:
+    • Friendly Units with Guardian get +0/+1.
+    • (2 AP, Exhaust): FORGE an Unsavory Garrison.
+
+
+  ── TERRAINS ──
+
+  TWIGFRUIT GROVE
+  ───────────────
+  Type:     Terrain
+  Subtype:  Grove
+  Cost:     1 AP
+  Bounty:   0
+  Keywords: CULTIVATE 2
+  Abilities:
+    • (0 AP, Exhaust): Harvest: Gain 1 AP for each Growth counter on this card.
+
+  DUNES OF THE CAPE
+  ─────────────────
+  Type:     Terrain
+  Subtype:  Desert, Coast
+  Cost:     2 AP
+  Bounty:   0
+  Abilities:
+    • Friendly units with cost 1 AP get +0/+1.
+
+  VINEYARDS
+  ─────────
+  Type:     Terrain
+  Subtype:  Grove
+  Cost:     2 AP
+  Bounty:   0
+  Keywords: CULTIVATE 3
+  Abilities:
+    • (0 AP, Exhaust): Harvest: Gain 1 AP for each Growth counter on this card.
+
+  DOUR DALE
+  ─────────
+  Type:     Terrain
+  Subtype:  Valley
+  Cost:     3 AP
+  Bounty:   0
+  Abilities:
+    • Friendly farmers and shepherds get +1/+1.
+
+  GRAVEYARD OF LIES
+  ─────────────────
+  Type:     Terrain
+  Subtype:  Desert
+  Cost:     3 AP
+  Bounty:   0
+  Abilities:
+    • When a friendly character is destroyed: Look at the top 1 card of your opponent's deck.
+
+  MONOLITHIC SLABS
+  ────────────────
+  Type:     Terrain
+  Subtype:  Desert
+  Cost:     3 AP
+  Bounty:   0
+  Abilities:
+    • Friendly units with GUARDIAN get +1/+1.
+
+  PINKWILLOW & PINES
+  ────────────────────
+  Type:     Terrain
+  Subtype:  Forest
+  Cost:     3 AP
+  Bounty:   0
+  Abilities:
+    • Forging vessels costs 1 AP less, but not less than 1 AP.
+
+  TWINGE TRIBUTARY
+  ────────────────
+  Type:     Terrain
+  Subtype:  River
+  Cost:     3 AP
+  Bounty:   0
+  Abilities:
+    • Friendly farmers get +1/+2.
+
+  DEEP WATERS
+  ───────────
+  Type:     Terrain
+  Subtype:  Bay
+  Cost:     4 AP
+  Bounty:   0
+  Abilities:
+    • (0 AP, Exhaust): Gain 1 AP for each friendly vessel, up to 3 AP.
+
+  FLAMESWORN RIDGE
+  ────────────────
+  Type:     Terrain
+  Subtype:  Mountain
+  Cost:     4 AP
+  Bounty:   0
+  Abilities:
+    • (1 AP, Exhaust): Deal 1 damage to target unit.
+
+
+  ── CHARACTERS ──
+
+  SQUEAMISH SQUIRE
+  ────────────────
+  Type:     Character
+  Subtype:  Peasant
+  Cost:     2 AP
+  Stats:    Wrath 2 | Vigor 2 | Bounty 1
+  Abilities:
+    • When played, you may attach this card to a friendly knight. If you do, this card loses all abilities and attached knight gets +2/+2.
+
+  SHAPER OF SPHERES
+  ─────────────────
+  Type:     Character
+  Subtype:  Engineer
+  Cost:     4 AP
+  Stats:    Wrath 2 | Vigor 4 | Bounty 3
+  Abilities:
+    • When played, RESEARCH 2.
+    • (7 AP, Exhaust): FORGE a Bronze Blazebringer.
+
+  RANCOROUS KNIGHT
+  ────────────────
+  Type:     Character
+  Subtype:  Noble, Knight
+  Cost:     5 AP
+  Stats:    Wrath 4 | Vigor 6 | Bounty 3
+  Keywords: RUSH, RAGE
+
+  LORD OF THE KEEP
+  ────────────────
+  Type:     Character
+  Subtype:  Noble
+  Cost:     6 AP
+  Stats:    Wrath 2 | Vigor 8 | Bounty 4
+  Abilities:
+    • (0 AP, Exhaust): Gain 1 AP for each friendly GUARDIAN.
+    • (2 AP, Exhaust): FORGE an Unsavory Garrison.
+
+
+  ── UNITS ──
+
+  MEN OF STERLING
+  ───────────────
+  Type:     Unit
+  Subtype:  Peasant, Archers
+  Cost:     1 AP
+  Stats:    Wrath 1 | Vigor 1 | Bounty 1
+  Keywords: SALVO 1
+
+  UNWASHED MASSES
+  ───────────────
+  Type:     Unit
+  Subtype:  Peasant
+  Cost:     1 AP
+  Stats:    Wrath 1 | Vigor 1 | Bounty 0
+
+  FERAL FOLK
+  ──────────
+  Type:     Unit
+  Subtype:  Peasant, Beast
+  Cost:     2 AP
+  Stats:    Wrath 2 | Vigor 1 | Bounty 1
+  Keywords: RUSH
+
+  SHIP OF FOOLS
+  ─────────────
+  Type:     Unit
+  Subtype:  Naval, Vessel
+  Cost:     2 AP
+  Stats:    Wrath 1 | Vigor 1 | Bounty 1
+  Keywords: SALVO 1
+
+  UNSAVORY GARRISON
+  ─────────────────
+  Type:     Unit
+  Subtype:  Professional
+  Cost:     2 AP
+  Stats:    Wrath 1 | Vigor 3 | Bounty 1
+  Keywords: GUARDIAN
+
+  BALINGER
+  ────────
+  Type:     Unit
+  Subtype:  Naval, Vessel
+  Cost:     3 AP
+  Stats:    Wrath 3 | Vigor 2 | Bounty 3
+  Keywords: SALVO 2
+
+  ORGANIZED RESISTANCE
+  ────────────────────
+  Type:     Unit
+  Subtype:  Peasant
+  Cost:     3 AP
+  Stats:    Wrath 4 | Vigor 1 | Bounty 2
+
+  FLYING ZIN
+  ──────────
+  Type:     Unit
+  Subtype:  Trade, Vessel
+  Cost:     4 AP
+  Stats:    Wrath 4 | Vigor 5 | Bounty 3
+
+  HOEPELBLASTER
+  ─────────────
+  Type:     Unit
+  Subtype:  Professional
+  Cost:     4 AP
+  Stats:    Wrath 2 | Vigor 4 | Bounty 3
+  Keywords: SALVO 3, RELOAD 1
+
+  MOONLIT MILITANTS
+  ─────────────────
+  Type:     Unit
+  Subtype:  Peasant
+  Cost:     4 AP
+  Stats:    Wrath 5 | Vigor 4 | Bounty 3
+  Keywords: CHARGE 1
+
+  FEN FORTRESS
+  ────────────
+  Type:     Unit
+  Subtype:  Outpost
+  Cost:     6 AP
+  Stats:    Wrath 1 | Vigor 10 | Bounty 4
+  Keywords: GUARDIAN
+
+  BRONZE BLAZEBRINGER
+  ───────────────────
+  Type:     Unit
+  Subtype:  War Machine
+  Cost:     7 AP
+  Stats:    Wrath 6 | Vigor 6 | Bounty 4
+  Keywords: ORDNANCE, SALVO 3
+
+
+  ── EVENTS ──
+
+  AWAKEN AT DAWN
+  ──────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     1 AP
+  Bounty:   0
+  Abilities:
+    • Ready target unit.
+  Liquidate Value: 3 AP
+
+  DIVINE BREATH
+  ─────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     1 AP
+  Bounty:   0
+  Abilities:
+    • Heal 5 damage from your monarch.
+  Liquidate Value: 3 AP
+
+  HEALING LIGHT
+  ─────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     2 AP
+  Bounty:   0
+  Abilities:
+    • Restore target character to full vigor.
+  Liquidate Value: 3 AP
+
+  WEALTH IS HEALTH
+  ────────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     2 AP
+  Bounty:   0
+  Abilities:
+    • If your capitol has 15 or more Vigor, gain 5 AP.
+  Liquidate Value: 3 AP
+
+  HIRED HANDS
+  ───────────
+  Type:     Event
+  Subtype:  —
+  Cost:     3 AP
+  Bounty:   0
+  Abilities:
+    • Create two friendly, ready Unwashed Masses tokens in the Wilderness.
+  Liquidate Value: 4 AP
+
+  INQUISITION
+  ───────────
+  Type:     Event
+  Subtype:  —
+  Cost:     3 AP
+  Bounty:   0
+  Abilities:
+    • Destroy target cult. Take another action.
+  Liquidate Value: 4 AP
+
+  SALT THE EARTH
+  ──────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     3 AP
+  Bounty:   0
+  Abilities:
+    • Target Terrain loses all abilities and keywords.
+  Liquidate Value: 4 AP
+
+  TWO DELICACIES
+  ──────────────
+  Type:     Event
+  Subtype:  —
+  Cost:     5 AP
+  Bounty:   0
+  Abilities:
+    • Each players loses all AP, then each player gains 8 AP.
+  Liquidate Value: 4 AP
+
+  MASS GRAVE
+  ──────────
+  Type:     Event
+  Subtype:  —
+  Cost:     6 AP
+  Bounty:   0
+  Abilities:
+    • When played: Destroy all units.
+  Liquidate Value: 4 AP
+
+
+  ── ITEMS ──
+
+  HALIBUT AMULET
+  ──────────────
+  Type:     Item
+  Subtype:  Character
+  Cost:     1 AP
+  Bounty:   0
+  Abilities:
+    • Attached character gains Crew.
+  Liquidate Value: 3 AP
+
+  OBEDIENCE COLLAR
+  ────────────────
+  Type:     Item
+  Subtype:  Beast
+  Cost:     1 AP
+  Bounty:   0
+  Abilities:
+    • Attached beast gains Rage.
+  Liquidate Value: 3 AP
+
+  PLACEBICUS
+  ──────────
+  Type:     Item
+  Subtype:  Character
+  Cost:     2 AP
+  Bounty:   0
+  Abilities:
+    • Attached character has type clergy, in addition to its other types.
+  Liquidate Value: 3 AP
+
+  SENTRY SHIELD
+  ─────────────
+  Type:     Item
+  Subtype:  Professional
+  Cost:     2 AP
+  Bounty:   0
+  Abilities:
+    • Attached professional gains Guardian.
+  Liquidate Value: 3 AP
+
+  WITCH'S TIT
+  ───────────
+  Type:     Item
+  Subtype:  Vessel
+  Cost:     2 AP
+  Bounty:   0
+  Abilities:
+    • Attached vessel gets +2/+1.
+  Liquidate Value: 3 AP
+
+  BRINIC ACID
+  ───────────
+  Type:     Item
+  Subtype:  Vessel
+  Cost:     3 AP
+  Bounty:   0
+  Abilities:
+    • Attached Vessel gets Salvo 1. If salvo target is an Improvement, deal +3 damage.
+  Liquidate Value: 4 AP
+
+  BERZERKER ARMOR
+  ───────────────
+  Type:     Item
+  Subtype:  Professional
+  Cost:     4 AP
+  Bounty:   0
+  Abilities:
+    • Attached Professional gets +0/+4 and RAGE.
+  Liquidate Value: 4 AP
+
+
+========================================================================
+  TOTAL CARDS: 171
+========================================================================

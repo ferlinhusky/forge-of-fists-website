@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Card Gallery — Forge of Fists</title>
+<link rel="icon" type="image/png" sizes="192x192" href="images/FoF-Icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="images/FoF-Icon-512.png">
+<link rel="apple-touch-icon" sizes="192x192" href="images/FoF-Icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700;900&family=IM+Fell+English:ital@0;1&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --parchment:#F5ECD7; --parchment-mid:#E8D5B0;
+  --ink:#1A0F0A; --gold:#B8963E; --gold-l:#D4AF62; --gold-d:#8B6E2A;
+  --radius:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--parchment);color:var(--ink);font-family:'Spectral',Georgia,serif;font-size:16px;line-height:1.75;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* ── Site nav ── */
+.site-nav{position:sticky;top:0;z-index:900;background:var(--ink);border-bottom:1px solid rgba(184,150,62,.35);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:54px}
+.nav-brand{font-family:'Cinzel Decorative',cursive;color:var(--gold);font-size:.85rem;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+.nav-links{display:flex;list-style:none}
+.nav-links a{display:block;font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,236,215,.55);padding:0 .85rem;height:54px;line-height:54px;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--gold);background:rgba(184,150,62,.07)}
+.nav-links .nav-active{color:var(--gold)}
+.nav-links .nav-play{background:var(--gold);color:var(--ink)!important;margin-left:.5rem}
+.nav-links .nav-play:hover{background:var(--gold-l)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--gold);font-size:1.3rem;padding:.25rem}
+
+/* ── Page header ── */
+.page-header{text-align:center;padding:2.5rem 1rem 1.5rem;border-bottom:2px solid var(--gold-d)}
+.page-header h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.4rem,4vw,2.2rem);color:var(--ink)}
+.page-header p{font-family:'IM Fell English',serif;font-style:italic;color:var(--gold-d);margin-top:.4rem;font-size:1rem}
+
+/* ── Faction tab strip ── */
+.faction-tabs{display:flex;flex-wrap:wrap;gap:.4rem;padding:.9rem 1.2rem;background:var(--parchment-mid);border-bottom:1px solid var(--gold-d);position:sticky;top:54px;z-index:99}
+.faction-tab{font-family:'Cinzel',serif;font-size:0.72rem;font-weight:700;letter-spacing:.07em;padding:.35rem .75rem;border-radius:3px;cursor:pointer;border:1px solid transparent;transition:all .15s}
+.faction-tab:hover{opacity:.85}
+
+/* ── Main layout ── */
+.gallery-main{max-width:1400px;margin:0 auto;padding:1.5rem 1rem 4rem}
+
+/* ── Faction section ── */
+.faction-section{margin-bottom:3rem;scroll-margin-top:90px}
+.faction-header{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;letter-spacing:.1em;padding:.6rem 1rem;border-radius:var(--radius) var(--radius) 0 0;color:#fff;text-transform:uppercase}
+.faction-body{background:rgba(255,255,255,.35);border:1px solid var(--gold-d);border-top:none;border-radius:0 0 var(--radius) var(--radius);padding:1rem}
+
+/* ── Type group ── */
+.type-group{margin-bottom:1.4rem}
+.type-group:last-child{margin-bottom:0}
+.type-label{font-family:'Cinzel',serif;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-d);margin-bottom:.55rem;padding-bottom:.25rem;border-bottom:1px solid var(--gold-l);opacity:.85}
+
+/* ── Card grid ── */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:.55rem}
+
+/* ── Card thumbnail ── */
+.card-thumb{display:flex;gap:.6rem;background:rgba(255,255,255,.55);border:1px solid var(--gold-d);border-radius:var(--radius);padding:.5rem;cursor:pointer;transition:all .15s;align-items:flex-start}
+.card-thumb:hover{background:rgba(255,255,255,.85);box-shadow:0 2px 8px rgba(0,0,0,.15);transform:translateY(-1px)}
+.card-thumb img{width:80px;min-width:80px;border-radius:3px;display:block;object-fit:cover;aspect-ratio:640/832}
+.card-info{flex:1;min-width:0}
+.card-name{font-family:'Cinzel',serif;font-size:.78rem;font-weight:700;line-height:1.2;margin-bottom:.2rem;color:var(--ink)}
+.card-meta{font-size:.65rem;color:#5a4030;margin-bottom:.28rem;font-family:'Spectral',serif}
+.card-stats{display:flex;flex-wrap:wrap;gap:.2rem;margin-bottom:.28rem;align-items:center}
+.stat-chip{font-size:.62rem;font-family:'Cinzel',serif;font-weight:600;padding:.1rem .32rem;border-radius:2px;white-space:nowrap}
+.stat-cost{background:var(--gold-d);color:#fff}
+.stat-bounty{background:var(--parchment-mid);border:1px solid var(--gold-d);color:var(--ink)}
+.stat-w{background:#b02020;color:#fff}
+.stat-v{background:#1a6a1a;color:#fff}
+.stat-b{background:#5a4a00;color:#fff}
+.kw-list{display:flex;flex-wrap:wrap;gap:.18rem;margin-bottom:.28rem}
+.kw{font-size:.58rem;font-family:'Cinzel',serif;font-weight:700;letter-spacing:.05em;padding:.08rem .3rem;border-radius:2px;background:var(--ink);color:var(--gold-l)}
+.ability-preview{font-size:.64rem;font-family:'IM Fell English',serif;font-style:italic;color:#3a2a15;line-height:1.35;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+
+/* ── Lightbox ── */
+#lightbox{display:none;position:fixed;inset:0;background:rgba(10,5,0,.82);z-index:1000;align-items:center;justify-content:center;padding:1rem}
+#lightbox.open{display:flex}
+#lightbox-inner{background:var(--parchment);border:2px solid var(--gold-d);border-radius:8px;max-width:820px;width:100%;max-height:92vh;overflow:auto;display:flex;gap:0;position:relative}
+#lb-close{position:absolute;top:.5rem;right:.7rem;font-size:1.5rem;cursor:pointer;color:var(--gold-d);font-family:'Cinzel',serif;z-index:10;line-height:1;background:none;border:none}
+#lb-close:hover{color:var(--ink)}
+#lb-img-wrap{flex:0 0 auto;width:280px;padding:.8rem .8rem .8rem 1rem}
+#lb-img-wrap img{width:100%;border-radius:4px;display:block}
+#lb-content{flex:1;padding:1.2rem 1.2rem 1.2rem .4rem;display:flex;flex-direction:column;gap:.6rem;min-width:0}
+#lb-name{font-family:'Cinzel',serif;font-size:1.15rem;font-weight:700;line-height:1.2}
+#lb-faction-type{font-size:.75rem;font-family:'Cinzel',serif;letter-spacing:.06em;color:var(--gold-d)}
+#lb-stats{display:flex;flex-wrap:wrap;gap:.3rem;align-items:center}
+#lb-keywords{display:flex;flex-wrap:wrap;gap:.25rem}
+.lb-kw{font-size:.7rem;font-family:'Cinzel',serif;font-weight:700;padding:.12rem .4rem;border-radius:3px;background:var(--ink);color:var(--gold-l)}
+#lb-abilities{font-family:'IM Fell English',serif;font-size:.85rem;line-height:1.6;color:var(--ink)}
+#lb-abilities .ab-line{padding:.25rem 0;border-bottom:1px dotted var(--gold-l)}
+#lb-abilities .ab-line:last-child{border-bottom:none}
+.lb-section-label{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-d);margin-bottom:.2rem}
+
+@media(max-width:768px){
+  .nav-links{display:none;flex-direction:column;position:absolute;top:54px;left:0;right:0;background:var(--ink);border-bottom:1px solid rgba(184,150,62,.28);padding:.75rem 0}
+  .nav-links.open{display:flex}
+  .nav-links a{height:auto;line-height:1;padding:.75rem 1.5rem}
+  .nav-toggle{display:block}
+}
+@media(max-width:600px){
+  #lightbox-inner{flex-direction:column}
+  #lb-img-wrap{width:100%;padding:.8rem 1rem .4rem}
+  #lb-img-wrap img{max-width:220px;margin:0 auto}
+  #lb-content{padding:.8rem 1rem 1rem}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand"><img src="images/FoF-Icon-192.png" alt="" aria-hidden="true" style="height:34px;width:34px;margin-right:.55rem;vertical-align:middle;border-radius:4px">Forge of Fists</a>
+  <button class="nav-toggle" aria-label="Menu" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <ul class="nav-links">
+    <li><a href="index.html#what">The Game</a></li>
+    <li><a href="index.html#factions">Factions</a></li>
+    <li><a href="index.html#story">Lore</a></li>
+    <li><a href="index.html#playtest">Playtest</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="gallery.html" class="nav-active">Card Gallery</a></li>
+    <li><a href="https://play.forgeoffists.com" class="nav-play" target="_blank" rel="noopener">Play Free ↗</a></li>
+  </ul>
+</nav>
+
+<header class="page-header">
+  <h1>Card Gallery</h1>
+  <p>Core Set · 171 Cards</p>
+</header>
+
+<div class="faction-tabs" id="faction-tabs"></div>
+
+<main class="gallery-main" id="gallery-main"></main>
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <div id="lightbox-inner">
+    <button id="lb-close" aria-label="Close">✕</button>
+    <div id="lb-img-wrap"><img id="lb-img" src="" alt=""></div>
+    <div id="lb-content">
+      <div id="lb-name"></div>
+      <div id="lb-faction-type"></div>
+      <div id="lb-stats"></div>
+      <div id="lb-keywords"></div>
+      <div id="lb-abilities"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const FACTION_META = {
+  conquest:  { label:"Conquest",  color:"#ed2124", light:"rgba(237,33,36,.08)"   },
+  community: { label:"Community", color:"#c5711c", light:"rgba(197,113,28,.08)"  },
+  creed:     { label:"Creed",     color:"#f5eb12", light:"rgba(245,235,18,.08)"  },
+  trade:     { label:"Trade",     color:"#68bd45", light:"rgba(104,189,69,.08)"  },
+  diplomacy: { label:"Diplomacy", color:"#3a53a4", light:"rgba(58,83,164,.08)"   },
+  neutral:   { label:"Neutral",   color:"#989899", light:"rgba(152,152,153,.08)" }
+};
+
+const TYPE_ORDER = ["Monarch","Capitol","Improvement","Cult","Terrain","Character","Unit","Event","Item"];
+
+// Card data: [name, faction, type, subtype, cost, wrath, vigor, bounty, [keywords], [abilities], img_filename]
+// cost=null for Monarchs/Capitols; wrath=null if not applicable
+const CARDS = [
+
+// ── CONQUEST ─────────────────────────────────────────────────────────────
+
+["Batalan the White","conquest","Monarch","",null,8,13,12,["RAGE","INEXHAUSTIBLE"],["When Batalan attacks, he does 2 damage to himself."],"batalan-the-white.jpg"],
+["Begba Doum","conquest","Monarch","",null,4,15,12,[],["(X AP, Exhaust): Forge a beast with value X."],"begba-doum.jpg"],
+
+["Genesis Keep","conquest","Capitol","Plains",null,null,25,10,[],["(0 AP, Exhaust): Gain 1 AP for each friendly beast."],"genesis-keep.jpg"],
+["Ward's Hill","conquest","Capitol","Hill",null,null,25,10,[],["(0 AP, Exhaust): Gain 1 AP for each friendly professional."],"wards-hill.jpg"],
+
+["Gentlemen's Club","conquest","Improvement","Social",1,null,2,1,[],["(0 AP, Exhaust): Gain 1 AP for each friendly noble."],"gentlemens-club.jpg"],
+["Impressment Office","conquest","Improvement","Military",3,null,3,4,[],["(1 AP, Exhaust): FORGE an Unwashed Masses."],"impressment-office.jpg"],
+
+["True Bastards","conquest","Cult","—",2,null,null,0,[],["Whenever a friendly unit or character destroys an enemy in combat, it readies."],"true-bastards.jpg"],
+
+["Stablemaster","conquest","Character","Peasant",1,1,1,1,[],["(3 AP, Exhaust): FORGE an Outriders if you control any nobles."],"stablemaster.jpg"],
+["Steelrough","conquest","Character","Artisan",2,3,2,1,[],["(4 AP, Exhaust): FORGE a Cast-iron Cannon."],"steelrough.jpg"],
+["Disfigured Duke","conquest","Character","Noble",3,4,3,3,[],["Friendly Beasts get +1/+1.","(3 AP, Exhaust): FORGE a Badlands Brute."],"disfigured-duke.jpg"],
+["Veiled Baron","conquest","Character","Noble",4,4,4,4,[],["Friendly Professionals get +1/+1.","(2 AP, Exhaust): FORGE a Border Company."],"veiled-baron.jpg"],
+
+["Swift Shrike","conquest","Unit","Beast",1,1,1,1,["RUSH"],[],"swift-shrike.jpg"],
+["Border Company","conquest","Unit","Professional",2,2,3,1,[],[],"border-company.jpg"],
+["Badlands Brute","conquest","Unit","Beast",3,4,3,2,["SALVO 2"],[],"badlands-brute.jpg"],
+["Outriders","conquest","Unit","Professional",3,3,2,2,["CHARGE 1","RUSH"],[],"outriders.jpg"],
+["Cast-Iron Cannon","conquest","Unit","Artillery",4,1,1,4,["ORDNANCE","SALVO 5"],[],"cast-iron-cannon.jpg"],
+
+["Border Squabble","conquest","Event","—",2,null,null,0,[],["Move a ready, friendly non-guardian professional unit from your realm to the Wilderness. It remains ready."],"border-squabble.jpg"],
+["I Stab at Thee!","conquest","Event","—",2,null,null,0,[],["Choose a friendly character and an enemy character. Each deals damage to the other equal to their wrath."],"i-stab-at-thee.jpg"],
+["Royal Edict","conquest","Event","—",3,null,null,0,[],["Deal damage equal to your monarch's wrath to target unit in the Outland."],"royal-edict.jpg"],
+["Burn It All","conquest","Event","—",4,null,null,0,[],["Destroy up to two improvements."],"burn-it-all.jpg"],
+
+["Mark of Death","conquest","Item","Beast",1,null,null,0,[],["Attach to a Beast: Attached beast gets +3/+0. Destroy it after it next attacks."],"mark-of-death.jpg"],
+["Signet Ring","conquest","Item","Character",1,null,null,0,[],["Attach to a Character: Attached character gains the type noble and gets +1/+0."],"signet-ring.jpg"],
+["Pox Oil","conquest","Item","Professional",2,null,null,0,[],["Attach to a Professional: When attached professional deals damage to a target, you may discard this card to deal 4 extra damage to that target."],"pox-oil.jpg"],
+["Shortbow","conquest","Item","Professional",2,null,null,0,[],["Attach to a Professional: Attached Professional gets SALVO 1."],"short-bow.jpg"],
+
+// ── COMMUNITY ────────────────────────────────────────────────────────────
+
+["Crul Blackmoon","community","Monarch","",null,6,14,12,[],["(1 AP, Exhaust): Forge a Naïve Newcomer."],"crul-blackmoon.jpg"],
+["Kin Paco","community","Monarch","",null,4,15,12,["KINSHIP"],["Kin Paco has all character types and is not affected by events or abilities."],"kin-paco.jpg"],
+
+["Asala-Sala","community","Capitol","Desert",null,null,20,10,[],["(0 AP, Exhaust): Gain 1 AP for each friendly terrain."],"asala-sala.jpg"],
+["Mat-Mat-Sin","community","Capitol","Plains",null,null,20,10,[],["(1 AP, Exhaust): TUTOR for a terrain."],"mat-mat-sin.jpg"],
+
+["Muck Bridge","community","Improvement","Civil",1,null,1,1,[],["Whenever you play a peasant from your hand, gain 1 AP."],"muck-bridge.jpg"],
+["Hypnodome","community","Improvement","Sacred",2,null,4,2,[],["(1 AP, Exhaust): FORGE a Naïve Newcomer."],"hypnodome.jpg"],
+["Loitering Ground","community","Improvement","Civil",2,null,1,1,[],["(1 AP, Exhaust): FORGE an Unwashed Masses."],"loitering-ground.jpg"],
+["Dryhouse","community","Improvement","Economic",3,null,2,1,[],["(2 AP, Exhaust): Restore a peasant to full health."],"dryhouse.jpg"],
+["Communal Lodging","community","Improvement","Civil",5,null,6,4,[],["All friendly peasants have kinship."],"communal-lodging.jpg"],
+
+["Children of Ea","community","Cult","—",4,null,null,0,[],["Friendly Peasants get +1/+1 for each friendly Spirit."],"children-of-ea.jpg"],
+
+["Fisherman","community","Character","Peasant",1,1,1,1,[],["(0 AP, Exhaust): Gain 1 AP for each friendly lake, river and coast."],"fisherman.jpg"],
+["He Who Sustains","community","Character","Peasant, Farmer",1,1,1,1,[],["(0 AP, Exhaust): Gain 1 AP for each friendly card in play named He Who Sustains."],"he-who-sustains.jpg"],
+["Suspicious Shepherd","community","Character","Peasant, Shepherd",1,1,1,1,[],["(0 AP, Exhaust): Gain 1 AP for each friendly Hill, Valley and Forest."],"suspicious-shepherd.jpg"],
+["Sultana Collector","community","Character","Peasant, Farmer",2,1,3,1,[],["(0 AP, Exhaust): Gain 2 AP for each friendly Grove."],"sultana-collector.jpg"],
+["Red-Eared One","community","Character","Spirit",3,2,4,3,[],["Whenever you Harvest a Grove, gain 2 AP.","Friendly Terrain gains: (0 AP, Exhaust) Dispose of this card. Gain 3 AP."],"red-eared-one.jpg"],
+["Stonemason","community","Character","Artisan",3,2,4,2,[],["Friendly improvements cost 1 AP less for each friendly peasant, but not less than 1."],"stonemason.jpg"],
+["Bubbling Nan","community","Character","Spirit",5,2,6,3,[],["Friendly rivers are also 1/4 units, in addition to their other types, until this card leaves play."],"bubbling-nan.jpg"],
+["Maid Mossy","community","Character","Spirit",5,4,5,3,[],["Friendly forests are also 3/3 units with Guardian, in addition to their other types, until this card leaves play."],"maid-mossy.jpg"],
+["Lord Stonedrop","community","Character","Spirit",6,4,6,3,[],["Friendly Mountains have \"(1 AP, Exhaust) Deal 2 damage to a unit in the Wilderness.\" until this card leaves play."],"lord-stonedrop.jpg"],
+
+["Naïve Newcomer","community","Unit","Peasant",1,1,1,1,["KINSHIP"],[],"naive-newcomer.jpg"],
+["Baleazaintza","community","Unit","Sea Beast",5,5,6,3,[],[],"baleazaintza.jpg"],
+
+["Fabric of Society","community","Event","—",2,null,null,0,[],["Heal 5 damage from your Capitol. Take another action."],"fabric-of-society.jpg"],
+["Coordinated Attack","community","Event","—",6,null,null,0,[],["All friendly units gain the subtype Ally until this card resolves. Ready target friendly unit. It gains Kinship and attacks immediately."],"coordinated-attack.jpg"],
+
+["Tie That Binds","community","Item","Character",1,null,null,0,[],["Attach to a character: Attached character gains Kinship."],"tie-that-binds.jpg"],
+
+// ── CREED ────────────────────────────────────────────────────────────────
+
+["Lord Willsit","creed","Monarch","",null,4,12,12,[],["(1 AP, Exhaust): FORGE a Mounted Messiah."],"lord-willsit.jpg"],
+["Monda Vesel","creed","Monarch","",null,2,14,12,[],["(2 AP, Exhaust): TUTOR for a Clergy."],"monda-vesel.jpg"],
+
+["MacMarten Rock","creed","Capitol","Mountain",null,null,25,10,[],["Whenever a friendly clergy leaves play, shuffle it into your deck."],"macmarten-rock.jpg"],
+["Mother's House","creed","Capitol","Valley",null,null,25,10,[],["(0 AP, Exhaust): Gain 1 AP for each friendly clergy."],"mothers-house.jpg"],
+
+["Lonely Rectory","creed","Improvement","Sacred",1,null,1,1,[],["If you control a clergy, sacred cards cost 1 less to play from hand, but not less than 1."],"lonely-rectory.jpg"],
+["Perished Church","creed","Improvement","Sacred",3,null,3,3,[],["(3 AP, Exhaust): Discard three cards and then draw three cards."],"perished-church.jpg"],
+["Altered Junction","creed","Improvement","Sacred, Mountain",4,null,10,4,[],["Whenever you Contemplate, friendly clergy get +1/0 until the end of your next action.","(3 AP, Exhaust): CONTEMPLATE 3."],"altered-junction.jpg"],
+["Aquathedral","creed","Improvement","Sacred, Port",5,null,6,4,[],["(0 AP, Exhaust): Gain 1 AP for each friendly Peasant.","(X AP, Exhaust): CONTEMPLATE X."],"aquathedral.jpg"],
+["Sphinx of Black Quartz","creed","Improvement","Sacred",6,null,8,4,["IMBUE"],["Cards in your hand have IMBUE."],"sphinx-of-black-quartz.jpg"],
+
+["Embercrowns","creed","Cult","—",3,null,null,0,[],["Whenever you play a clergy, you may immediately take another action."],"embercrowns.jpg"],
+
+["Willing Subject","creed","Character","Alchemist",1,3,1,2,[],["When this card leaves play, deal damage equal to this card's wrath to an enemy Unit."],"willing-subject.jpg"],
+["Priest (Deceased)","creed","Character","Clergy",2,1,3,1,[],["Friendly Peasants get +0/+1.","(1 AP, Exhaust): FORGE an Unwashed Masses."],"priest-deceased.jpg"],
+["Aloof Genius","creed","Character","Clergy",3,2,2,3,[],["When played and when this card leaves play, Research 3."],"aloof-genius.jpg"],
+["Naked Bishop","creed","Character","Clergy",3,4,3,2,[],["Friendly peasants in the Wilderness get +1/+0.","(1 AP, Exhaust): FORGE an Unwashed Masses."],"naked-bishop.jpg"],
+["Abbess of Deceit","creed","Character","Clergy",4,3,4,3,[],["When played gain AP equal to the number of peasants in the Wilderness.","(1 AP, Exhaust): FORGE an Unwashed Masses."],"abbess-of-deceit.jpg"],
+["Homunculist","creed","Character","Alchemist",5,4,6,3,[],["(3 AP, Exhaust): Return a Character from your discard to your Realm."],"homunculist.jpg"],
+["Jacqi Ukampi","creed","Character","Noble, Clergy",10,7,6,4,["IMBUE"],["When played, Contemplate 3. Immune to SALVO damage."],"jacqi-ukampi.jpg"],
+
+["Mounted Messiah","creed","Unit","Peasant, Knight",1,2,1,1,[],["When this unit attacks a Peasant, it gets +1/+0 until end of combat."],"mounted-messiah.jpg"],
+["True Visionary","creed","Unit","Peasant",2,1,2,1,["SALVO 3"],[],"true-visionary.jpg"],
+
+["Til We Meet Again","creed","Event","—",1,null,null,0,[],["Return a Character to its owner's hand."],"til-we-meet-again.jpg"],
+["Ill Excommunication","creed","Event","—",2,null,null,0,[],["Opponent reveals their hand; you choose a card from it. Opponent discards that card."],"ill-excommunication.jpg"],
+["Unwitting Subject","creed","Event","—",2,null,null,0,[],["Contemplate 3"],"unwitting-subject.jpg"],
+["What Have I Done?","creed","Event","—",3,null,null,0,[],["Draw a card for each character in your discard, up to 3."],"what-have-i-done.jpg"],
+["Limitless Vision","creed","Event","—",8,null,null,0,["IMBUE"],["For the rest of the game, play with the top two cards of your deck face up. When you would draw a card, instead choose between the two."],"limitless-vision.jpg"],
+
+// ── TRADE ────────────────────────────────────────────────────────────────
+
+["Green Queen Chelise","trade","Monarch","",null,2,14,12,[],["(1 AP): FORGE an Undermen."],"queen-chelise.jpg"],
+["Vaya Mykolo","trade","Monarch","",null,4,14,12,[],["If you control five or more merchants, friendly merchants produce double AP."],"vaya-mykolo.jpg"],
+
+["Nelucifera","trade","Capitol","Coast",null,null,20,10,[],["Whenever you play a merchant, draw a card."],"nelucifera.jpg"],
+["Zostera","trade","Capitol","Desert",null,null,25,10,[],["Friendly Merchants get +1/+1."],"zostera.jpg"],
+
+["Arcadian Landing","trade","Improvement","Port",1,null,2,2,[],["(2 AP, Exhaust): FORGE a Catarrack."],"arcadian-landing.jpg"],
+["Barashan Market","trade","Improvement","Economic",1,null,3,1,[],["(0 AP, Exhaust): Gain 1 AP for each friendly merchant."],"barashan-market.jpg"],
+["Wetlands Wharf","trade","Improvement","Port",2,null,3,1,[],["Friendly Naval units get +1/+1."],"wetlands-wharf.jpg"],
+["Exchequer's Office","trade","Improvement","Economic",3,null,2,2,[],["(0 AP, Exhaust): Gain 1 AP for each friendly non-Sacred Improvement, other than this one."],"exchequers-office.jpg"],
+["Too-Tall Guildhall","trade","Improvement","Economic",4,null,3,2,[],["Friendly Artisans cost 1 AP less to play, but not less than 1 AP."],"too-tall-guildhall.jpg"],
+["Workhouse","trade","Improvement","Economic",4,null,3,1,[],["(0 AP, Exhaust): Gain 2 AP for each friendly peasant, then discard or dispose of a peasant."],"workhouse.jpg"],
+["Deepwater Harbor","trade","Improvement","Shipyard",5,null,5,4,[],["Whenever a friendly Unit in the Open Sea is destroyed, return it to your hand."],"deepwater-harbor.jpg"],
+
+["Coroloran Vintner","trade","Character","Coroloran, Merchant",1,1,1,1,[],["(0 AP, Exhaust): Gain 1 AP for each friendly clergy."],"coroloran-vintner.jpg"],
+["Weevil Tamer","trade","Character","Merchant",1,1,1,1,[],["(0 AP, Exhaust): Gain 1 AP for each friendly peasant."],"weevil-tamer.jpg"],
+["Spicerien","trade","Character","Amaguran, Merchant",2,1,2,1,["CREW"],["(0 AP, Exhaust): Gain 1 AP for each trade vessel."],"spicerien.jpg"],
+["Gemarien","trade","Character","Amaguran, Merchant",3,2,3,2,["CREW"],["(0 AP, Exhaust): Gain 2 AP for each friendly Noble and Courtier."],"gemarien.jpg"],
+["Lumbering Oaf","trade","Character","Merchant",4,5,2,2,[],["(0 AP, Exhaust): Gain 2 AP for each friendly Artisan."],"lumbering-oaf.jpg"],
+["Seaside Shipwrights","trade","Character","Artisan",4,3,4,2,[],["Forging Vessels costs 1 AP less, but not less than 1 AP."],"seaside-shipwrights.jpg"],
+["Stern Admiral","trade","Character","Noble",6,6,3,3,["CREW"],["Friendly naval units get +1/+1."],"stern-admiral.jpg"],
+["Cat-Eyed Man","trade","Character","Coroloran, Merchant",7,7,6,3,[],["When this card attacks, gain 1 AP for each friendly Merchant."],"cat-eyed-man.jpg"],
+
+["Undermen","trade","Unit","Professional",1,1,1,1,["CREW"],[],"undermen.jpg"],
+["Catarrack","trade","Unit","Trade, Vessel",2,1,2,1,["SALVO 1"],[],"catarrack.jpg"],
+["Golden Gull","trade","Unit","Naval, Vessel",3,4,2,2,[],[],"golden-gull.jpg"],
+
+["Dead Slow Ahead","trade","Event","—",2,null,null,0,[],["Gain 1 AP for each trade unit."],"dead-slow-ahead.jpg"],
+["Capitol Investment","trade","Event","—",6,null,null,0,[],["Deal X damage to an enemy capitol, where X is the number of friendly merchants."],"capitol-investment.jpg"],
+
+// ── DIPLOMACY ────────────────────────────────────────────────────────────
+
+["Casara Valara","diplomacy","Monarch","",null,4,14,12,[],["Begin the game with 4 action points.","(0 AP, Exhaust) Veto. Deal 2 damage to this card."],"casara-valara.jpg"],
+["Viktor Valara","diplomacy","Monarch","",null,4,14,12,[],["(0 AP, Exhaust): Gain 1 AP for each friendly Courtier."],"viktor-valara.jpg"],
+
+["Bicara Township","diplomacy","Capitol","Plains",null,null,40,10,[],["Every card in your deck must be from the same faction as your Monarch, or neutral.","Whenever you Veto, gain 2 Bounty."],"bicara-township.jpg"],
+["Rahasa","diplomacy","Capitol","Hill",null,null,10,10,[],["At the start of the game, your deck may have up to 6 cards from unaligned factions."],"rahasa.jpg"],
+
+["Neutral Ground","diplomacy","Improvement","Diplomatic",1,null,1,1,["GUARDIAN","TRUCE"],["When this card leaves play, deal 2 damage to target enemy Unit."],"neutral-ground.jpg"],
+["Embassy","diplomacy","Improvement","Diplomatic",3,null,3,2,[],["(2 AP, Exhaust): Tutor a card from an unaligned faction."],"embassy.jpg"],
+["Council Chamber","diplomacy","Improvement","Legal",4,null,5,2,[],["Units cost 1 AP more to play.","(0 AP, Exhaust): If you control no Units, gain 3 AP."],"council-chamber.jpg"],
+["Upper Court","diplomacy","Improvement","Legal",5,null,6,3,[],["When played, name a Character in a Realm. If that Character leaves its Realm, destroy it."],"upper-court.jpg"],
+
+["Obvious Observer","diplomacy","Character","Courtier",1,1,1,1,[],["(X AP, Exhaust): Look at the top X cards of an opponent's deck: return them to the top of the deck in any order."],"obvious-observer.jpg"],
+["Churlish Inquisitor","diplomacy","Character","Courtier",2,3,2,2,[],["When played, choose target player. When that player plays a card from an aligned faction, deal 1 damage to their Capitol."],"churlish-inquisitor.jpg"],
+["Courtesan","diplomacy","Character","Courtier",2,0,2,2,[],["When this card leaves play, destroy target enemy noble."],"courtesan.jpg"],
+["Salacious Scribes","diplomacy","Character","Courtier",2,0,3,2,[],["While this card is in the Outland, all enemy bounties are worth +1."],"salacious-scribes.jpg"],
+["Erudite Translator","diplomacy","Character","Courtier",3,0,4,2,[],["This card gets +2/+0 for each friendly unaligned faction card in play."],"erudite-translator.jpg"],
+["Face in the Crowd","diplomacy","Character","Spy",3,1,1,1,["REFLEX"],["When played, you may VETO. If you do, take another action."],"face-in-the-crowd.jpg"],
+["Master Orator","diplomacy","Character","Courtier",3,2,3,2,["GUARDIAN"],["When played, you may return a Character to its owner's Realm."],"master-orator.jpg"],
+["Backalley Emissary","diplomacy","Character","Noble, Ambassador",4,4,3,3,[],["(4 AP, Exhaust): Tutor for any Character in your deck, then discard a card."],"backalley-emissary.jpg"],
+["Unsettling Visitor","diplomacy","Character","Coroloran, Ambassador",4,4,5,2,["REFLEX"],["When played, select a random card from an enemy's hand and look at it."],"unsettling-visitor.jpg"],
+["Viceroy","diplomacy","Character","Noble",6,5,6,3,["GUARDIAN","TRUCE"],[],"viceroy.jpg"],
+["Flashy Assassin","diplomacy","Character","Spy",7,1,2,5,["REFLEX"],["When played, you may destroy an enemy character. If you do, return this card to your hand."],"flashy-assassin.jpg"],
+
+["Laced with Poison","diplomacy","Event","—",1,null,null,0,[],["Exhaust an enemy character."],"laced-with-poison.jpg"],
+["Lies! Lies! Lies!","diplomacy","Event","—",2,null,null,0,["REFLEX"],["Veto"],"lies-lies-lies.jpg"],
+["Man on the Inside","diplomacy","Event","—",2,null,null,0,[],["Truce.","Exhaust target improvement."],"man-on-the-inside.jpg"],
+["Decisions, Decisions","diplomacy","Event","—",3,null,null,0,[],["Target enemy must forfeit a character of their choice."],"decisions-decisions.jpg"],
+["We're Done Here","diplomacy","Event","—",6,null,null,0,[],["Exhaust all enemy characters and units."],"were-done-here.jpg"],
+
+// ── NEUTRAL ──────────────────────────────────────────────────────────────
+
+["Breeding Concern","neutral","Improvement","Military",1,null,1,1,[],["Friendly Beasts get +0/+1."],"breeding-concern.jpg"],
+["Abattoir","neutral","Improvement","Economic",2,null,2,2,[],["Gain 1 AP whenever you destroy an enemy unit or character."],"abattoir.jpg"],
+["Mud Yards","neutral","Improvement","Seaside, Shipyard",2,null,2,3,[],["(3 AP, Exhaust): FORGE a Balinger.","(4 AP, Exhaust): FORGE a Flying Zin."],"mud-yards.jpg"],
+["Workshop","neutral","Improvement","Artisan",2,null,3,2,[],["(6 AP, Exhaust): FORGE a Fen Fortress."],"workshop.jpg"],
+["House of Warship","neutral","Improvement","Sacred, Artisan",3,null,4,2,[],["(2 AP, Exhaust): FORGE a Ship of Fools."],"house-of-warship.jpg"],
+["Stricken Barracks","neutral","Improvement","Military",3,null,3,2,[],["Friendly professionals get RUSH."],"stricken-barracks.jpg"],
+["Fetid Holler","neutral","Improvement","Civil",4,null,4,2,[],["(2 AP, Exhaust): FORGE a Feral Folk."],"fetid-holler.jpg"],
+["High Walls","neutral","Improvement","Military",5,null,8,1,["GUARDIAN"],[],"high-walls.jpg"],
+["Cobstone Citadel","neutral","Improvement","Military",7,null,6,3,[],["Friendly Units with Guardian get +0/+1.","(2 AP, Exhaust): FORGE an Unsavory Garrison."],"cobstone-citadel.jpg"],
+
+["Twigfruit Grove","neutral","Terrain","Grove",1,null,null,0,["CULTIVATE 2"],["(0 AP, Exhaust): Harvest: Gain 1 AP for each Growth counter on this card."],"twigfruit-grove.jpg"],
+["Dunes of the Cape","neutral","Terrain","Desert, Coast",2,null,null,0,[],["Friendly units with cost 1 AP get +0/+1."],"dunes-of-the-cape.jpg"],
+["Vineyards","neutral","Terrain","Grove",2,null,null,0,["CULTIVATE 3"],["(0 AP, Exhaust): Harvest: Gain 1 AP for each Growth counter on this card."],"vineyards.jpg"],
+["Dour Dale","neutral","Terrain","Valley",3,null,null,0,[],["Friendly farmers and shepherds get +1/+1."],"dour-dale.jpg"],
+["Graveyard of Lies","neutral","Terrain","Desert",3,null,null,0,[],["When a friendly character is destroyed: Look at the top 1 card of your opponent's deck."],"graveyard-of-lies.jpg"],
+["Monolithic Slabs","neutral","Terrain","Desert",3,null,null,0,[],["Friendly units with GUARDIAN get +1/+1."],"monolithic-slabs.jpg"],
+["Pinkwillow & Pines","neutral","Terrain","Forest",3,null,null,0,[],["Forging vessels costs 1 AP less, but not less than 1 AP."],"pinkwillow-pines.jpg"],
+["Twinge Tributary","neutral","Terrain","River",3,null,null,0,[],["Friendly farmers get +1/+2."],"twinge-tributary.jpg"],
+["Deep Waters","neutral","Terrain","Bay",4,null,null,0,[],["(0 AP, Exhaust): Gain 1 AP for each friendly vessel, up to 3 AP."],"deep-waters.jpg"],
+["Flamesworn Ridge","neutral","Terrain","Mountain",4,null,null,0,[],["(1 AP, Exhaust): Deal 1 damage to target unit."],"flamesworn-ridge.jpg"],
+
+["Squeamish Squire","neutral","Character","Peasant",2,2,2,1,[],["When played, you may attach this card to a friendly knight. If you do, this card loses all abilities and attached knight gets +2/+2."],"squeamish-squire.jpg"],
+["Shaper of Spheres","neutral","Character","Engineer",4,2,4,3,[],["When played, RESEARCH 2.","(7 AP, Exhaust): FORGE a Bronze Blazebringer."],"shaper-of-spheres.jpg"],
+["Rancorous Knight","neutral","Character","Noble, Knight",5,4,6,3,["RUSH","RAGE"],[],"rancorous-knight.jpg"],
+["Lord of the Keep","neutral","Character","Noble",6,2,8,4,[],["(0 AP, Exhaust): Gain 1 AP for each friendly GUARDIAN.","(2 AP, Exhaust): FORGE an Unsavory Garrison."],"lord-of-the-keep.jpg"],
+
+["Men of Sterling","neutral","Unit","Peasant, Archers",1,1,1,1,["SALVO 1"],[],"men-of-sterling.jpg"],
+["Unwashed Masses","neutral","Unit","Peasant",1,1,1,0,[],[],"unwashed-masses.jpg"],
+["Feral Folk","neutral","Unit","Peasant, Beast",2,2,1,1,["RUSH"],[],"feral-folk.jpg"],
+["Ship of Fools","neutral","Unit","Naval, Vessel",2,1,1,1,["SALVO 1"],[],"ship-of-fools.jpg"],
+["Unsavory Garrison","neutral","Unit","Professional",2,1,3,1,["GUARDIAN"],[],"unsavory-garrison.jpg"],
+["Balinger","neutral","Unit","Naval, Vessel",3,3,2,3,["SALVO 2"],[],"balinger.jpg"],
+["Organized Resistance","neutral","Unit","Peasant",3,4,1,2,[],[],"organized-resistance.jpg"],
+["Flying Zin","neutral","Unit","Trade, Vessel",4,4,5,3,[],[],"flying-zin.jpg"],
+["Hoepelblaster","neutral","Unit","Professional",4,2,4,3,["SALVO 3","RELOAD 1"],[],"hoepelblaster.jpg"],
+["Moonlit Militants","neutral","Unit","Peasant",4,5,4,3,["CHARGE 1"],[],"moonlit-militants.jpg"],
+["Fen Fortress","neutral","Unit","Outpost",6,1,10,4,["GUARDIAN"],[],"fen-fortress.jpg"],
+["Bronze Blazebringer","neutral","Unit","War Machine",7,6,6,4,["ORDNANCE","SALVO 3"],[],"bronze-blazebringer.jpg"],
+
+["Awaken at Dawn","neutral","Event","—",1,null,null,0,[],["Ready target unit."],"awaken-at-dawn.jpg"],
+["Divine Breath","neutral","Event","—",1,null,null,0,[],["Heal 5 damage from your monarch."],"divine-breath.jpg"],
+["Healing Light","neutral","Event","—",2,null,null,0,[],["Restore target character to full vigor."],"healing-light.jpg"],
+["Wealth Is Health","neutral","Event","—",2,null,null,0,[],["If your capitol has 15 or more Vigor, gain 5 AP."],"wealth-is-health.jpg"],
+["Hired Hands","neutral","Event","—",3,null,null,0,[],["Create two friendly, ready Unwashed Masses tokens in the Wilderness."],"hired-hands.jpg"],
+["Inquisition","neutral","Event","—",3,null,null,0,[],["Destroy target cult. Take another action."],"inquisition.jpg"],
+["Salt the Earth","neutral","Event","—",3,null,null,0,[],["Target Terrain loses all abilities and keywords."],"salt-the-earth.jpg"],
+["Two Delicacies","neutral","Event","—",5,null,null,0,[],["Each players loses all AP, then each player gains 8 AP."],"two-delicacies.jpg"],
+["Mass Grave","neutral","Event","—",6,null,null,0,[],["When played: Destroy all units."],"mass-grave.jpg"],
+
+["Halibut Amulet","neutral","Item","Character",1,null,null,0,[],["Attached character gains Crew."],"halibut-amulet.jpg"],
+["Obedience Collar","neutral","Item","Beast",1,null,null,0,[],["Attached beast gains Rage."],"obedience-collar.jpg"],
+["Placebicus","neutral","Item","Character",2,null,null,0,[],["Attached character has type clergy, in addition to its other types."],"placebicus.jpg"],
+["Sentry Shield","neutral","Item","Professional",2,null,null,0,[],["Attached professional gains Guardian."],"sentry-shield.jpg"],
+["Witch's Tit","neutral","Item","Vessel",2,null,null,0,[],["Attached vessel gets +2/+1."],"witchs-tit.jpg"],
+["Brinic Acid","neutral","Item","Vessel",3,null,null,0,[],["Attached Vessel gets Salvo 1. If salvo target is an Improvement, deal +3 damage."],"brinic-acid.jpg"],
+["Berzerker Armor","neutral","Item","Professional",4,null,null,0,[],["Attached Professional gets +0/+4 and RAGE."],"berzerker-armor.jpg"],
+
+];
+
+// ── Rendering ────────────────────────────────────────────────────────────
+
+function slug(s){ return s.toLowerCase().replace(/\s+/g,'-'); }
+
+function renderStatChip(label, value, cls){
+  if(value === null || value === undefined) return '';
+  return `<span class="stat-chip ${cls}">${label} ${value}</span>`;
+}
+
+function buildThumb(card){
+  const [name,faction,type,subtype,cost,wrath,vigor,bounty,kws,abs,img] = card;
+  const imgPath = `images/cards/${img}`;
+
+  let stats = '';
+  if(cost !== null) stats += renderStatChip('',cost+' AP','stat-cost');
+  if(wrath !== null) stats += renderStatChip('W',wrath,'stat-w');
+  if(vigor !== null) stats += renderStatChip('V',vigor,'stat-v');
+  if(bounty !== null && (type==='Monarch'||type==='Capitol'||type==='Character'||type==='Unit'||type==='Improvement'))
+    stats += renderStatChip('★',bounty,'stat-b');
+
+  const kwHtml = kws.map(k=>`<span class="kw">${k}</span>`).join('');
+  const firstAb = abs.length ? abs[0] : '';
+  const preview = firstAb.length > 110 ? firstAb.slice(0,108)+'…' : firstAb;
+
+  return `<div class="card-thumb" data-name="${name.replace(/"/g,'&quot;')}" tabindex="0" role="button" aria-label="View ${name}">
+    <img src="${imgPath}" alt="${name}" loading="lazy" onerror="this.style.opacity='.3'">
+    <div class="card-info">
+      <div class="card-name">${name}</div>
+      <div class="card-meta">${type}${subtype&&subtype!=='—'?' · '+subtype:''}</div>
+      <div class="card-stats">${stats}</div>
+      ${kwHtml ? `<div class="kw-list">${kwHtml}</div>` : ''}
+      ${preview ? `<div class="ability-preview">${preview}</div>` : ''}
+    </div>
+  </div>`;
+}
+
+function buildLightbox(card){
+  const [name,faction,type,subtype,cost,wrath,vigor,bounty,kws,abs,img] = card;
+  const fm = FACTION_META[faction];
+  const imgPath = `images/cards/${img}`;
+
+  let stats = '';
+  if(cost !== null) stats += renderStatChip('Cost',cost+' AP','stat-cost');
+  if(wrath !== null) stats += renderStatChip('Wrath',wrath,'stat-w');
+  if(vigor !== null) stats += renderStatChip('Vigor',vigor,'stat-v');
+  if(bounty !== null) stats += renderStatChip('Bounty',bounty,'stat-b');
+
+  const kwHtml = kws.map(k=>`<span class="lb-kw">${k}</span>`).join('');
+  const absHtml = abs.map(a=>`<div class="ab-line">${a}</div>`).join('');
+
+  document.getElementById('lb-img').src = imgPath;
+  document.getElementById('lb-img').alt = name;
+  document.getElementById('lb-name').textContent = name;
+  document.getElementById('lb-name').style.color = 'var(--ink)';
+  document.getElementById('lb-faction-type').textContent =
+    `${fm.label} · ${type}${subtype&&subtype!=='—'?' · '+subtype:''}`;
+  document.getElementById('lb-stats').innerHTML = stats;
+  document.getElementById('lb-keywords').innerHTML = kwHtml;
+  document.getElementById('lb-abilities').innerHTML = absHtml ||
+    '<span style="font-style:italic;opacity:.6">No abilities.</span>';
+}
+
+function render(){
+  // Group by faction then type
+  const byFaction = {};
+  for(const f of Object.keys(FACTION_META)) byFaction[f] = {};
+  for(const card of CARDS){
+    const [,faction,type] = card;
+    if(!byFaction[faction][type]) byFaction[faction][type] = [];
+    byFaction[faction][type].push(card);
+  }
+
+  // Faction tabs
+  const tabsEl = document.getElementById('faction-tabs');
+  for(const [fk, fm] of Object.entries(FACTION_META)){
+    const btn = document.createElement('button');
+    btn.className = 'faction-tab';
+    btn.textContent = fm.label;
+    btn.style.background = fm.color;
+    btn.style.color = fk === 'creed' ? '#1a0f0a' : '#fff';
+    btn.onclick = () => {
+      document.getElementById('faction-'+fk).scrollIntoView({behavior:'smooth'});
+    };
+    tabsEl.appendChild(btn);
+  }
+
+  // Gallery sections
+  const mainEl = document.getElementById('gallery-main');
+  for(const [fk, fm] of Object.entries(FACTION_META)){
+    const typeMap = byFaction[fk];
+    if(!Object.keys(typeMap).length) continue;
+
+    const section = document.createElement('section');
+    section.className = 'faction-section';
+    section.id = 'faction-'+fk;
+
+    const headerTextColor = fk === 'creed' ? '#1a0f0a' : '#fff';
+    section.innerHTML = `<div class="faction-header" style="background:${fm.color};color:${headerTextColor}">${fm.label}</div>
+      <div class="faction-body" style="background-color:${fm.light};border-color:${fm.color}"></div>`;
+    const body = section.querySelector('.faction-body');
+
+    for(const typeName of TYPE_ORDER){
+      if(!typeMap[typeName]) continue;
+      const cards = typeMap[typeName];
+      const group = document.createElement('div');
+      group.className = 'type-group';
+      group.innerHTML = `<div class="type-label">${typeName}s (${cards.length})</div>
+        <div class="card-grid">${cards.map(buildThumb).join('')}</div>`;
+      body.appendChild(group);
+    }
+    mainEl.appendChild(section);
+  }
+
+  // Card thumb click handlers
+  document.querySelectorAll('.card-thumb').forEach(el=>{
+    const open = ()=>{
+      const name = el.dataset.name;
+      const card = CARDS.find(c=>c[0]===name);
+      if(!card) return;
+      buildLightbox(card);
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow='hidden';
+    };
+    el.addEventListener('click', open);
+    el.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(); } });
+  });
+}
+
+// Lightbox close
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('lb-close').addEventListener('click', closeLightbox);
+document.getElementById('lightbox').addEventListener('click', e=>{
+  if(e.target===document.getElementById('lightbox')) closeLightbox();
+});
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLightbox(); });
+
+render();
+</script>
+</body>
+</html>
