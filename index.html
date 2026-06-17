@@ -260,60 +260,20 @@ p:last-child{margin-bottom:0}
 }
 .faq-table tr:last-child td{border-bottom:none}
 
-/* ── FIVE FACTIONS ── */
-#factions{
-  background:var(--ink);
-  background-image:radial-gradient(ellipse 100% 55% at 50% 0%,rgba(184,150,62,.1) 0%,transparent 70%);
-}
-.factions-head{text-align:center;margin-bottom:3.5rem}
-.factions-grid{
-  display:flex;flex-wrap:wrap;gap:1.2rem;justify-content:center;
-}
-.fc{
-  flex:1 1 210px;max-width:270px;
-  border:1px solid rgba(184,150,62,.22);
-  padding:1.85rem 1.4rem;text-align:center;
-  background:rgba(26,15,10,.55);
-  position:relative;
-  transition:transform .25s,border-color .25s,background .25s;
-}
-.fc:hover{
-  transform:translateY(-6px);
-  border-color:rgba(184,150,62,.65);
-  background:rgba(184,150,62,.06);
-}
-.fc::before{
-  content:'';position:absolute;
-  top:0;left:12%;right:12%;height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  opacity:0;transition:opacity .25s;
-}
-.fc:hover::before{opacity:1}
-.fc-icon{display:block;margin-bottom:.9rem;width:2.6rem;height:2.6rem;margin-left:auto;margin-right:auto}
-.fc-name{
-  font-family:'Metamorphous',cursive;
-  font-size:.88rem;display:block;margin-bottom:.3rem;
-}
-.fc-credo{
+/* ── FACTION CELLS (inside .mechanics grid) ── */
+.mec-icon{display:block;width:2rem;height:2rem;margin:0 auto .65rem}
+.mec-fname{font-family:'Metamorphous',serif}
+.mec-credo{
   font-family:'IM Fell English',serif;font-style:italic;
-  font-size:.82rem;color:var(--p-mid);
-  display:block;margin-bottom:1rem;opacity:.78;
-}
-.fc-body{
-  font-size:.87rem;line-height:1.6;
-  color:rgba(245,236,215,.62);margin:0;
+  font-size:.82rem;line-height:1.45;
+  color:rgba(26,15,10,.6);margin:0;
 }
 /* Faction accent colours */
-.f-conquest .fc-icon,.f-conquest .fc-name{color:#ed2124}
-.f-conquest:hover{border-color:rgba(237,33,36,.4)}
-.f-community .fc-icon,.f-community .fc-name{color:#c5711c}
-.f-community:hover{border-color:rgba(197,113,28,.4)}
-.f-creed .fc-icon,.f-creed .fc-name{color:#f5eb12}
-.f-creed:hover{border-color:rgba(245,235,18,.4)}
-.f-trade .fc-icon,.f-trade .fc-name{color:#68bd45}
-.f-trade:hover{border-color:rgba(104,189,69,.4)}
-.f-diplomacy .fc-icon,.f-diplomacy .fc-name{color:#3a53a4}
-.f-diplomacy:hover{border-color:rgba(58,83,164,.4)}
+.f-conquest .mec-fname{color:#c01010}
+.f-community .mec-fname{color:#a05510}
+.f-creed .mec-fname{color:#a09000}
+.f-trade .mec-fname{color:#3a8a20}
+.f-diplomacy .mec-fname{color:#2a3a8a}
 
 /* ── PLAY FREE ── */
 #play{
@@ -551,7 +511,9 @@ p:last-child{margin-bottom:0}
   <button class="nav-toggle" aria-label="Menu" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">☰</button>
   <ul class="nav-links">
     <li><a href="#what">The Game</a></li>
-    <li><a href="#factions">Factions</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#email">Signup</a></li>
     <li><a href="gallery.html">Card Gallery</a></li>
     <li><a href="https://play.forgeoffists.com" class="nav-play" target="_blank" rel="noopener">Play Free ↗</a></li>
   </ul>
@@ -595,7 +557,14 @@ p:last-child{margin-bottom:0}
       </p>
     </div>
 
-    <div class="orn">✦ ✦ ✦</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ FEATURES ══════════════════════════ -->
+<section id="features" class="pad">
+  <div class="container">
+    <span class="eyebrow">Features</span>
+    <h2 class="heading heading-ink">How It Works</h2>
 
     <div class="mechanics">
       <div class="mec">
@@ -612,6 +581,39 @@ p:last-child{margin-bottom:0}
         <span class="mec-sym">◈</span>
         <span class="mec-name">21 Bounty Points</span>
         <p class="mec-body">Win by accumulating Bounty Points through card play, contested territory, and fulfilled declarations — not by reducing a life total.</p>
+      </div>
+    </div>
+
+    <div class="orn">✦ ✦ ✦</div>
+
+    <span class="eyebrow">Factions</span>
+    <h2 class="heading heading-ink">The Powers of Almokon</h2>
+
+    <div class="mechanics">
+      <div class="mec f-conquest">
+        <img class="mec-icon" src="images/icons/Conquest-Color.svg" alt="">
+        <span class="mec-name mec-fname">Conquest</span>
+        <p class="mec-credo">"Blood is for butchers."</p>
+      </div>
+      <div class="mec f-community">
+        <img class="mec-icon" src="images/icons/Community-Color.svg" alt="">
+        <span class="mec-name mec-fname">Community</span>
+        <p class="mec-credo">"One thousand times a thousand hands raised in defiance."</p>
+      </div>
+      <div class="mec f-creed">
+        <img class="mec-icon" src="images/icons/Creed-Color.svg" alt="">
+        <span class="mec-name mec-fname">Creed</span>
+        <p class="mec-credo">"Pray before you act, forgive yourself after."</p>
+      </div>
+      <div class="mec f-trade">
+        <img class="mec-icon" src="images/icons/Trade-Color.svg" alt="">
+        <span class="mec-name mec-fname">Trade</span>
+        <p class="mec-credo">"Flesh is a currency of last resort."</p>
+      </div>
+      <div class="mec f-diplomacy">
+        <img class="mec-icon" src="images/icons/Diplomacy-Color.svg" alt="">
+        <span class="mec-name mec-fname">Diplomacy</span>
+        <p class="mec-credo">"Respect, understanding, compromise: forget these words."</p>
       </div>
     </div>
   </div>
@@ -674,57 +676,6 @@ p:last-child{margin-bottom:0}
   </div>
 </section>
 
-<!-- ═══════════════════════════ FIVE FACTIONS ═════════════════════════ -->
-<section id="factions" class="pad-lg">
-  <div class="container-w">
-    <div class="factions-head">
-      <span class="eyebrow">The Powers of Almokon</span>
-      <h2 class="heading heading-light">Choose Your Faction</h2>
-      <p style="font-family:'IM Fell English',serif;font-style:italic;color:rgba(245,236,215,.6);max-width:520px;margin:0 auto;font-size:1.05rem;line-height:1.65;">
-        Each faction commands a different path to Bounty. Which philosophy of power is yours?
-      </p>
-    </div>
-
-    <div class="factions-grid">
-
-      <!-- Conquest -->
-      <div class="fc f-conquest">
-        <img class="fc-icon" src="images/icons/Conquest-Color.svg" alt="">
-        <span class="fc-name">Conquest</span>
-        <span class="fc-credo">"Blood is for butchers."</span>
-      </div>
-
-      <!-- Community -->
-      <div class="fc f-community">
-        <img class="fc-icon" src="images/icons/Community-Color.svg" alt="">
-        <span class="fc-name">Community</span>
-        <span class="fc-credo">"One thousand times a thousand hands raised in defiance."</span>
-      </div>
-
-      <!-- Creed -->
-      <div class="fc f-creed">
-        <img class="fc-icon" src="images/icons/Creed-Color.svg" alt="">
-        <span class="fc-name">Creed</span>
-        <span class="fc-credo">"Pray before you act, forgive youself after."</span>
-      </div>
-
-      <!-- Trade -->
-      <div class="fc f-trade">
-        <img class="fc-icon" src="images/icons/Trade-Color.svg" alt="">
-        <span class="fc-name">Trade</span>
-        <span class="fc-credo">"Flesh is a currency of last resort."</span>
-      </div>
-
-      <!-- Diplomacy -->
-      <div class="fc f-diplomacy">
-        <img class="fc-icon" src="images/icons/Diplomacy-Color.svg" alt="">
-        <span class="fc-name">Diplomacy</span>
-        <span class="fc-credo">"Respect, understanding, compromise: forget these words."</span>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ═══════════════════════════ PLAY FREE ══════════════════════════════ -->
 <section id="play" class="pad">
   <div class="container">
@@ -775,9 +726,10 @@ p:last-child{margin-bottom:0}
   <p class="footer-tag">A living card game set in the world of Almokon</p>
   <ul class="footer-nav">
     <li><a href="#what">The Game</a></li>
-    <li><a href="#factions">Factions</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#play">Play Free</a></li>
-    <li><a href="#email">Newsletter</a></li>
+    <li><a href="#email">Signup</a></li>
     <li><a href="https://play.forgeoffists.com" target="_blank" rel="noopener">play.forgeoffists.com ↗</a></li>
   </ul>
   <div class="footer-orn">✦ &nbsp; ✦ &nbsp; ✦</div>
