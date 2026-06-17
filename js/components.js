@@ -1,11 +1,11 @@
 (function () {
-  const onGallery = /gallery\.html/.test(window.location.pathname);
+  const nav = document.getElementById('site-nav');
+  const onGallery = nav ? nav.dataset.page === 'gallery' : /gallery\.html/.test(window.location.pathname);
   const r = onGallery ? 'index.html' : ''; // root prefix for cross-page links
 
   // ── NAV ──────────────────────────────────────────────────────────────
-  const navPlaceholder = document.getElementById('site-nav');
-  if (navPlaceholder) {
-    navPlaceholder.outerHTML = `
+  if (nav) {
+    nav.outerHTML = `
 <nav class="site-nav">
   <a href="${onGallery ? 'index.html' : '#hero'}" class="nav-brand"><img src="images/FoF-Icon-192.png" alt="" aria-hidden="true" style="height:34px;width:34px;margin-right:.55rem;vertical-align:middle;border-radius:4px">Forge of Fists</a>
   <button class="nav-toggle" aria-label="Menu">☰</button>
