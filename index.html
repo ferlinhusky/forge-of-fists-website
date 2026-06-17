@@ -553,21 +553,7 @@ p:last-child{margin-bottom:0}
 </head>
 <body>
 
-<!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
-<nav class="site-nav">
-  <a href="#hero" class="nav-brand"><img src="images/FoF-Icon-192.png" alt="" aria-hidden="true" style="height:34px;width:34px;margin-right:.55rem;vertical-align:middle;border-radius:4px">Forge of Fists</a>
-  <button class="nav-toggle" aria-label="Menu" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">☰</button>
-  <ul class="nav-links">
-    <li><a href="#what">The Game</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#factions">Factions</a></li>
-    <li><a href="#email">Signup</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#author">About</a></li>
-    <li><a href="gallery.html">Card Gallery</a></li>
-    <li><a href="https://play.forgeoffists.com" class="nav-play" target="_blank" rel="noopener">Play Free ↗</a></li>
-  </ul>
-</nav>
+<div id="site-nav"></div>
 
 <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
 <section id="hero">
@@ -822,27 +808,9 @@ p:last-child{margin-bottom:0}
   </div>
 </section>
 
-<!-- ═══════════════════════════ FOOTER ════════════════════════════════ -->
-<footer id="footer">
-  <span class="footer-brand">Forge of Fists</span>
-  <p class="footer-tag">A living card game set in the world of Almokon</p>
-  <ul class="footer-nav">
-    <li><a href="#what">The Game</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#factions">Factions</a></li>
-    <li><a href="#email">Signup</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#author">About</a></li>
-    <li><a href="#play">Play Free</a></li>
-    <li><a href="https://play.forgeoffists.com" target="_blank" rel="noopener">play.forgeoffists.com ↗</a></li>
-  </ul>
-  <div class="footer-orn">✦ &nbsp; ✦ &nbsp; ✦</div>
-  <p class="footer-copy">
-    &copy; 2026 Forge of Fists. All rights reserved.<br>
-    Almokon, its factions, and all associated content are original works of fiction.<br>
-    <a href="mailto:gcranfield@gmail.com">gcranfield@gmail.com</a>
-  </p>
-</footer>
+<div id="site-footer"></div>
+
+<script src="js/components.js"></script>
 
 <!-- ── Faction card lightbox ── -->
 <div id="faction-lightbox" aria-modal="true" role="dialog">
