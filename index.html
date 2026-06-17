@@ -278,6 +278,22 @@ p:last-child{margin-bottom:0}
 .f-trade .mec-fname{color:#3a8a20}
 .f-diplomacy .mec-fname{color:#2a3a8a}
 
+/* ── FACTIONS stacked list override ── */
+#factions .mechanics{
+  display:flex;flex-direction:column;
+  gap:0;background:none;border:none;margin-top:2rem;
+}
+#factions .mec{
+  display:flex;align-items:center;gap:1.2rem;
+  text-align:left;padding:1rem 0;
+  border-bottom:1px solid rgba(184,150,62,.2);
+  background:transparent;
+}
+#factions .mec:last-child{border-bottom:none}
+#factions .mec-icon{margin:0;flex-shrink:0;width:2.2rem;height:2.2rem}
+#factions .mec-fname{display:block;margin-bottom:.15rem}
+#factions .mec-credo{text-align:left}
+
 /* ── PLAY FREE ── */
 #play{
   background:var(--p-mid);text-align:center;
@@ -609,7 +625,7 @@ p:last-child{margin-bottom:0}
       <div class="mec f-creed">
         <img class="mec-icon" src="images/icons/Creed-Color.svg" alt="">
         <span class="mec-name mec-fname">Creed</span>
-        <p class="mec-credo">"Pray before you act, forgive yourself after."</p>
+        <p class="mec-credo">"Pray before you act, forgive yourself later."</p>
       </div>
       <div class="mec f-trade">
         <img class="mec-icon" src="images/icons/Trade-Color.svg" alt="">
