@@ -207,7 +207,7 @@ p:last-child{margin-bottom:0}
 /* ── WHAT IS FORGE OF FISTS ── */
 #what{background:var(--p-light)}
 #features{background:var(--p-mid)}
-#factions{background:var(--p-light)}
+#factions{background:var(--ink)}
 #faq{background:var(--p-mid)}
 .mechanics{
   display:grid;
@@ -286,13 +286,42 @@ p:last-child{margin-bottom:0}
 #factions .mec{
   display:flex;align-items:center;gap:1.2rem;
   text-align:left;padding:1rem 0;
-  border-bottom:1px solid rgba(184,150,62,.2);
+  border-bottom:1px solid rgba(184,150,62,.18);
   background:transparent;
 }
 #factions .mec:last-child{border-bottom:none}
 #factions .mec-icon{margin:0;flex-shrink:0;width:2.2rem;height:2.2rem}
+#factions .mec-text{flex:1;min-width:0}
 #factions .mec-fname{display:block;margin-bottom:.15rem}
-#factions .mec-credo{text-align:left}
+#factions .mec-credo{text-align:left;color:rgba(245,236,215,.6)}
+/* Brighten faction names for dark background */
+#factions .f-conquest .mec-fname{color:#ed2124}
+#factions .f-community .mec-fname{color:#c5711c}
+#factions .f-creed .mec-fname{color:#e8dc10}
+#factions .f-trade .mec-fname{color:#68bd45}
+#factions .f-diplomacy .mec-fname{color:#5a73c4}
+/* Card thumbnails */
+.mec-cards{display:flex;gap:.35rem;flex-shrink:0}
+.mec-card-thumb{
+  width:48px;border-radius:3px;cursor:pointer;
+  aspect-ratio:640/832;object-fit:cover;
+  transition:transform .15s,box-shadow .15s;
+  display:block;
+}
+.mec-card-thumb:hover{transform:translateY(-3px);box-shadow:0 4px 14px rgba(0,0,0,.5)}
+/* Faction lightbox */
+#faction-lightbox{
+  display:none;position:fixed;inset:0;
+  background:rgba(10,5,0,.85);z-index:1000;
+  align-items:center;justify-content:center;
+  padding:1rem;cursor:pointer;
+}
+#faction-lightbox.open{display:flex}
+#faction-lightbox img{
+  max-height:85vh;max-width:min(420px,90vw);
+  border-radius:6px;box-shadow:0 8px 40px rgba(0,0,0,.7);
+  cursor:default;
+}
 
 /* ── PLAY FREE ── */
 #play{
@@ -609,33 +638,73 @@ p:last-child{margin-bottom:0}
 <section id="factions" class="pad">
   <div class="container">
     <span class="eyebrow">Factions</span>
-    <h2 class="heading heading-ink">The Powers of Almokon</h2>
+    <h2 class="heading heading-light">The Powers of Almokon</h2>
 
     <div class="mechanics">
       <div class="mec f-conquest">
         <img class="mec-icon" src="images/icons/Conquest-Color.svg" alt="">
-        <span class="mec-name mec-fname">Conquest</span>
-        <p class="mec-credo">"Blood is for butchers."</p>
+        <div class="mec-text">
+          <span class="mec-name mec-fname">Conquest</span>
+          <p class="mec-credo">"Blood is for butchers."</p>
+        </div>
+        <div class="mec-cards">
+          <img class="mec-card-thumb" src="images/cards/batalan-the-white.jpg" alt="Batalan the White" data-name="Batalan the White">
+          <img class="mec-card-thumb" src="images/cards/begba-doum.jpg" alt="Begba Doum" data-name="Begba Doum">
+          <img class="mec-card-thumb" src="images/cards/genesis-keep.jpg" alt="Genesis Keep" data-name="Genesis Keep">
+          <img class="mec-card-thumb" src="images/cards/wards-hill.jpg" alt="Ward's Hill" data-name="Ward's Hill">
+        </div>
       </div>
       <div class="mec f-community">
         <img class="mec-icon" src="images/icons/Community-Color.svg" alt="">
-        <span class="mec-name mec-fname">Community</span>
-        <p class="mec-credo">"One thousand times a thousand hands raised in defiance."</p>
+        <div class="mec-text">
+          <span class="mec-name mec-fname">Community</span>
+          <p class="mec-credo">"One thousand times a thousand hands raised in defiance."</p>
+        </div>
+        <div class="mec-cards">
+          <img class="mec-card-thumb" src="images/cards/crul-blackmoon.jpg" alt="Crul Blackmoon" data-name="Crul Blackmoon">
+          <img class="mec-card-thumb" src="images/cards/kin-paco.jpg" alt="Kin Paco" data-name="Kin Paco">
+          <img class="mec-card-thumb" src="images/cards/asala-sala.jpg" alt="Asala-Sala" data-name="Asala-Sala">
+          <img class="mec-card-thumb" src="images/cards/mat-mat-sin.jpg" alt="Mat-Mat-Sin" data-name="Mat-Mat-Sin">
+        </div>
       </div>
       <div class="mec f-creed">
         <img class="mec-icon" src="images/icons/Creed-Color.svg" alt="">
-        <span class="mec-name mec-fname">Creed</span>
-        <p class="mec-credo">"Pray before you act, forgive yourself later."</p>
+        <div class="mec-text">
+          <span class="mec-name mec-fname">Creed</span>
+          <p class="mec-credo">"Pray before you act, forgive yourself later."</p>
+        </div>
+        <div class="mec-cards">
+          <img class="mec-card-thumb" src="images/cards/lord-willsit.jpg" alt="Lord Willsit" data-name="Lord Willsit">
+          <img class="mec-card-thumb" src="images/cards/monda-vesel.jpg" alt="Monda Vesel" data-name="Monda Vesel">
+          <img class="mec-card-thumb" src="images/cards/macmarten-rock.jpg" alt="MacMarten Rock" data-name="MacMarten Rock">
+          <img class="mec-card-thumb" src="images/cards/mothers-house.jpg" alt="Mother's House" data-name="Mother's House">
+        </div>
       </div>
       <div class="mec f-trade">
         <img class="mec-icon" src="images/icons/Trade-Color.svg" alt="">
-        <span class="mec-name mec-fname">Trade</span>
-        <p class="mec-credo">"Flesh is a currency of last resort."</p>
+        <div class="mec-text">
+          <span class="mec-name mec-fname">Trade</span>
+          <p class="mec-credo">"Flesh is a currency of last resort."</p>
+        </div>
+        <div class="mec-cards">
+          <img class="mec-card-thumb" src="images/cards/queen-chelise.jpg" alt="Green Queen Chelise" data-name="Green Queen Chelise">
+          <img class="mec-card-thumb" src="images/cards/vaya-mykolo.jpg" alt="Vaya Mykolo" data-name="Vaya Mykolo">
+          <img class="mec-card-thumb" src="images/cards/nelucifera.jpg" alt="Nelucifera" data-name="Nelucifera">
+          <img class="mec-card-thumb" src="images/cards/zostera.jpg" alt="Zostera" data-name="Zostera">
+        </div>
       </div>
       <div class="mec f-diplomacy">
         <img class="mec-icon" src="images/icons/Diplomacy-Color.svg" alt="">
-        <span class="mec-name mec-fname">Diplomacy</span>
-        <p class="mec-credo">"Respect, understanding, compromise: forget these words."</p>
+        <div class="mec-text">
+          <span class="mec-name mec-fname">Diplomacy</span>
+          <p class="mec-credo">"Respect, understanding, compromise: forget these words."</p>
+        </div>
+        <div class="mec-cards">
+          <img class="mec-card-thumb" src="images/cards/casara-valara.jpg" alt="Casara Valara" data-name="Casara Valara">
+          <img class="mec-card-thumb" src="images/cards/viktor-valara.jpg" alt="Viktor Valara" data-name="Viktor Valara">
+          <img class="mec-card-thumb" src="images/cards/bicara-township.jpg" alt="Bicara Township" data-name="Bicara Township">
+          <img class="mec-card-thumb" src="images/cards/rahasa.jpg" alt="Rahasa" data-name="Rahasa">
+        </div>
       </div>
     </div>
   </div>
@@ -761,6 +830,28 @@ p:last-child{margin-bottom:0}
     <a href="mailto:hello@forgeoffists.com">hello@forgeoffists.com</a>
   </p>
 </footer>
+
+<!-- ── Faction card lightbox ── -->
+<div id="faction-lightbox" aria-modal="true" role="dialog">
+  <img id="faction-lightbox-img" src="" alt="">
+</div>
+
+<script>
+const lb = document.getElementById('faction-lightbox');
+const lbImg = document.getElementById('faction-lightbox-img');
+
+document.querySelectorAll('.mec-card-thumb').forEach(img => {
+  img.addEventListener('click', () => {
+    lbImg.src = img.src;
+    lbImg.alt = img.dataset.name || img.alt;
+    lb.classList.add('open');
+  });
+});
+
+lb.addEventListener('click', () => lb.classList.remove('open'));
+lbImg.addEventListener('click', e => e.stopPropagation());
+document.addEventListener('keydown', e => { if(e.key === 'Escape') lb.classList.remove('open'); });
+</script>
 
 </body>
 </html>
