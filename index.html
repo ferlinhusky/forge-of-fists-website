@@ -230,6 +230,36 @@ p:last-child{margin-bottom:0}
   color:rgba(26,15,10,.72);margin:0;
 }
 
+/* ── FAQ ── */
+.faq-list{margin-top:1.5rem}
+.faq-item{
+  padding:1.2rem 0;
+  border-bottom:1px solid rgba(184,150,62,.2);
+}
+.faq-item:last-child{border-bottom:none}
+.faq-q{
+  font-family:'Metamorphous',serif;font-size:.88rem;
+  color:var(--gold-d);margin-bottom:.5rem;
+}
+.faq-a{font-size:.92rem;line-height:1.65;color:rgba(26,15,10,.78);margin:0}
+.faq-table{
+  margin-top:.85rem;border-collapse:collapse;
+  font-size:.82rem;width:auto;
+}
+.faq-table th{
+  font-family:'Metamorphous',serif;font-size:.62rem;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold-d);text-align:left;
+  padding:.35rem .9rem .35rem 0;
+  border-bottom:1px solid rgba(184,150,62,.35);
+}
+.faq-table td{
+  padding:.3rem .9rem .3rem 0;
+  color:rgba(26,15,10,.72);
+  border-bottom:1px solid rgba(184,150,62,.1);
+}
+.faq-table tr:last-child td{border-bottom:none}
+
 /* ── FIVE FACTIONS ── */
 #factions{
   background:var(--ink);
@@ -539,7 +569,7 @@ p:last-child{margin-bottom:0}
     </p>
     <div class="hero-cta">
       <a href="https://play.forgeoffists.com" class="btn btn-gold" target="_blank" rel="noopener">Play Free Now</a>
-      <a href="#what" class="btn btn-ghost">Learn the Game</a>
+      <a href="#what" class="btn btn-ghost">Learn More</a>
     </div>
   </div>
   <div class="scroll-hint">Scroll</div>
@@ -583,11 +613,63 @@ p:last-child{margin-bottom:0}
         <span class="mec-name">21 Bounty Points</span>
         <p class="mec-body">Win by accumulating Bounty Points through card play, contested territory, and fulfilled declarations — not by reducing a life total.</p>
       </div>
-      <div class="mec">
-        <span class="mec-sym">⚙</span>
-        <span class="mec-name">CPU Opponent</span>
-        <p class="mec-body">A capable AI adversary in the digital demo. Learn every faction, test every strategy, and discover your playstyle without pressure.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════ FAQ ══════════════════════════════ -->
+<section id="faq" class="pad">
+  <div class="container">
+    <span class="eyebrow">FAQ</span>
+    <h2 class="heading heading-ink">Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q">What are the basics?</div>
+        <p class="faq-a">Two players, each player selects a Monarch and a Capitol of a matching faction. They each build a 40-card deck around that faction identity.</p>
       </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What are the factions?</div>
+        <p class="faq-a">Conquest, Community, Creed, Trade and Diplomacy. There are also neutral cards that can be used by any faction.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Am I limited to building a deck with just my faction and neutral cards?</div>
+        <p class="faq-a">No! The factions are arranged in such a way that each faction has two aligned factions from which a player may include up to 12 aligned faction cards in their deck.</p>
+        <table class="faq-table">
+          <thead><tr><th>Faction</th><th>Aligned with…</th></tr></thead>
+          <tbody>
+            <tr><td>Conquest</td><td>Community, Diplomacy</td></tr>
+            <tr><td>Community</td><td>Conquest, Creed</td></tr>
+            <tr><td>Creed</td><td>Community, Trade</td></tr>
+            <tr><td>Trade</td><td>Creed, Diplomacy</td></tr>
+            <tr><td>Diplomacy</td><td>Trade, Conquest</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">I have my deck, how do I play?</div>
+        <p class="faq-a">Each player has their own realm and between the realms sits the Outland. Units are played into the Outland and all other card types are played into the realm.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Is this a CCG like Pokémon or Magic?</div>
+        <p class="faq-a">No, it's a living card game (LCG). You get all the cards.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Well how many cards are there?</div>
+        <p class="faq-a">Ten monarchs, ten capitols, 20 cards specific to each of the five factions and 51 neutral cards. With three copies of each faction and neutral card, that's 473 cards. Plus some token cards.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What card games inspired Forge of Fists / who did you steal mechanics from?</div>
+        <p class="faq-a">Deadlands: Doomtown, Star Wars Unlimited, Magic, Quest for the Grail, Dune, Flesh &amp; Blood.</p>
+      </div>
+
     </div>
   </div>
 </section>
