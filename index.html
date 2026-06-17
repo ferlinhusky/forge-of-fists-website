@@ -520,9 +520,6 @@ p:last-child{margin-bottom:0}
   <ul class="nav-links">
     <li><a href="#what">The Game</a></li>
     <li><a href="#factions">Factions</a></li>
-    <li><a href="#story">Lore</a></li>
-    <li><a href="#playtest">Playtest</a></li>
-    <li><a href="#about">About</a></li>
     <li><a href="gallery.html">Card Gallery</a></li>
     <li><a href="https://play.forgeoffists.com" class="nav-play" target="_blank" rel="noopener">Play Free ↗</a></li>
   </ul>
@@ -714,138 +711,6 @@ p:last-child{margin-bottom:0}
   </div>
 </section>
 
-<!-- ═══════════════════════════ THE STORY ══════════════════════════════ -->
-<section id="story" class="pad-lg">
-  <div class="container">
-    <span class="eyebrow">Lore of Almokon</span>
-    <h2 class="heading heading-ink">The Story So Far</h2>
-
-    <div class="story-grid">
-      <div class="story-main">
-        <p class="dropcap">
-          Almokon was not always a land of contention. For three centuries it prospered
-          beneath a single crown — the Accord of the Gilt Throne — a compact that bound
-          warrior, priest, merchant, delegate, and common folk in uneasy but workable
-          harmony.
-        </p>
-        <p>
-          Then the Throne fell silent. No heir came forward. No declaration was made.
-          In the vacuum left by the crown's absence, the five great powers that once
-          served it began, slowly and then with alarming speed, to assert themselves.
-        </p>
-
-        <div class="pull-quote">
-          <p>"The Throne does not grant dominion. Dominion is what fills the Throne's absence — and it belongs to whoever is bold enough to claim it."</p>
-        </div>
-
-        <p>
-          The Bounty system arose as a civilised fiction — a way to measure power
-          without drowning Almokon in outright war. A public declaration, witnessed
-          and recorded, that your faction's will has bent the land to its purposes.
-          Accumulate twenty-one such Bounties and the argument is settled: Almokon
-          answers to you.
-        </p>
-        <p>
-          Whether that settlement holds is a question for tomorrow. Today, your
-          faction moves, and the game is played.
-        </p>
-      </div>
-
-      <div class="story-sidebar">
-        <div class="lore-box">
-          <span class="lore-box-title">Almanac of Almokon</span>
-          <div class="lore-item">
-            <span class="lore-sym">✦</span>
-            <span><strong>The Gilt Throne</strong> — Seat of the old Accord. Empty for eleven years. Its location is known; the will to claim it, contested.</span>
-          </div>
-          <div class="lore-item">
-            <span class="lore-sym">✦</span>
-            <span><strong>Bounty Points</strong> — Witnessed declarations of power, formally lodged before the remaining neutral scribes of Almokon.</span>
-          </div>
-          <div class="lore-item">
-            <span class="lore-sym">✦</span>
-            <span><strong>The Fivefold Accord</strong> — The original compact. Each faction interprets its collapse differently, and each believes their interpretation is correct.</span>
-          </div>
-          <div class="lore-item">
-            <span class="lore-sym">✦</span>
-            <span><strong>The Margin</strong> — Territories on Almokon's border that no faction formally controls — and every faction secretly covets.</span>
-          </div>
-          <div class="lore-item">
-            <span class="lore-sym">✦</span>
-            <span><strong>The Living Rules</strong> — New cards enter Almokon's conflict with each set release, shifting the balance of power between factions.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════ PLAYTEST SIGNUP ═══════════════════════ -->
-<section id="playtest" class="pad-lg">
-  <div class="container">
-    <div class="playtest-grid">
-      <div class="playtest-intro">
-        <span class="eyebrow">Shape the Game</span>
-        <h2 class="heading heading-light">Join the Playtest</h2>
-        <p>
-          Forge of Fists is actively in development. Playtesters help determine
-          which cards ship, which mechanics sharpen, and which factions need
-          a better answer to their weaknesses.
-        </p>
-        <ul class="perks">
-          <li>Early access to new card sets before public release</li>
-          <li>Direct feedback channel to the design team</li>
-          <li>Your name in the credits of the finished game</li>
-          <li>Exclusive playtest-only card back design</li>
-          <li>Monthly design notes and behind-the-scenes updates</li>
-        </ul>
-      </div>
-
-      <div class="signup-form">
-        <form onsubmit="event.preventDefault();this.innerHTML='<p style=\'font-family:Metamorphous,serif;color:var(--gold);text-align:center;padding:2rem;\'>✦ &nbsp; Your application has been received. We will be in touch. &nbsp; ✦</p>'">
-          <div class="form-row">
-            <div class="field">
-              <label for="pt-name">Name</label>
-              <input type="text" id="pt-name" placeholder="Your name" required>
-            </div>
-            <div class="field">
-              <label for="pt-email">Email</label>
-              <input type="email" id="pt-email" placeholder="your@email.com" required>
-            </div>
-          </div>
-          <div class="field">
-            <label for="pt-faction">Preferred Faction</label>
-            <select id="pt-faction">
-              <option value="">— No preference yet —</option>
-              <option>Conquest</option>
-              <option>Community</option>
-              <option>Creed</option>
-              <option>Trade</option>
-              <option>Diplomacy</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="pt-xp">Card Game Experience</label>
-            <select id="pt-xp">
-              <option value="">— Select level —</option>
-              <option>New to card games</option>
-              <option>Casual player</option>
-              <option>Experienced (CCGs / LCGs)</option>
-              <option>Competitive / tournament player</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="pt-note">Anything else? (optional)</label>
-            <textarea id="pt-note" placeholder="What draws you to Forge of Fists, or what you'd like to see in the game…"></textarea>
-          </div>
-          <button type="submit" class="btn btn-gold" style="width:100%">Submit Application</button>
-          <p class="form-note">Applications are reviewed monthly. We will reply by email.</p>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ══════════════════════════ EMAIL CAPTURE ══════════════════════════ -->
 <section id="email" class="pad">
   <div class="container">
@@ -877,60 +742,6 @@ p:last-child{margin-bottom:0}
   </div>
 </section>
 
-<!-- ══════════════════════════════ ABOUT ══════════════════════════════ -->
-<section id="about" class="pad">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-main">
-        <span class="eyebrow">The Forge</span>
-        <h2 class="heading heading-ink">About Forge of Fists</h2>
-        <div class="about-badge">⚒</div>
-        <p class="dropcap">
-          Forge of Fists began as a question: what does a living card game look like
-          when it is built around clarity instead of complexity? When every mechanic
-          is chosen because it creates an interesting decision — not because it fills
-          a design space or supports a product line?
-        </p>
-        <p>
-          The alternating single-action system came first. From there, the five
-          factions of Almokon were built to express five genuinely different
-          philosophies of play — not just different flavour on the same strategy.
-          Conquest players and Diplomacy players should feel like they are
-          playing a different game at the same table.
-        </p>
-        <p>
-          The digital demo exists so you can experience all of it before spending
-          a single coin. The physical game is coming. The living part — new cards,
-          new sets, the ongoing story of Almokon — will grow with the players
-          who choose to join it.
-        </p>
-      </div>
-
-      <div class="about-sidebar">
-        <div class="design-box">
-          <span class="design-box-title">Design Philosophy</span>
-          <div class="d-item">
-            <span class="d-item-name">Low Luck, High Skill</span>
-            <p class="d-item-body">Forge of Fists is designed so that the better player wins consistently. Randomness comes from deck construction choices, not draw variance.</p>
-          </div>
-          <div class="d-item">
-            <span class="d-item-name">Faction Identity</span>
-            <p class="d-item-body">Each faction has a distinct win condition philosophy. You should never mistake a Creed deck for a Trade deck, mid-game.</p>
-          </div>
-          <div class="d-item">
-            <span class="d-item-name">Living, Not Bloated</span>
-            <p class="d-item-body">New sets add cards and story — they don't invalidate old ones. The 40-card format keeps collection size accessible.</p>
-          </div>
-          <div class="d-item">
-            <span class="d-item-name">Play First</span>
-            <p class="d-item-body">The digital demo is free and fully featured. Nothing about Forge of Fists should require spending money to understand it.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ═══════════════════════════ FOOTER ════════════════════════════════ -->
 <footer id="footer">
   <span class="footer-brand">Forge of Fists</span>
@@ -939,10 +750,7 @@ p:last-child{margin-bottom:0}
     <li><a href="#what">The Game</a></li>
     <li><a href="#factions">Factions</a></li>
     <li><a href="#play">Play Free</a></li>
-    <li><a href="#story">Lore</a></li>
-    <li><a href="#playtest">Playtest</a></li>
     <li><a href="#email">Newsletter</a></li>
-    <li><a href="#about">About</a></li>
     <li><a href="https://play.forgeoffists.com" target="_blank" rel="noopener">play.forgeoffists.com ↗</a></li>
   </ul>
   <div class="footer-orn">✦ &nbsp; ✦ &nbsp; ✦</div>
