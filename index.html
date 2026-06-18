@@ -247,7 +247,6 @@ p:last-child{margin-bottom:0}
 
 /* ── HOW TO PLAY ── */
 .overview-lead{
-  font-family:'Cormorant Garamond',serif;font-style:italic;
   font-size:1.05rem;color:rgba(26,15,10,.68);
   border-left:3px solid var(--gold);padding-left:1.1rem;
   margin-bottom:2.75rem;
@@ -320,7 +319,9 @@ p:last-child{margin-bottom:0}
 }
 .bf-zones{display:flex;border-top:1px solid rgba(184,150,62,.15)}
 .bf-zone{flex:1;padding:1rem 1rem 1.1rem;text-align:center}
-.bf-zone+.bf-zone{border-left:1px solid rgba(184,150,62,.15)}
+.bf-zone+.bf-zone{border-left:1px solid rgba(0,0,0,.2)}
+.bf-wilderness{background:#1e2d18}
+.bf-sea{background:#0f1f2d}
 .bf-zone-name{
   display:block;font-family:'Metamorphous',serif;font-size:.6rem;
   letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem;
@@ -802,17 +803,17 @@ p:last-child{margin-bottom:0}
   <div class="container">
     <span class="eyebrow">How to Play</span>
     <h2 class="heading heading-ink">A Brief Overview</h2>
-    <p class="overview-lead">Almokon is a land of many kingdoms, each shaped by one of five great forces: Conquest, Community, Creed, Trade, or Diplomacy. Command one, build your forces, and destroy what stands against you. The first player to reach 21 Bounty Points wins — and every card you destroy brings you closer.</p>
+    <p class="overview-lead">Almokon is a land of many kingdoms, each shaped by one of five great forces: Conquest, Community, Creed, Trade or Diplomacy. Lead one, build your kingdom, and destroy who stands against you. The first player to reach 21 Bounty Points wins — and every card you destroy brings you closer to victory.</p>
 
     <div class="overview-block">
       <h3 class="overview-h"><span class="overview-num">1</span>Choose Your Faction</h3>
       <p>Every game begins with a Monarch — your ruler — and the faction they lead. There are five:</p>
       <ul class="overview-factions">
-        <li class="f-conquest"><span class="ovf-name">Conquest</span> Brutal, fast, beast-forged. Win by overwhelming force.</li>
-        <li class="f-community"><span class="ovf-name">Community</span> Patient and rooted. Strength built from many small parts.</li>
-        <li class="f-creed"><span class="ovf-name">Creed</span> The Church of the Three Modes of Death. Clergy who trade in souls.</li>
-        <li class="f-trade"><span class="ovf-name">Trade</span> Merchants and ships. Every advantage has a price, and they're paying.</li>
-        <li class="f-diplomacy"><span class="ovf-name">Diplomacy</span> Courtiers and spies. They win the war before it's declared.</li>
+        <li class="f-conquest"><span class="ovf-name">Conquest</span> Brutal, fast and beastly. Win by force alone.</li>
+        <li class="f-community"><span class="ovf-name">Community</span> The power of the group, drawing strength from nature.</li>
+        <li class="f-creed"><span class="ovf-name">Creed</span> Manipulate the fates and let loose your flock.</li>
+        <li class="f-trade"><span class="ovf-name">Trade</span> Rule the waves and exploit the markets for maximum power.</li>
+        <li class="f-diplomacy"><span class="ovf-name">Diplomacy</span> Control the conversation and push your enemy off the map.</li>
       </ul>
       <p>Your Monarch determines your faction, your playstyle, and the cards available to you.</p>
     </div>
@@ -837,11 +838,11 @@ p:last-child{margin-bottom:0}
         <div class="bf-outland-wrap">
           <div class="bf-outland-title">Outland</div>
           <div class="bf-zones">
-            <div class="bf-zone">
+            <div class="bf-zone bf-wilderness">
               <span class="bf-zone-name">Wilderness</span>
               <span class="bf-zone-sub">Land Forces</span>
             </div>
-            <div class="bf-zone">
+            <div class="bf-zone bf-sea">
               <span class="bf-zone-name">Open Sea</span>
               <span class="bf-zone-sub">Naval Forces</span>
             </div>
