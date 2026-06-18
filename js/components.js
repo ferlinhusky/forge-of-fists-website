@@ -14,7 +14,7 @@
     <li><a href="${r}#features">Features</a></li>
     <li><a href="${r}#factions">Factions</a></li>
     <li><a href="${r}#email">Signup</a></li>
-    <li><a href="${r}#faq">FAQ</a></li>
+    <li><a href="${r}#faq">How to Play</a></li>
     <li><a href="${r}#author">About</a></li>
     <li><a href="gallery.html"${onGallery ? ' class="nav-active"' : ''}>Card Gallery</a></li>
     <li><a href="https://play.forgeoffists.com" class="nav-play" target="_blank" rel="noopener">Play Free ↗</a></li>
@@ -39,7 +39,7 @@
     <li><a href="${r}#features">Features</a></li>
     <li><a href="${r}#factions">Factions</a></li>
     <li><a href="${r}#email">Signup</a></li>
-    <li><a href="${r}#faq">FAQ</a></li>
+    <li><a href="${r}#faq">How to Play</a></li>
     <li><a href="${r}#author">About</a></li>
     <li><a href="${r}#play">Play Free</a></li>
     <li><a href="https://play.forgeoffists.com" target="_blank" rel="noopener">play.forgeoffists.com ↗</a></li>

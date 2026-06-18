@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" sizes="192x192" href="images/FoF-Icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=IM+Fell+English:ital@0;1&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -151,7 +151,7 @@ p:last-child{margin-bottom:0}
   background:var(--ink);
   display:flex;flex-direction:column;
   align-items:center;justify-content:center;
-  text-align:center;padding:8rem 1.5rem 6rem;
+  text-align:center;padding:4rem 1.5rem 6rem;
   position:relative;overflow:hidden;
 }
 #hero::after{
@@ -176,7 +176,7 @@ p:last-child{margin-bottom:0}
   text-align:justify;text-align-last:center;
 }
 .hero-tag{
-  font-family:'IM Fell English',serif;font-style:italic;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
   font-size:clamp(.95rem,2.5vw,1.25rem);
   color:var(--p-mid);max-width:560px;margin:0 auto 3rem;line-height:1.65;
 }
@@ -245,41 +245,96 @@ p:last-child{margin-bottom:0}
   color:rgba(26,15,10,.72);margin:0;
 }
 
-/* ── FAQ ── */
-.faq-list{margin-top:1.5rem}
-.faq-item{
-  padding:1.2rem 0;
-  border-bottom:1px solid rgba(184,150,62,.2);
+/* ── HOW TO PLAY ── */
+.overview-lead{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:1.05rem;color:rgba(26,15,10,.68);
+  border-left:3px solid var(--gold);padding-left:1.1rem;
+  margin-bottom:2.75rem;
 }
-.faq-item:last-child{border-bottom:none}
-.faq-q{
-  font-family:'Metamorphous',serif;font-size:.88rem;
-  color:var(--gold-d);margin-bottom:.5rem;
+.overview-block{margin-bottom:0}
+.overview-sep{
+  display:flex;align-items:center;
+  margin:2.5rem 0;opacity:.45;
 }
-.faq-a{font-size:.92rem;line-height:1.65;color:rgba(26,15,10,.78);margin:0}
-.faq-table{
-  margin-top:.85rem;border-collapse:collapse;
-  font-size:.82rem;width:auto;
+.overview-sep::before,.overview-sep::after{
+  content:'';flex:1;height:1px;background:rgba(184,150,62,.5);
 }
-.faq-table th{
-  font-family:'Metamorphous',serif;font-size:.62rem;
-  letter-spacing:.18em;text-transform:uppercase;
-  color:var(--gold-d);text-align:left;
-  padding:.35rem .9rem .35rem 0;
-  border-bottom:1px solid rgba(184,150,62,.35);
+.overview-h{
+  font-family:'Metamorphous',cursive;
+  font-size:1.15rem;color:var(--ink);
+  margin-bottom:.9rem;
+  display:flex;align-items:center;gap:.75rem;
 }
-.faq-table td{
-  padding:.3rem .9rem .3rem 0;
-  color:rgba(26,15,10,.72);
-  border-bottom:1px solid rgba(184,150,62,.1);
+.overview-num{
+  font-family:'Metamorphous',cursive;font-size:.72rem;
+  color:var(--gold);letter-spacing:.1em;
+  border:1px solid rgba(184,150,62,.5);
+  width:1.65rem;height:1.65rem;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
 }
-.faq-table tr:last-child td{border-bottom:none}
+.overview-factions{
+  list-style:none;display:flex;flex-direction:column;gap:.45rem;
+  margin:1.2rem 0;
+}
+.overview-factions li{
+  font-size:.93rem;line-height:1.55;
+  padding:.6rem 1rem;
+  border-left:3px solid;background:rgba(245,236,215,.45);
+}
+.ovf-name{
+  font-family:'Metamorphous',serif;font-size:.72rem;
+  letter-spacing:.1em;text-transform:uppercase;
+  display:inline-block;margin-right:.5rem;
+}
+.overview-factions .f-conquest{border-color:#c01010}
+.overview-factions .f-community{border-color:#a05510}
+.overview-factions .f-creed{border-color:#a09000}
+.overview-factions .f-trade{border-color:#3a8a20}
+.overview-factions .f-diplomacy{border-color:#2a3a8a}
+.overview-factions .f-conquest .ovf-name{color:#c01010}
+.overview-factions .f-community .ovf-name{color:#a05510}
+.overview-factions .f-creed .ovf-name{color:#7a6900}
+.overview-factions .f-trade .ovf-name{color:#3a8a20}
+.overview-factions .f-diplomacy .ovf-name{color:#2a3a8a}
+/* Battlefield diagram */
+.bf-diagram{
+  margin:1.6rem 0 1.75rem;
+  border:1px solid rgba(184,150,62,.38);overflow:hidden;
+}
+.bf-realm{
+  padding:1rem 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+}
+.bf-opponent{background:var(--p-mid);border-bottom:1px solid rgba(184,150,62,.3)}
+.bf-yours{background:var(--p-light);border-top:1px solid rgba(184,150,62,.3)}
+.bf-realm-label{
+  font-family:'Metamorphous',serif;font-size:.6rem;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--gold-d);
+}
+.bf-realm-cards{font-size:.72rem;color:rgba(26,15,10,.42);font-family:'Metamorphous',serif;letter-spacing:.04em}
+.bf-outland-wrap{background:var(--ink)}
+.bf-outland-title{
+  font-family:'Metamorphous',serif;font-size:.55rem;letter-spacing:.4em;text-transform:uppercase;
+  color:rgba(184,150,62,.5);text-align:center;padding:.5rem 0 0;
+}
+.bf-zones{display:flex;border-top:1px solid rgba(184,150,62,.15)}
+.bf-zone{flex:1;padding:1rem 1rem 1.1rem;text-align:center}
+.bf-zone+.bf-zone{border-left:1px solid rgba(184,150,62,.15)}
+.bf-zone-name{
+  display:block;font-family:'Metamorphous',serif;font-size:.6rem;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem;
+}
+.bf-zone-sub{
+  display:block;font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.78rem;color:rgba(245,236,215,.38);
+}
 
 /* ── FACTION CELLS (inside .mechanics grid) ── */
 .mec-icon{display:block;width:2rem;height:2rem;margin:0 auto .65rem}
 .mec-fname{font-family:'Metamorphous',serif}
 .mec-credo{
-  font-family:'IM Fell English',serif;font-style:italic;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
   font-size:.82rem;line-height:1.45;
   color:rgba(26,15,10,.6);margin:0;
 }
@@ -351,7 +406,7 @@ p:last-child{margin-bottom:0}
 }
 .play-title{color:var(--ink)}
 .play-lead{
-  font-family:'IM Fell English',serif;font-style:italic;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
   font-size:1.12rem;color:rgba(26,15,10,.68);
   max-width:480px;margin:0 auto 2rem;line-height:1.65;
 }
@@ -377,7 +432,7 @@ p:last-child{margin-bottom:0}
   background:rgba(184,150,62,.06);
 }
 .pull-quote p{
-  font-family:'IM Fell English',serif;font-style:italic;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
   font-size:1.08rem;line-height:1.65;margin:0;
 }
 .lore-box{
@@ -463,7 +518,7 @@ p:last-child{margin-bottom:0}
 }
 .kit-block .kit-icon{font-size:2rem;color:var(--gold);display:block;margin-bottom:.7rem}
 .kit-block p{
-  font-family:'IM Fell English',serif;font-style:italic;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
   font-size:.88rem;color:rgba(26,15,10,.48);margin:0;
 }
 
@@ -514,7 +569,7 @@ p:last-child{margin-bottom:0}
   display:block;margin-bottom:.4rem;
 }
 .footer-tag{
-  font-family:'IM Fell English',serif;font-style:italic;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
   font-size:.88rem;color:rgba(245,236,215,.38);margin-bottom:2.25rem;
 }
 .footer-nav{display:flex;flex-wrap:wrap;justify-content:center;list-style:none;margin-bottom:2rem}
@@ -573,7 +628,7 @@ p:last-child{margin-bottom:0}
   <div class="hero-inner">
     <div class="hero-over">A Living Card Game of Dark Fantasy</div>
     <h1 class="hero-title"><img src="images/logo.png" alt="Forge of Fists"></h1>
-    <div class="hero-sub">POWER ✦ GREED ✦ CORRUPTION ✦ BELIEF ✦ DISGUST ✦ HOPE ✦ ANGER ✦ DESPERATION ✦ AGONY ✦ HERESY ✦ DEFIANCE ✦ DEATH ✦ WONDER ✦ VIOLENCE ✦ INSANITY ✦ BEAUTY</div>
+    <!--<div class="hero-sub">POWER ✦ GREED ✦ CORRUPTION ✦ BELIEF ✦ DISGUST ✦ HOPE ✦ ANGER ✦ DESPERATION ✦ AGONY ✦ HERESY ✦ DEFIANCE ✦ DEATH ✦ WONDER ✦ VIOLENCE ✦ INSANITY ✦ BEAUTY</div>-->
     <p class="hero-tag">
       “From far away, Truth appears to be a circle: simple, clear, precise. Only when examined very closely do you reveal a many-sided shape, with infinite angles.”
 <br/>- Fra. Tolomeo Tartolo
@@ -742,60 +797,73 @@ p:last-child{margin-bottom:0}
   </div>
 </section>
 
-<!-- ════════════════════════════════ FAQ ══════════════════════════════ -->
+<!-- ══════════════════════════ HOW TO PLAY ════════════════════════════ -->
 <section id="faq" class="pad">
   <div class="container">
-    <span class="eyebrow">FAQ</span>
-    <h2 class="heading heading-ink">Frequently Asked Questions</h2>
+    <span class="eyebrow">How to Play</span>
+    <h2 class="heading heading-ink">A Brief Overview</h2>
+    <p class="overview-lead">Almokon is a land of many kingdoms, each shaped by one of five great forces: Conquest, Community, Creed, Trade, or Diplomacy. Command one, build your forces, and destroy what stands against you. The first player to reach 21 Bounty Points wins — and every card you destroy brings you closer.</p>
 
-    <div class="faq-list">
-
-      <div class="faq-item">
-        <div class="faq-q">What are the basics?</div>
-        <p class="faq-a">Two players, each player selects a Monarch and a Capitol of a matching faction. They each build a 40-card deck around that faction identity.</p>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">What are the factions?</div>
-        <p class="faq-a">Conquest, Community, Creed, Trade and Diplomacy. There are also neutral cards that can be used by any faction.</p>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Am I limited to building a deck with just my faction and neutral cards?</div>
-        <p class="faq-a">No! The factions are arranged in such a way that each faction has two aligned factions from which a player may include up to 12 aligned faction cards in their deck.</p>
-        <table class="faq-table">
-          <thead><tr><th>Faction</th><th>Aligned with…</th></tr></thead>
-          <tbody>
-            <tr><td>Conquest</td><td>Community, Diplomacy</td></tr>
-            <tr><td>Community</td><td>Conquest, Creed</td></tr>
-            <tr><td>Creed</td><td>Community, Trade</td></tr>
-            <tr><td>Trade</td><td>Creed, Diplomacy</td></tr>
-            <tr><td>Diplomacy</td><td>Trade, Conquest</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">I have my deck, how do I play?</div>
-        <p class="faq-a">Each player has their own realm and between the realms sits the Outland. Units are played into the Outland and all other card types are played into the realm.</p>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Is this a CCG like Pokémon or Magic?</div>
-        <p class="faq-a">No, it's a living card game (LCG). You get all the cards.</p>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Well how many cards are there?</div>
-        <p class="faq-a">Ten monarchs, ten capitols, 20 cards specific to each of the five factions and 51 neutral cards. With three copies of each faction and neutral card, that's 473 cards. Plus some token cards.</p>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">What card games inspired Forge of Fists / who did you steal mechanics from?</div>
-        <p class="faq-a">Deadlands: Doomtown, Star Wars Unlimited, Magic, Quest for the Grail, Dune, Flesh &amp; Blood.</p>
-      </div>
-
+    <div class="overview-block">
+      <h3 class="overview-h"><span class="overview-num">1</span>Choose Your Faction</h3>
+      <p>Every game begins with a Monarch — your ruler — and the faction they lead. There are five:</p>
+      <ul class="overview-factions">
+        <li class="f-conquest"><span class="ovf-name">Conquest</span> Brutal, fast, beast-forged. Win by overwhelming force.</li>
+        <li class="f-community"><span class="ovf-name">Community</span> Patient and rooted. Strength built from many small parts.</li>
+        <li class="f-creed"><span class="ovf-name">Creed</span> The Church of the Three Modes of Death. Clergy who trade in souls.</li>
+        <li class="f-trade"><span class="ovf-name">Trade</span> Merchants and ships. Every advantage has a price, and they're paying.</li>
+        <li class="f-diplomacy"><span class="ovf-name">Diplomacy</span> Courtiers and spies. They win the war before it's declared.</li>
+      </ul>
+      <p>Your Monarch determines your faction, your playstyle, and the cards available to you.</p>
     </div>
+
+    <div class="overview-sep"></div>
+
+    <div class="overview-block">
+      <h3 class="overview-h"><span class="overview-num">2</span>Build Your Deck</h3>
+      <p>A deck is 40 cards plus your Monarch and matching Capitol. You build around your faction's strengths — but you're not locked in. Each faction is aligned with two neighbours, and you may recruit up to twelve cards from them. Neutral cards are open to everyone.</p>
+      <p>The result is a deck that's distinctly yours: focused enough to have an identity, flexible enough to surprise.</p>
+    </div>
+
+    <div class="overview-sep"></div>
+
+    <div class="overview-block">
+      <h3 class="overview-h"><span class="overview-num">3</span>Know the Battlefield</h3>
+      <div class="bf-diagram">
+        <div class="bf-realm bf-opponent">
+          <span class="bf-realm-label">Opponent's Realm</span>
+          <span class="bf-realm-cards">Monarch · Capitol · Characters · Improvements</span>
+        </div>
+        <div class="bf-outland-wrap">
+          <div class="bf-outland-title">Outland</div>
+          <div class="bf-zones">
+            <div class="bf-zone">
+              <span class="bf-zone-name">Wilderness</span>
+              <span class="bf-zone-sub">Land Forces</span>
+            </div>
+            <div class="bf-zone">
+              <span class="bf-zone-name">Open Sea</span>
+              <span class="bf-zone-sub">Naval Forces</span>
+            </div>
+          </div>
+        </div>
+        <div class="bf-realm bf-yours">
+          <span class="bf-realm-label">Your Realm</span>
+          <span class="bf-realm-cards">Monarch · Capitol · Characters · Improvements</span>
+        </div>
+      </div>
+      <p>The board is split into two domains. Your Realm is your home — where your Monarch, Capitol, and characters reside. The Outland between you and your opponent is where blood is spilled, divided into the Wilderness for land forces and the Open Sea for naval ones.</p>
+      <p>Cards move forward into the Outland to attack. There is no retreat — once committed, the only way is onward.</p>
+    </div>
+
+    <div class="overview-sep"></div>
+
+    <div class="overview-block">
+      <h3 class="overview-h"><span class="overview-num">4</span>Take Your Turn</h3>
+      <p>Forge of Fists has no turns in the usual sense. Players alternate one action at a time — play a card, launch an attack, gather resources — back and forth, action for action.</p>
+      <p>It means the pressure never lifts. Every move you make opens a door for your opponent. Every move they make opens one for you. The game is a constant, shifting negotiation of tempo and threat.</p>
+    </div>
+
   </div>
 </section>
 
@@ -823,7 +891,8 @@ p:last-child{margin-bottom:0}
   <div class="container">
     <span class="eyebrow">The Author</span>
     <h2 class="heading heading-ink">About the Author</h2>
-    <p>Author bio coming soon.</p>
+    <p>Forge of Fists was created by me, Graham Cranfield. I previously published Hero&rsquo;s Journey Home in 2015 and did not publish many other amazing yet half-completed games in the ensuing years. I live in Richmond, Virginia with my family (the family my wife and I started, that is, not my original family from when I was a child).</p>
+    <p>When I&rsquo;m not painting or working on a game, I bind books, paint miniatures and listen to vaporwave. That&rsquo;s incredibly reductive, I probably do other things too.</p>
   </div>
 </section>
 
