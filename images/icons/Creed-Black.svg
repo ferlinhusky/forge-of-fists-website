@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(8.33333,0,0,8.33333,30,1200)">
+        <g>
+            <g transform="matrix(1,0,0,1,-183.629,-627.873)">
+                <path d="M180.029,488.964L182.138,491.073L185.12,491.073L187.229,488.964L185.261,488.964" style="fill:rgb(3,4,4);fill-rule:nonzero;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-183.629,-627.873)">
+                <path d="M185.261,485.982L187.229,485.982L185.12,483.873L182.138,483.873L180.029,485.982" style="fill:rgb(3,4,4);fill-rule:nonzero;"/>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,-10.4144,1.39358)">
+            <rect x="9.36" y="-142.848" width="2.109" height="2.109" style="fill:rgb(35,31,32);"/>
+        </g>
+    </g>
+</svg>

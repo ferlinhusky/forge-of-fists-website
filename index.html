@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forge of Fists — A Living Card Game</title>
+<title>Forge of Fists — A Living Card Game of Dark Fantasy</title>
 <meta name="description" content="Forge of Fists is a living card game set in Almokon. Five factions. 40-card decks. 21 Bounty Points to win. Play the digital demo free.">
 <link rel="icon" type="image/png" sizes="192x192" href="images/FoF-Icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="images/FoF-Icon-512.png">
 <link rel="apple-touch-icon" sizes="192x192" href="images/FoF-Icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700;900&family=IM+Fell+English:ital@0;1&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -47,14 +47,14 @@ p:last-child{margin-bottom:0}
   padding:0 2rem;height:54px;
 }
 .nav-brand{
-  font-family:'Cinzel Decorative',cursive;
+  font-family:'Metamorphous',cursive;
   color:var(--gold);font-size:.85rem;font-weight:700;
   letter-spacing:.04em;white-space:nowrap;
 }
 .nav-links{display:flex;list-style:none}
 .nav-links a{
   display:block;
-  font-family:'Cinzel',serif;font-size:.6rem;
+  font-family:'Metamorphous',serif;font-size:.6rem;
   letter-spacing:.18em;text-transform:uppercase;
   color:rgba(245,236,215,.55);
   padding:0 .85rem;height:54px;line-height:54px;
@@ -79,12 +79,12 @@ p:last-child{margin-bottom:0}
 
 .eyebrow{
   display:block;
-  font-family:'Cinzel',serif;font-size:.62rem;
+  font-family:'Metamorphous',serif;font-size:.62rem;
   letter-spacing:.42em;text-transform:uppercase;
   color:var(--gold);margin-bottom:.75rem;
 }
 .heading{
-  font-family:'Cinzel Decorative',cursive;
+  font-family:'Metamorphous',cursive;
   font-size:clamp(1.55rem,4vw,2.55rem);
   line-height:1.2;margin-bottom:1.4rem;
 }
@@ -105,7 +105,7 @@ p:last-child{margin-bottom:0}
 
 /* Drop cap */
 .dropcap::first-letter{
-  font-family:'Cinzel Decorative',cursive;
+  font-family:'Metamorphous',cursive;
   font-size:4rem;font-weight:900;
   float:left;line-height:.8;
   margin:.06em .1em 0 0;
@@ -115,7 +115,7 @@ p:last-child{margin-bottom:0}
 /* Buttons */
 .btn{
   display:inline-block;
-  font-family:'Cinzel',serif;font-weight:700;
+  font-family:'Metamorphous',serif;font-weight:700;
   font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
   padding:.85rem 2.2rem;border:2px solid var(--gold);
   transition:background .2s,color .2s;cursor:pointer;
@@ -139,6 +139,11 @@ p:last-child{margin-bottom:0}
 }
 .cbox::before{top:7px;left:7px;border-right:none;border-bottom:none}
 .cbox::after{bottom:7px;right:7px;border-left:none;border-top:none}
+.cbox-inner{display:flex;gap:2rem;align-items:flex-start}
+.cbox-card{width:160px;flex-shrink:0;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,.35);cursor:pointer;transition:transform .18s,box-shadow .18s}
+.cbox-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.cbox-text{flex:1}
+.cbox-text p+p{margin-top:.9rem}
 
 /* ── HERO ── */
 #hero{
@@ -146,7 +151,7 @@ p:last-child{margin-bottom:0}
   background:var(--ink);
   display:flex;flex-direction:column;
   align-items:center;justify-content:center;
-  text-align:center;padding:8rem 1.5rem 6rem;
+  text-align:center;padding:4rem 1.5rem 6rem;
   position:relative;overflow:hidden;
 }
 #hero::after{
@@ -155,7 +160,7 @@ p:last-child{margin-bottom:0}
 }
 .hero-inner{position:relative;z-index:1}
 .hero-over{
-  font-family:'Cinzel',serif;font-size:.68rem;
+  font-family:'Metamorphous',serif;font-size:.68rem;
   letter-spacing:.55em;text-transform:uppercase;
   color:var(--gold);margin-bottom:2rem;
   display:flex;align-items:center;justify-content:center;gap:.9rem;
@@ -164,12 +169,14 @@ p:last-child{margin-bottom:0}
 .hero-title{margin-bottom:1.2rem}
 .hero-title img{display:block;width:min(600px,88vw);height:auto;margin:0 auto}
 .hero-sub{
-  font-family:'Cinzel Decorative',cursive;
-  font-size:clamp(1.6rem,5vw,3.2rem);font-weight:400;
+  font-family:'Metamorphous',cursive;
+  font-size:clamp(.65rem,1.4vw,1rem);font-weight:400;
   color:var(--gold);letter-spacing:.07em;margin-bottom:2rem;
+  max-width:560px;margin-left:auto;margin-right:auto;
+  text-align:justify;text-align-last:center;
 }
 .hero-tag{
-  font-family:'IM Fell English',serif;font-style:italic;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
   font-size:clamp(.95rem,2.5vw,1.25rem);
   color:var(--p-mid);max-width:560px;margin:0 auto 3rem;line-height:1.65;
 }
@@ -182,19 +189,19 @@ p:last-child{margin-bottom:0}
 }
 .hstat:last-child{border-right:1px solid rgba(184,150,62,.22)}
 .hstat-n{
-  font-family:'Cinzel Decorative',cursive;
+  font-family:'Metamorphous',cursive;
   font-size:1.7rem;color:var(--gold);font-weight:700;
   display:block;line-height:1;margin-bottom:.3rem;
 }
 .hstat-l{
-  font-family:'Cinzel',serif;font-size:.58rem;
+  font-family:'Metamorphous',serif;font-size:.58rem;
   letter-spacing:.2em;text-transform:uppercase;
   color:rgba(245,236,215,.4);
 }
 .hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .scroll-hint{
   position:absolute;bottom:1.75rem;left:50%;transform:translateX(-50%);
-  font-family:'Cinzel',serif;font-size:.58rem;
+  font-family:'Metamorphous',serif;font-size:.58rem;
   letter-spacing:.3em;text-transform:uppercase;
   color:rgba(245,236,215,.25);
   display:flex;flex-direction:column;align-items:center;gap:.4rem;
@@ -204,6 +211,10 @@ p:last-child{margin-bottom:0}
 
 /* ── WHAT IS FORGE OF FISTS ── */
 #what{background:var(--p-light)}
+#features{background:var(--p-mid)}
+#factions{background:var(--ink)}
+#email{background:var(--p-mid)}
+#faq{background:var(--p-light)}
 .mechanics{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
@@ -218,8 +229,14 @@ p:last-child{margin-bottom:0}
   font-size:2rem;color:var(--gold);display:block;
   margin-bottom:.65rem;line-height:1;
 }
+.mec-feat-card{
+  width:110px;display:block;margin:0 auto .85rem;
+  border-radius:5px;box-shadow:0 4px 14px rgba(0,0,0,.28);
+  cursor:pointer;transition:transform .18s,box-shadow .18s;
+}
+.mec-feat-card:hover{transform:translateY(-3px);box-shadow:0 7px 20px rgba(0,0,0,.4)}
 .mec-name{
-  font-family:'Cinzel',serif;font-size:.6rem;
+  font-family:'Metamorphous',serif;font-size:.6rem;
   letter-spacing:.25em;text-transform:uppercase;
   color:var(--gold-d);display:block;margin-bottom:.45rem;
 }
@@ -228,60 +245,151 @@ p:last-child{margin-bottom:0}
   color:rgba(26,15,10,.72);margin:0;
 }
 
-/* ── FIVE FACTIONS ── */
-#factions{
-  background:var(--ink);
-  background-image:radial-gradient(ellipse 100% 55% at 50% 0%,rgba(184,150,62,.1) 0%,transparent 70%);
+/* ── HOW TO PLAY ── */
+.overview-lead{
+  font-size:1.05rem;color:rgba(26,15,10,.68);
+  border-left:3px solid var(--gold);padding-left:1.1rem;
+  margin-bottom:2.75rem;
 }
-.factions-head{text-align:center;margin-bottom:3.5rem}
-.factions-grid{
-  display:flex;flex-wrap:wrap;gap:1.2rem;justify-content:center;
+.overview-block{margin-bottom:0}
+.overview-sep{
+  display:flex;align-items:center;
+  margin:2.5rem 0;opacity:.45;
 }
-.fc{
-  flex:1 1 210px;max-width:270px;
-  border:1px solid rgba(184,150,62,.22);
-  padding:1.85rem 1.4rem;text-align:center;
-  background:rgba(26,15,10,.55);
-  position:relative;
-  transition:transform .25s,border-color .25s,background .25s;
+.overview-sep::before,.overview-sep::after{
+  content:'';flex:1;height:1px;background:rgba(184,150,62,.5);
 }
-.fc:hover{
-  transform:translateY(-6px);
-  border-color:rgba(184,150,62,.65);
-  background:rgba(184,150,62,.06);
+.overview-h{
+  font-family:'Metamorphous',cursive;
+  font-size:1.15rem;color:var(--ink);
+  margin-bottom:.9rem;
+  display:flex;align-items:center;gap:.75rem;
 }
-.fc::before{
-  content:'';position:absolute;
-  top:0;left:12%;right:12%;height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  opacity:0;transition:opacity .25s;
+.overview-num{
+  font-family:'Metamorphous',cursive;font-size:.72rem;
+  color:var(--gold);letter-spacing:.1em;
+  border:1px solid rgba(184,150,62,.5);
+  width:1.65rem;height:1.65rem;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
 }
-.fc:hover::before{opacity:1}
-.fc-icon{font-size:2.6rem;display:block;margin-bottom:.9rem;line-height:1}
-.fc-name{
-  font-family:'Cinzel Decorative',cursive;
-  font-size:.88rem;display:block;margin-bottom:.3rem;
+.overview-factions{
+  list-style:none;display:flex;flex-direction:column;gap:.45rem;
+  margin:1.2rem 0;
 }
-.fc-credo{
-  font-family:'IM Fell English',serif;font-style:italic;
-  font-size:.82rem;color:var(--p-mid);
-  display:block;margin-bottom:1rem;opacity:.78;
+.overview-factions li{
+  font-size:.93rem;line-height:1.55;
+  padding:.6rem 1rem;
+  border-left:3px solid;background:rgba(245,236,215,.45);
 }
-.fc-body{
-  font-size:.87rem;line-height:1.6;
-  color:rgba(245,236,215,.62);margin:0;
+.ovf-name{
+  font-family:'Metamorphous',serif;font-size:.72rem;
+  letter-spacing:.1em;text-transform:uppercase;
+  display:inline-block;margin-right:.5rem;
+}
+.overview-factions .f-conquest{border-color:#c01010}
+.overview-factions .f-community{border-color:#a05510}
+.overview-factions .f-creed{border-color:#a09000}
+.overview-factions .f-trade{border-color:#3a8a20}
+.overview-factions .f-diplomacy{border-color:#2a3a8a}
+.overview-factions .f-conquest .ovf-name{color:#c01010}
+.overview-factions .f-community .ovf-name{color:#a05510}
+.overview-factions .f-creed .ovf-name{color:#7a6900}
+.overview-factions .f-trade .ovf-name{color:#3a8a20}
+.overview-factions .f-diplomacy .ovf-name{color:#2a3a8a}
+/* Battlefield diagram */
+.bf-diagram{
+  margin:1.6rem 0 1.75rem;
+  border:1px solid rgba(184,150,62,.38);overflow:hidden;
+}
+.bf-realm{
+  padding:1rem 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+}
+.bf-opponent{background:var(--p-mid);border-bottom:1px solid rgba(184,150,62,.3)}
+.bf-yours{background:var(--p-light);border-top:1px solid rgba(184,150,62,.3)}
+.bf-realm-label{
+  font-family:'Metamorphous',serif;font-size:.6rem;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--gold-d);
+}
+.bf-realm-cards{font-size:.72rem;color:rgba(26,15,10,.42);font-family:'Metamorphous',serif;letter-spacing:.04em}
+.bf-outland-wrap{background:var(--ink)}
+.bf-outland-title{
+  font-family:'Metamorphous',serif;font-size:.55rem;letter-spacing:.4em;text-transform:uppercase;
+  color:rgba(184,150,62,.5);text-align:center;padding:.5rem 0 0;
+}
+.bf-zones{display:flex;border-top:1px solid rgba(184,150,62,.15)}
+.bf-zone{flex:1;padding:1rem 1rem 1.1rem;text-align:center}
+.bf-zone+.bf-zone{border-left:1px solid rgba(0,0,0,.2)}
+.bf-wilderness{background:#1e2d18}
+.bf-sea{background:#0f1f2d}
+.bf-zone-name{
+  display:block;font-family:'Metamorphous',serif;font-size:.6rem;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem;
+}
+.bf-zone-sub{
+  display:block;font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.78rem;color:rgba(245,236,215,.38);
+}
+
+/* ── FACTION CELLS (inside .mechanics grid) ── */
+.mec-icon{display:block;width:2rem;height:2rem;margin:0 auto .65rem}
+.mec-fname{font-family:'Metamorphous',serif}
+.mec-credo{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.82rem;line-height:1.45;
+  color:rgba(26,15,10,.6);margin:0;
 }
 /* Faction accent colours */
-.f-conquest .fc-icon,.f-conquest .fc-name{color:#ed2124}
-.f-conquest:hover{border-color:rgba(237,33,36,.4)}
-.f-community .fc-icon,.f-community .fc-name{color:#c5711c}
-.f-community:hover{border-color:rgba(197,113,28,.4)}
-.f-creed .fc-icon,.f-creed .fc-name{color:#f5eb12}
-.f-creed:hover{border-color:rgba(245,235,18,.4)}
-.f-trade .fc-icon,.f-trade .fc-name{color:#68bd45}
-.f-trade:hover{border-color:rgba(104,189,69,.4)}
-.f-diplomacy .fc-icon,.f-diplomacy .fc-name{color:#3a53a4}
-.f-diplomacy:hover{border-color:rgba(58,83,164,.4)}
+.f-conquest .mec-fname{color:#c01010}
+.f-community .mec-fname{color:#a05510}
+.f-creed .mec-fname{color:#a09000}
+.f-trade .mec-fname{color:#3a8a20}
+.f-diplomacy .mec-fname{color:#2a3a8a}
+
+/* ── FACTIONS stacked list override ── */
+#factions .mechanics{
+  display:flex;flex-direction:column;
+  gap:0;background:none;border:none;margin-top:2rem;
+}
+#factions .mec{
+  display:flex;align-items:center;gap:1.2rem;
+  text-align:left;padding:1rem 0;
+  border-bottom:1px solid rgba(184,150,62,.18);
+  background:transparent;
+}
+#factions .mec:last-child{border-bottom:none}
+#factions .mec-icon{margin:0;flex-shrink:0;width:2.2rem;height:2.2rem}
+#factions .mec-text{flex:1;min-width:0}
+#factions .mec-fname{display:block;margin-bottom:.15rem;font-size:.82rem}
+#factions .mec-credo{text-align:left;color:rgba(245,236,215,.6)}
+/* Brighten faction names for dark background */
+#factions .f-conquest .mec-fname{color:#ed2124}
+#factions .f-community .mec-fname{color:#c5711c}
+#factions .f-creed .mec-fname{color:#e8dc10}
+#factions .f-trade .mec-fname{color:#68bd45}
+#factions .f-diplomacy .mec-fname{color:#5a73c4}
+/* Card thumbnails */
+.mec-cards{display:flex;gap:.35rem;flex-shrink:0}
+.mec-card-thumb{
+  width:48px;border-radius:3px;cursor:pointer;
+  aspect-ratio:640/832;object-fit:cover;
+  transition:transform .15s,box-shadow .15s;
+  display:block;
+}
+.mec-card-thumb:hover{transform:translateY(-3px);box-shadow:0 4px 14px rgba(0,0,0,.5)}
+/* Faction lightbox */
+#faction-lightbox{
+  display:none;position:fixed;inset:0;
+  background:rgba(10,5,0,.85);z-index:1000;
+  align-items:center;justify-content:center;
+  padding:1rem;cursor:pointer;
+}
+#faction-lightbox.open{display:flex}
+#faction-lightbox img{
+  max-height:85vh;max-width:min(420px,90vw);
+  border-radius:6px;box-shadow:0 8px 40px rgba(0,0,0,.7);
+  cursor:default;
+}
 
 /* ── PLAY FREE ── */
 #play{
@@ -299,12 +407,12 @@ p:last-child{margin-bottom:0}
 }
 .play-title{color:var(--ink)}
 .play-lead{
-  font-family:'IM Fell English',serif;font-style:italic;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
   font-size:1.12rem;color:rgba(26,15,10,.68);
   max-width:480px;margin:0 auto 2rem;line-height:1.65;
 }
 .play-url{
-  display:block;font-family:'Cinzel',serif;
+  display:block;font-family:'Metamorphous',serif;
   font-size:.78rem;letter-spacing:.2em;
   color:var(--gold-d);margin-top:1.2rem;
 }
@@ -325,7 +433,7 @@ p:last-child{margin-bottom:0}
   background:rgba(184,150,62,.06);
 }
 .pull-quote p{
-  font-family:'IM Fell English',serif;font-style:italic;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
   font-size:1.08rem;line-height:1.65;margin:0;
 }
 .lore-box{
@@ -340,7 +448,7 @@ p:last-child{margin-bottom:0}
   border:1px solid rgba(184,150,62,.18);pointer-events:none;
 }
 .lore-box-title{
-  font-family:'Cinzel',serif;font-size:.62rem;
+  font-family:'Metamorphous',serif;font-size:.62rem;
   letter-spacing:.32em;text-transform:uppercase;
   color:var(--gold);margin-bottom:1.1rem;display:block;
 }
@@ -374,7 +482,7 @@ p:last-child{margin-bottom:0}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .field{margin-bottom:1.05rem}
 .field label{
-  display:block;font-family:'Cinzel',serif;font-size:.6rem;
+  display:block;font-family:'Metamorphous',serif;font-size:.6rem;
   letter-spacing:.25em;text-transform:uppercase;
   color:var(--gold);margin-bottom:.38rem;
 }
@@ -400,7 +508,6 @@ p:last-child{margin-bottom:0}
 
 /* ── EMAIL CAPTURE ── */
 #email{
-  background:var(--p-mid);
   border-top:1px solid rgba(184,150,62,.28);
   border-bottom:1px solid rgba(184,150,62,.28);
 }
@@ -412,7 +519,7 @@ p:last-child{margin-bottom:0}
 }
 .kit-block .kit-icon{font-size:2rem;color:var(--gold);display:block;margin-bottom:.7rem}
 .kit-block p{
-  font-family:'IM Fell English',serif;font-style:italic;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
   font-size:.88rem;color:rgba(26,15,10,.48);margin:0;
 }
 
@@ -432,7 +539,7 @@ p:last-child{margin-bottom:0}
   padding:1.75rem;background:rgba(184,150,62,.04);
 }
 .design-box-title{
-  font-family:'Cinzel',serif;font-size:.62rem;
+  font-family:'Metamorphous',serif;font-size:.62rem;
   letter-spacing:.32em;text-transform:uppercase;
   color:var(--gold);margin-bottom:1.2rem;display:block;
 }
@@ -442,7 +549,7 @@ p:last-child{margin-bottom:0}
 }
 .d-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
 .d-item-name{
-  font-family:'Cinzel',serif;font-size:.72rem;
+  font-family:'Metamorphous',serif;font-size:.72rem;
   letter-spacing:.1em;color:var(--gold-d);
   display:block;margin-bottom:.28rem;
 }
@@ -458,17 +565,17 @@ p:last-child{margin-bottom:0}
   padding:4rem 1.5rem 2.25rem;text-align:center;
 }
 .footer-brand{
-  font-family:'Cinzel Decorative',cursive;
+  font-family:'Metamorphous',cursive;
   font-size:1.35rem;color:var(--gold);
   display:block;margin-bottom:.4rem;
 }
 .footer-tag{
-  font-family:'IM Fell English',serif;font-style:italic;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
   font-size:.88rem;color:rgba(245,236,215,.38);margin-bottom:2.25rem;
 }
 .footer-nav{display:flex;flex-wrap:wrap;justify-content:center;list-style:none;margin-bottom:2rem}
 .footer-nav li a{
-  display:block;font-family:'Cinzel',serif;font-size:.58rem;
+  display:block;font-family:'Metamorphous',serif;font-size:.58rem;
   letter-spacing:.2em;text-transform:uppercase;
   color:rgba(245,236,215,.38);
   padding:.3rem .85rem;
@@ -503,6 +610,8 @@ p:last-child{margin-bottom:0}
   .form-row{grid-template-columns:1fr}
   .hero-stats{flex-wrap:wrap}
   .hstat{min-width:110px}
+  .cbox-inner{flex-direction:column;align-items:center}
+  .cbox-card{width:140px}
 }
 @media(max-width:480px){
   .pad{padding:3.5rem 0}
@@ -513,48 +622,22 @@ p:last-child{margin-bottom:0}
 </head>
 <body>
 
-<!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
-<nav class="site-nav">
-  <a href="#hero" class="nav-brand"><img src="images/FoF-Icon-192.png" alt="" aria-hidden="true" style="height:34px;width:34px;margin-right:.55rem;vertical-align:middle;border-radius:4px">Forge of Fists</a>
-  <button class="nav-toggle" aria-label="Menu" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">☰</button>
-  <ul class="nav-links">
-    <li><a href="#what">The Game</a></li>
-    <li><a href="#factions">Factions</a></li>
-    <li><a href="#story">Lore</a></li>
-    <li><a href="#playtest">Playtest</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="gallery.html">Card Gallery</a></li>
-    <li><a href="https://play.forgeoffists.com" class="nav-play" target="_blank" rel="noopener">Play Free ↗</a></li>
-  </ul>
-</nav>
+<div id="site-nav"></div>
 
 <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
 <section id="hero">
   <div class="hero-inner">
-    <div class="hero-over">A Living Card Game</div>
+    <div class="hero-over">A Living Card Game of Dark Fantasy</div>
     <h1 class="hero-title"><img src="images/logo.png" alt="Forge of Fists"></h1>
-    <div class="hero-sub">The World of Almokon Awaits</div>
+    <!--<div class="hero-sub">POWER ✦ GREED ✦ CORRUPTION ✦ BELIEF ✦ DISGUST ✦ HOPE ✦ ANGER ✦ DESPERATION ✦ AGONY ✦ HERESY ✦ DEFIANCE ✦ DEATH ✦ WONDER ✦ VIOLENCE ✦ INSANITY ✦ BEAUTY</div>-->
     <p class="hero-tag">
-      Five factions. One crucible. Only the shrewdest commander will earn<br>
-      twenty-one Bounty Points and bend Almokon to their will.
+      “From far away, Truth appears to be a circle: simple, clear, precise. Only when examined very closely do you reveal a many-sided shape, with infinite angles.”
+<br/>- Fra. Tolomeo Tartolo
     </p>
-    <div class="hero-stats">
-      <div class="hstat">
-        <span class="hstat-n">5</span>
-        <span class="hstat-l">Factions</span>
-      </div>
-      <div class="hstat">
-        <span class="hstat-n">40</span>
-        <span class="hstat-l">Cards per Deck</span>
-      </div>
-      <div class="hstat">
-        <span class="hstat-n">21</span>
-        <span class="hstat-l">Bounty Points</span>
-      </div>
-    </div>
     <div class="hero-cta">
       <a href="https://play.forgeoffists.com" class="btn btn-gold" target="_blank" rel="noopener">Play Free Now</a>
-      <a href="#what" class="btn btn-ghost">Learn the Game</a>
+      <a href="#what" class="btn btn-ghost">Learn More</a>
+      <a href="rules.html" class="btn btn-ghost">Complete Rules</a>
     </div>
   </div>
   <div class="scroll-hint">Scroll</div>
@@ -567,131 +650,221 @@ p:last-child{margin-bottom:0}
     <h2 class="heading heading-ink">What is Forge of Fists?</h2>
 
     <div class="cbox">
-      <p class="dropcap">
-        Forge of Fists is a living card game of strategy, faction identity, and precise timing.
-        Two commanders — each representing one of Almokon's five great powers — face each other
-        across a shared field of cards, taking turns one action at a time until one has claimed
-        twenty-one Bounty Points and secured dominion over the realm.
-      </p>
-      <p>
-        There is no luck of the draw dictating your fate. Every card in your forty-card deck has
-        been chosen by you, shaped around the strengths of your chosen faction. The alternating
-        single-action system means every play is a direct response to your opponent's last move —
-        a rhythm of pressure, patience, and decisive strikes.
-      </p>
-      <p>
-        The digital demo pits you against a CPU opponent, letting you learn the full depth of
-        the game at your own pace. No download required. No cost. Just you, your cards, and the
-        weight of Almokon's future.
-      </p>
+      <div class="cbox-inner">
+        <img src="images/cards/royal-edict.jpg" alt="Royal Edict card" class="cbox-card">
+        <div class="cbox-text">
+          <p class="dropcap">
+            Forge of Fists is a living card game (LCG) set in the land of Almokon, which is ruled by the old and wise emperor,
+            Manfred the Most Loved. Unfortunately, Manfred is dying (for he is old) and upon his death
+            he knows his empire will crumble (for he is wise).
+          </p>
+          <p>
+            To maintain peace in Almokon, Manfred must decide, now, who is to wear the crown of the
+            empire upon his passing. You, the player, are one of many monarchs vying for Manfred's
+            favor. Your ability to rule, to protect, and to grow your realm will determine if you will
+            be the next emperor of Almokon.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div class="orn">✦ ✦ ✦</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ FEATURES ══════════════════════════ -->
+<section id="features" class="pad">
+  <div class="container">
+    <span class="eyebrow">Features</span>
+    <h2 class="heading heading-ink">The Highlights</h2>
 
     <div class="mechanics">
       <div class="mec">
-        <span class="mec-sym">⚔</span>
+        <img class="mec-feat-card" src="images/cards/i-stab-at-thee.jpg" alt="">
         <span class="mec-name">Alternating Actions</span>
-        <p class="mec-body">Each turn, one player takes a single action. Then the other responds. No phases, no priority stacks — pure, clean decision-making.</p>
+        <p class="mec-body">One player takes a single action, then the other responds. No phases, just pure interplay.</p>
       </div>
       <div class="mec">
-        <span class="mec-sym">⬛</span>
+        <img class="mec-feat-card" src="images/cards/gemarien.jpg" alt="">
         <span class="mec-name">40-Card Decks</span>
-        <p class="mec-body">A tight constraint that rewards craft. Every card must earn its place. Redundancy is a choice; surprise is an art.</p>
+        <p class="mec-body">A tight constraint that rewards craft and synergy, supported by distinct factions.</p>
       </div>
       <div class="mec">
-        <span class="mec-sym">◈</span>
-        <span class="mec-name">21 Bounty Points</span>
-        <p class="mec-body">Win by accumulating Bounty Points through card play, contested territory, and fulfilled declarations — not by reducing a life total.</p>
+        <img class="mec-feat-card" src="images/cards/viceroy.jpg" alt="">
+        <span class="mec-name">21 Bounty to Win</span>
+        <p class="mec-body">Gain Bounty by decimating your opponent's units, characters and improvements.</p>
       </div>
       <div class="mec">
-        <span class="mec-sym">⚙</span>
-        <span class="mec-name">CPU Opponent</span>
-        <p class="mec-body">A capable AI adversary in the digital demo. Learn every faction, test every strategy, and discover your playstyle without pressure.</p>
+        <img class="mec-feat-card" src="images/cards/two-delicacies.jpg" alt="">
+        <span class="mec-name">Original Artwork</span>
+        <p class="mec-body">171 traditional and digital paintings created for the game.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════ FIVE FACTIONS ═════════════════════════ -->
-<section id="factions" class="pad-lg">
-  <div class="container-w">
-    <div class="factions-head">
-      <span class="eyebrow">The Powers of Almokon</span>
-      <h2 class="heading heading-light">Choose Your Faction</h2>
-      <p style="font-family:'IM Fell English',serif;font-style:italic;color:rgba(245,236,215,.6);max-width:520px;margin:0 auto;font-size:1.05rem;line-height:1.65;">
-        Each faction commands a different path to Bounty. Which philosophy of power is yours?
-      </p>
+<!-- ══════════════════════════════ FACTIONS ══════════════════════════ -->
+<section id="factions" class="pad">
+  <div class="container">
+    <span class="eyebrow">Factions</span>
+    <h2 class="heading heading-light">The Powers of Almokon</h2>
+
+    <div class="mechanics">
+      <div class="mec f-conquest">
+        <img class="mec-icon" src="images/icons/Conquest-Color.svg" alt="">
+        <div class="mec-text">
+          <span class="mec-name mec-fname">Conquest</span>
+          <p class="mec-credo">"Blood is for butchers."</p>
+        </div>
+        <div class="mec-cards">
+          <img class="mec-card-thumb" src="images/cards/batalan-the-white.jpg" alt="Batalan the White" data-name="Batalan the White">
+          <img class="mec-card-thumb" src="images/cards/begba-doum.jpg" alt="Begba Doum" data-name="Begba Doum">
+          <img class="mec-card-thumb" src="images/cards/genesis-keep.jpg" alt="Genesis Keep" data-name="Genesis Keep">
+          <img class="mec-card-thumb" src="images/cards/wards-hill.jpg" alt="Ward's Hill" data-name="Ward's Hill">
+        </div>
+      </div>
+      <div class="mec f-community">
+        <img class="mec-icon" src="images/icons/Community-Color.svg" alt="">
+        <div class="mec-text">
+          <span class="mec-name mec-fname">Community</span>
+          <p class="mec-credo">"One thousand times a thousand hands raised in defiance."</p>
+        </div>
+        <div class="mec-cards">
+          <img class="mec-card-thumb" src="images/cards/crul-blackmoon.jpg" alt="Crul Blackmoon" data-name="Crul Blackmoon">
+          <img class="mec-card-thumb" src="images/cards/kin-paco.jpg" alt="Kin Paco" data-name="Kin Paco">
+          <img class="mec-card-thumb" src="images/cards/asala-sala.jpg" alt="Asala-Sala" data-name="Asala-Sala">
+          <img class="mec-card-thumb" src="images/cards/mat-mat-sin.jpg" alt="Mat-Mat-Sin" data-name="Mat-Mat-Sin">
+        </div>
+      </div>
+      <div class="mec f-creed">
+        <img class="mec-icon" src="images/icons/Creed-Color.svg" alt="">
+        <div class="mec-text">
+          <span class="mec-name mec-fname">Creed</span>
+          <p class="mec-credo">"Pray before you act, forgive yourself later."</p>
+        </div>
+        <div class="mec-cards">
+          <img class="mec-card-thumb" src="images/cards/lord-willsit.jpg" alt="Lord Willsit" data-name="Lord Willsit">
+          <img class="mec-card-thumb" src="images/cards/monda-vesel.jpg" alt="Monda Vesel" data-name="Monda Vesel">
+          <img class="mec-card-thumb" src="images/cards/macmarten-rock.jpg" alt="MacMarten Rock" data-name="MacMarten Rock">
+          <img class="mec-card-thumb" src="images/cards/mothers-house.jpg" alt="Mother's House" data-name="Mother's House">
+        </div>
+      </div>
+      <div class="mec f-trade">
+        <img class="mec-icon" src="images/icons/Trade-Color.svg" alt="">
+        <div class="mec-text">
+          <span class="mec-name mec-fname">Trade</span>
+          <p class="mec-credo">"Flesh is a currency of last resort."</p>
+        </div>
+        <div class="mec-cards">
+          <img class="mec-card-thumb" src="images/cards/queen-chelise.jpg" alt="Green Queen Chelise" data-name="Green Queen Chelise">
+          <img class="mec-card-thumb" src="images/cards/vaya-mykolo.jpg" alt="Vaya Mykolo" data-name="Vaya Mykolo">
+          <img class="mec-card-thumb" src="images/cards/nelucifera.jpg" alt="Nelucifera" data-name="Nelucifera">
+          <img class="mec-card-thumb" src="images/cards/zostera.jpg" alt="Zostera" data-name="Zostera">
+        </div>
+      </div>
+      <div class="mec f-diplomacy">
+        <img class="mec-icon" src="images/icons/Diplomacy-Color.svg" alt="">
+        <div class="mec-text">
+          <span class="mec-name mec-fname">Diplomacy</span>
+          <p class="mec-credo">"Respect, understanding, compromise: forget these words."</p>
+        </div>
+        <div class="mec-cards">
+          <img class="mec-card-thumb" src="images/cards/casara-valara.jpg" alt="Casara Valara" data-name="Casara Valara">
+          <img class="mec-card-thumb" src="images/cards/viktor-valara.jpg" alt="Viktor Valara" data-name="Viktor Valara">
+          <img class="mec-card-thumb" src="images/cards/bicara-township.jpg" alt="Bicara Township" data-name="Bicara Township">
+          <img class="mec-card-thumb" src="images/cards/rahasa.jpg" alt="Rahasa" data-name="Rahasa">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ EMAIL CAPTURE ══════════════════════════ -->
+<section id="email" class="pad">
+  <div class="container">
+    <div class="email-grid">
+      <div class="email-copy">
+        <span class="eyebrow">Stay Informed</span>
+        <h2 class="heading heading-ink">Early Access</h2>
+        <p>
+          Follow the game's development and be the first to know when playtesting opens up.
+        </p>
+      </div>
+      <div class="email-form-area">
+        <!-- KIT EMBED: Replace this block with your Kit (ConvertKit) embed code -->
+        <script async data-uid="32f9feb03e" src="https://skeleton-king-library.kit.com/32f9feb03e/index.js"></script>
+        <!-- END KIT EMBED -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ HOW TO PLAY ════════════════════════════ -->
+<section id="faq" class="pad">
+  <div class="container">
+    <span class="eyebrow">How to Play</span>
+    <h2 class="heading heading-ink">A Brief Overview</h2>
+    <p class="overview-lead">Almokon is a land of many kingdoms, each shaped by one of five great forces: Conquest, Community, Creed, Trade or Diplomacy. Lead one, build your kingdom, and destroy who stands against you. The first player to reach 21 Bounty Points wins — and every card you destroy brings you closer to victory.</p>
+
+    <div class="overview-block">
+      <h3 class="overview-h"><span class="overview-num">1</span>Choose Your Faction</h3>
+      <p>Every game begins with a Monarch — your ruler — and the faction they lead. There are five:</p>
+      <ul class="overview-factions">
+        <li class="f-conquest"><span class="ovf-name">Conquest</span> Brutal, fast and beastly. Win by force alone.</li>
+        <li class="f-community"><span class="ovf-name">Community</span> The power of the group, drawing strength from nature.</li>
+        <li class="f-creed"><span class="ovf-name">Creed</span> Manipulate the fates and let loose your flock.</li>
+        <li class="f-trade"><span class="ovf-name">Trade</span> Rule the waves and exploit the markets for maximum power.</li>
+        <li class="f-diplomacy"><span class="ovf-name">Diplomacy</span> Control the conversation and push your enemy off the map.</li>
+      </ul>
+      <p>Your Monarch determines your faction, your playstyle, and the cards available to you.</p>
     </div>
 
-    <div class="factions-grid">
+    <div class="overview-sep"></div>
 
-      <!-- Conquest -->
-      <div class="fc f-conquest">
-        <span class="fc-icon">⚔</span>
-        <span class="fc-name">Conquest</span>
-        <span class="fc-credo">"By Iron and Will Alone"</span>
-        <p class="fc-body">
-          The warlords of Almokon believe dominion is taken, never given.
-          Their cards are soldiers, siege-works, and champions — and their
-          Bounty comes from controlling the field by overwhelming force.
-          Aggressive, relentless, and punishing to hesitation.
-        </p>
-      </div>
-
-      <!-- Community -->
-      <div class="fc f-community">
-        <span class="fc-icon">❧</span>
-        <span class="fc-name">Community</span>
-        <span class="fc-credo">"Many Hands, One Heart"</span>
-        <p class="fc-body">
-          Guilds, farmers, and craftspeople who built Almokon from nothing.
-          No single card is remarkable — but together they are inexorable.
-          Community earns Bounty through solidarity, persistence, and the
-          quiet power of many humble acts compounding into victory.
-        </p>
-      </div>
-
-      <!-- Creed -->
-      <div class="fc f-creed">
-        <span class="fc-icon">✦</span>
-        <span class="fc-name">Creed</span>
-        <span class="fc-credo">"In Faith, Unbroken"</span>
-        <p class="fc-body">
-          The sacred orders hold that Almokon's soul belongs to the divine.
-          Creed wields prophecy, consecrated rites, and fervent devotion.
-          Their Bounty accrues through fulfilling edicts and protecting
-          holy sites — rewarding patience and precise sequencing.
-        </p>
-      </div>
-
-      <!-- Trade -->
-      <div class="fc f-trade">
-        <span class="fc-icon">⚖</span>
-        <span class="fc-name">Trade</span>
-        <span class="fc-credo">"Every Price Has Its Moment"</span>
-        <p class="fc-body">
-          The merchant houses fund every army, temple, and farmstead in
-          Almokon. Trade converts resources into decisive advantage at
-          precisely the right moment — a faction of timing, leverage,
-          and deals struck when the opponent least expects.
-        </p>
-      </div>
-
-      <!-- Diplomacy -->
-      <div class="fc f-diplomacy">
-        <span class="fc-icon">⚜</span>
-        <span class="fc-name">Diplomacy</span>
-        <span class="fc-credo">"Words Before Swords"</span>
-        <p class="fc-body">
-          The noble courts and emissaries who shape Almokon through
-          alliance and leverage. Diplomacy controls the field through
-          information, positioning, and carefully timed intervention —
-          winning games their opponents believed they were winning.
-        </p>
-      </div>
-
+    <div class="overview-block">
+      <h3 class="overview-h"><span class="overview-num">2</span>Build Your Deck</h3>
+      <p>A deck is 40 cards plus your Monarch and matching Capitol. You build around your faction's strengths — but you're not locked in. Each faction is aligned with two neighbours, and you may recruit up to twelve cards from them. Neutral cards are open to everyone.</p>
+      <p>The result is a deck that's distinctly yours: focused enough to have an identity, flexible enough to surprise.</p>
     </div>
+
+    <div class="overview-sep"></div>
+
+    <div class="overview-block">
+      <h3 class="overview-h"><span class="overview-num">3</span>Know the Battlefield</h3>
+      <div class="bf-diagram">
+        <div class="bf-realm bf-opponent">
+          <span class="bf-realm-label">Opponent's Realm</span>
+          <span class="bf-realm-cards">Monarch · Capitol · Characters · Improvements</span>
+        </div>
+        <div class="bf-outland-wrap">
+          <div class="bf-outland-title">Outland</div>
+          <div class="bf-zones">
+            <div class="bf-zone bf-wilderness">
+              <span class="bf-zone-name">Wilderness</span>
+              <span class="bf-zone-sub">Land Forces</span>
+            </div>
+            <div class="bf-zone bf-sea">
+              <span class="bf-zone-name">Open Sea</span>
+              <span class="bf-zone-sub">Naval Forces</span>
+            </div>
+          </div>
+        </div>
+        <div class="bf-realm bf-yours">
+          <span class="bf-realm-label">Your Realm</span>
+          <span class="bf-realm-cards">Monarch · Capitol · Characters · Improvements</span>
+        </div>
+      </div>
+      <p>The board is split into two domains. Your Realm is your home — where your Monarch, Capitol, and characters reside. The Outland between you and your opponent is where blood is spilled, divided into the Wilderness for land forces and the Open Sea for naval ones.</p>
+      <p>Cards move forward into the Outland to attack. There is no retreat — once committed, the only way is onward.</p>
+    </div>
+
+    <div class="overview-sep"></div>
+
+    <div class="overview-block">
+      <h3 class="overview-h"><span class="overview-num">4</span>Take Your Turn</h3>
+      <p>Forge of Fists has no turns in the usual sense. Players alternate one action at a time — play a card, launch an attack, gather resources — back and forth, action for action.</p>
+      <p>It means the pressure never lifts. Every move you make opens a door for your opponent. Every move they make opens one for you. The game is a constant, shifting negotiation of tempo and threat.</p>
+    </div>
+
   </div>
 </section>
 
@@ -714,244 +887,41 @@ p:last-child{margin-bottom:0}
   </div>
 </section>
 
-<!-- ═══════════════════════════ THE STORY ══════════════════════════════ -->
-<section id="story" class="pad-lg">
+<!-- ══════════════════════════ ABOUT THE AUTHOR ═══════════════════════ -->
+<section id="author" class="pad">
   <div class="container">
-    <span class="eyebrow">Lore of Almokon</span>
-    <h2 class="heading heading-ink">The Story So Far</h2>
-
-    <div class="story-grid">
-      <div class="story-main">
-        <p class="dropcap">
-          Almokon was not always a land of contention. For three centuries it prospered
-          beneath a single crown — the Accord of the Gilt Throne — a compact that bound
-          warrior, priest, merchant, delegate, and common folk in uneasy but workable
-          harmony.
-        </p>
-        <p>
-          Then the Throne fell silent. No heir came forward. No declaration was made.
-          In the vacuum left by the crown's absence, the five great powers that once
-          served it began, slowly and then with alarming speed, to assert themselves.
-        </p>
-
-        <div class="pull-quote">
-          <p>"The Throne does not grant dominion. Dominion is what fills the Throne's absence — and it belongs to whoever is bold enough to claim it."</p>
-        </div>
-
-        <p>
-          The Bounty system arose as a civilised fiction — a way to measure power
-          without drowning Almokon in outright war. A public declaration, witnessed
-          and recorded, that your faction's will has bent the land to its purposes.
-          Accumulate twenty-one such Bounties and the argument is settled: Almokon
-          answers to you.
-        </p>
-        <p>
-          Whether that settlement holds is a question for tomorrow. Today, your
-          faction moves, and the game is played.
-        </p>
-      </div>
-
-      <div class="story-sidebar">
-        <div class="lore-box">
-          <span class="lore-box-title">Almanac of Almokon</span>
-          <div class="lore-item">
-            <span class="lore-sym">✦</span>
-            <span><strong>The Gilt Throne</strong> — Seat of the old Accord. Empty for eleven years. Its location is known; the will to claim it, contested.</span>
-          </div>
-          <div class="lore-item">
-            <span class="lore-sym">✦</span>
-            <span><strong>Bounty Points</strong> — Witnessed declarations of power, formally lodged before the remaining neutral scribes of Almokon.</span>
-          </div>
-          <div class="lore-item">
-            <span class="lore-sym">✦</span>
-            <span><strong>The Fivefold Accord</strong> — The original compact. Each faction interprets its collapse differently, and each believes their interpretation is correct.</span>
-          </div>
-          <div class="lore-item">
-            <span class="lore-sym">✦</span>
-            <span><strong>The Margin</strong> — Territories on Almokon's border that no faction formally controls — and every faction secretly covets.</span>
-          </div>
-          <div class="lore-item">
-            <span class="lore-sym">✦</span>
-            <span><strong>The Living Rules</strong> — New cards enter Almokon's conflict with each set release, shifting the balance of power between factions.</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <span class="eyebrow">The Author</span>
+    <h2 class="heading heading-ink">About the Author</h2>
+    <p>Forge of Fists was created by me, Graham Cranfield. I previously published Hero&rsquo;s Journey Home in 2015 and did not publish many other amazing yet half-completed games in the ensuing years. I live in Richmond, Virginia with my family (the family my wife and I started, that is, not my original family from when I was a child).</p>
+    <p>When I&rsquo;m not painting or working on a game, I bind books, paint miniatures and listen to vaporwave. That&rsquo;s incredibly reductive, I probably do other things too.</p>
   </div>
 </section>
 
-<!-- ══════════════════════════ PLAYTEST SIGNUP ═══════════════════════ -->
-<section id="playtest" class="pad-lg">
-  <div class="container">
-    <div class="playtest-grid">
-      <div class="playtest-intro">
-        <span class="eyebrow">Shape the Game</span>
-        <h2 class="heading heading-light">Join the Playtest</h2>
-        <p>
-          Forge of Fists is actively in development. Playtesters help determine
-          which cards ship, which mechanics sharpen, and which factions need
-          a better answer to their weaknesses.
-        </p>
-        <ul class="perks">
-          <li>Early access to new card sets before public release</li>
-          <li>Direct feedback channel to the design team</li>
-          <li>Your name in the credits of the finished game</li>
-          <li>Exclusive playtest-only card back design</li>
-          <li>Monthly design notes and behind-the-scenes updates</li>
-        </ul>
-      </div>
+<div id="site-footer"></div>
 
-      <div class="signup-form">
-        <form onsubmit="event.preventDefault();this.innerHTML='<p style=\'font-family:Cinzel,serif;color:var(--gold);text-align:center;padding:2rem;\'>✦ &nbsp; Your application has been received. We will be in touch. &nbsp; ✦</p>'">
-          <div class="form-row">
-            <div class="field">
-              <label for="pt-name">Name</label>
-              <input type="text" id="pt-name" placeholder="Your name" required>
-            </div>
-            <div class="field">
-              <label for="pt-email">Email</label>
-              <input type="email" id="pt-email" placeholder="your@email.com" required>
-            </div>
-          </div>
-          <div class="field">
-            <label for="pt-faction">Preferred Faction</label>
-            <select id="pt-faction">
-              <option value="">— No preference yet —</option>
-              <option>Conquest</option>
-              <option>Community</option>
-              <option>Creed</option>
-              <option>Trade</option>
-              <option>Diplomacy</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="pt-xp">Card Game Experience</label>
-            <select id="pt-xp">
-              <option value="">— Select level —</option>
-              <option>New to card games</option>
-              <option>Casual player</option>
-              <option>Experienced (CCGs / LCGs)</option>
-              <option>Competitive / tournament player</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="pt-note">Anything else? (optional)</label>
-            <textarea id="pt-note" placeholder="What draws you to Forge of Fists, or what you'd like to see in the game…"></textarea>
-          </div>
-          <button type="submit" class="btn btn-gold" style="width:100%">Submit Application</button>
-          <p class="form-note">Applications are reviewed monthly. We will reply by email.</p>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
+<script src="js/components.js"></script>
 
-<!-- ══════════════════════════ EMAIL CAPTURE ══════════════════════════ -->
-<section id="email" class="pad">
-  <div class="container">
-    <div class="email-grid">
-      <div class="email-copy">
-        <span class="eyebrow">Stay Informed</span>
-        <h2 class="heading heading-ink">The Almokon Dispatch</h2>
-        <p>
-          New cards. New lore. Design notes from the forge. The Dispatch goes out
-          when there is something worth saying — never more, never less.
-        </p>
-        <p>
-          Subscribe and receive the <em>Faction Primer</em>: a free PDF guide to
-          all five factions, their playstyles, and starter deck recommendations.
-        </p>
-      </div>
-      <div class="email-form-area">
-        <!-- KIT EMBED: Replace this block with your Kit (ConvertKit) embed code -->
-        <div class="kit-block">
-          <span class="kit-icon">✉</span>
-          <p>
-            Newsletter embed coming soon.<br>
-            <em style="font-size:.8rem;opacity:.7">(Kit / ConvertKit form will appear here)</em>
-          </p>
-        </div>
-        <!-- END KIT EMBED -->
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ── Faction card lightbox ── -->
+<div id="faction-lightbox" aria-modal="true" role="dialog">
+  <img id="faction-lightbox-img" src="" alt="">
+</div>
 
-<!-- ══════════════════════════════ ABOUT ══════════════════════════════ -->
-<section id="about" class="pad">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-main">
-        <span class="eyebrow">The Forge</span>
-        <h2 class="heading heading-ink">About Forge of Fists</h2>
-        <div class="about-badge">⚒</div>
-        <p class="dropcap">
-          Forge of Fists began as a question: what does a living card game look like
-          when it is built around clarity instead of complexity? When every mechanic
-          is chosen because it creates an interesting decision — not because it fills
-          a design space or supports a product line?
-        </p>
-        <p>
-          The alternating single-action system came first. From there, the five
-          factions of Almokon were built to express five genuinely different
-          philosophies of play — not just different flavour on the same strategy.
-          Conquest players and Diplomacy players should feel like they are
-          playing a different game at the same table.
-        </p>
-        <p>
-          The digital demo exists so you can experience all of it before spending
-          a single coin. The physical game is coming. The living part — new cards,
-          new sets, the ongoing story of Almokon — will grow with the players
-          who choose to join it.
-        </p>
-      </div>
+<script>
+const lb = document.getElementById('faction-lightbox');
+const lbImg = document.getElementById('faction-lightbox-img');
 
-      <div class="about-sidebar">
-        <div class="design-box">
-          <span class="design-box-title">Design Philosophy</span>
-          <div class="d-item">
-            <span class="d-item-name">Low Luck, High Skill</span>
-            <p class="d-item-body">Forge of Fists is designed so that the better player wins consistently. Randomness comes from deck construction choices, not draw variance.</p>
-          </div>
-          <div class="d-item">
-            <span class="d-item-name">Faction Identity</span>
-            <p class="d-item-body">Each faction has a distinct win condition philosophy. You should never mistake a Creed deck for a Trade deck, mid-game.</p>
-          </div>
-          <div class="d-item">
-            <span class="d-item-name">Living, Not Bloated</span>
-            <p class="d-item-body">New sets add cards and story — they don't invalidate old ones. The 40-card format keeps collection size accessible.</p>
-          </div>
-          <div class="d-item">
-            <span class="d-item-name">Play First</span>
-            <p class="d-item-body">The digital demo is free and fully featured. Nothing about Forge of Fists should require spending money to understand it.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+document.querySelectorAll('.mec-card-thumb,.mec-feat-card,.cbox-card').forEach(img => {
+  img.addEventListener('click', () => {
+    lbImg.src = img.src;
+    lbImg.alt = img.dataset.name || img.alt;
+    lb.classList.add('open');
+  });
+});
 
-<!-- ═══════════════════════════ FOOTER ════════════════════════════════ -->
-<footer id="footer">
-  <span class="footer-brand">Forge of Fists</span>
-  <p class="footer-tag">A living card game set in the world of Almokon</p>
-  <ul class="footer-nav">
-    <li><a href="#what">The Game</a></li>
-    <li><a href="#factions">Factions</a></li>
-    <li><a href="#play">Play Free</a></li>
-    <li><a href="#story">Lore</a></li>
-    <li><a href="#playtest">Playtest</a></li>
-    <li><a href="#email">Newsletter</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="https://play.forgeoffists.com" target="_blank" rel="noopener">play.forgeoffists.com ↗</a></li>
-  </ul>
-  <div class="footer-orn">✦ &nbsp; ✦ &nbsp; ✦</div>
-  <p class="footer-copy">
-    &copy; 2026 Forge of Fists. All rights reserved.<br>
-    Almokon, its factions, and all associated content are original works of fiction.<br>
-    <a href="mailto:hello@forgeoffists.com">hello@forgeoffists.com</a>
-  </p>
-</footer>
+lb.addEventListener('click', () => lb.classList.remove('open'));
+lbImg.addEventListener('click', e => e.stopPropagation());
+document.addEventListener('keydown', e => { if(e.key === 'Escape') lb.classList.remove('open'); });
+</script>
 
 </body>
 </html>
