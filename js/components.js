@@ -1,13 +1,16 @@
 (function () {
   const nav = document.getElementById('site-nav');
-  const onGallery = nav ? nav.dataset.page === 'gallery' : /gallery\.html/.test(window.location.pathname);
-  const r = onGallery ? 'index.html' : ''; // root prefix for cross-page links
+  const page = nav ? (nav.dataset.page || 'index') : 'index';
+  const onIndex   = page === 'index';
+  const onGallery = page === 'gallery';
+  const onRules   = page === 'rules';
+  const r = onIndex ? '' : 'index.html'; // root prefix for cross-page anchor links
 
   // ── NAV ──────────────────────────────────────────────────────────────
   if (nav) {
     nav.outerHTML = `
 <nav class="site-nav">
-  <a href="${onGallery ? 'index.html' : '#hero'}" class="nav-brand"><img src="images/FoF-Icon-192.png" alt="" aria-hidden="true" style="height:34px;width:34px;margin-right:.55rem;vertical-align:middle;border-radius:4px">Forge of Fists</a>
+  <a href="${onIndex ? '#hero' : 'index.html'}" class="nav-brand"><img src="images/FoF-Icon-192.png" alt="" aria-hidden="true" style="height:34px;width:34px;margin-right:.55rem;vertical-align:middle;border-radius:4px">Forge of Fists</a>
   <button class="nav-toggle" aria-label="Menu">☰</button>
   <ul class="nav-links">
     <li><a href="${r}#what">The Game</a></li>
@@ -17,11 +20,11 @@
     <li><a href="${r}#faq">How to Play</a></li>
     <li><a href="${r}#author">About</a></li>
     <li><a href="gallery.html"${onGallery ? ' class="nav-active"' : ''}>Card Gallery</a></li>
+    <li><a href="rules.html"${onRules ? ' class="nav-active"' : ''}>Rules</a></li>
     <li><a href="https://play.forgeoffists.com" class="nav-play" target="_blank" rel="noopener">Play Free ↗</a></li>
   </ul>
 </nav>`;
 
-    // Re-attach mobile toggle (inline onclick is gone after outerHTML swap)
     document.querySelector('.nav-toggle').addEventListener('click', function () {
       document.querySelector('.nav-links').classList.toggle('open');
     });
@@ -42,6 +45,7 @@
     <li><a href="${r}#faq">How to Play</a></li>
     <li><a href="${r}#author">About</a></li>
     <li><a href="${r}#play">Play Free</a></li>
+    <li><a href="rules.html">Rules</a></li>
     <li><a href="https://play.forgeoffists.com" target="_blank" rel="noopener">play.forgeoffists.com ↗</a></li>
   </ul>
   <div class="footer-orn">✦ &nbsp; ✦ &nbsp; ✦</div>

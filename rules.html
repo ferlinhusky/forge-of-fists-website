@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Rules — Forge of Fists Player's Handbook</title>
+<meta name="description" content="Complete rules for Forge of Fists: objective, components, card types, combat, keywords, and deck construction.">
+<link rel="icon" type="image/png" sizes="192x192" href="images/FoF-Icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="images/FoF-Icon-512.png">
+<link rel="apple-touch-icon" sizes="192x192" href="images/FoF-Icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --p-light:#F5ECD7;
+  --p-mid:#E8D5B0;
+  --ink:#1A0F0A;
+  --gold:#B8963E;
+  --gold-l:#D4AF62;
+  --gold-d:#8B6E2A;
+}
+
+html{scroll-behavior:smooth}
+body{background:var(--p-light);color:var(--ink);font-family:'Spectral',serif;font-size:16px;line-height:1.75;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+p{margin-bottom:1.1rem}
+p:last-child{margin-bottom:0}
+ul,ol{padding-left:1.5rem;margin-bottom:1rem}
+li{margin-bottom:.3rem}
+strong{font-weight:600}
+em{font-style:italic}
+
+/* ── NAV ── */
+.site-nav{position:sticky;top:0;z-index:900;background:var(--ink);border-bottom:1px solid rgba(184,150,62,.35);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:54px}
+.nav-brand{font-family:'Metamorphous',cursive;color:var(--gold);font-size:.85rem;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+.nav-links{display:flex;list-style:none}
+.nav-links a{display:block;font-family:'Metamorphous',serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,236,215,.55);padding:0 .85rem;height:54px;line-height:54px;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--gold);background:rgba(184,150,62,.07)}
+.nav-links .nav-active{color:var(--gold)!important}
+.nav-links .nav-play{background:var(--gold);color:var(--ink)!important;margin-left:.5rem}
+.nav-links .nav-play:hover{background:var(--gold-l)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--gold);font-size:1.3rem;padding:.25rem}
+
+/* ── FOOTER ── */
+#footer{background:var(--ink);border-top:1px solid rgba(184,150,62,.28);padding:4rem 1.5rem 2.25rem;text-align:center}
+.footer-brand{font-family:'Metamorphous',cursive;font-size:1.35rem;color:var(--gold);display:block;margin-bottom:.4rem}
+.footer-tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.88rem;color:rgba(245,236,215,.38);margin-bottom:2.25rem}
+.footer-nav{display:flex;flex-wrap:wrap;justify-content:center;list-style:none;margin-bottom:2rem}
+.footer-nav li a{display:block;font-family:'Metamorphous',serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,236,215,.38);padding:.3rem .85rem;border-right:1px solid rgba(184,150,62,.18);transition:color .2s}
+.footer-nav li:last-child a{border-right:none}
+.footer-nav li a:hover{color:var(--gold)}
+.footer-orn{font-size:.9rem;color:var(--gold);letter-spacing:.5em;opacity:.35;margin-bottom:1.4rem}
+.footer-copy{font-size:.75rem;color:rgba(245,236,215,.2);line-height:1.7}
+.footer-copy a{color:rgba(184,150,62,.45)}
+.footer-copy a:hover{color:var(--gold)}
+
+/* ── PAGE HEADER ── */
+.rph{background:var(--ink);padding:4.5rem 1.5rem 3.5rem;text-align:center;border-bottom:1px solid rgba(184,150,62,.25)}
+.rph-eyebrow{display:block;font-family:'Metamorphous',serif;font-size:.6rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.rph-title{font-family:'Metamorphous',cursive;font-size:clamp(2rem,6vw,3.2rem);color:var(--p-light);line-height:1.1;margin-bottom:.5rem}
+.rph-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--gold)}
+.rph-by{font-family:'Metamorphous',serif;font-size:.58rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(245,236,215,.28);margin-top:2rem}
+
+/* ── LAYOUT ── */
+.rules-wrap{display:flex;align-items:flex-start;max-width:1140px;margin:0 auto;padding:0 1.5rem}
+
+.rules-sidebar{
+  width:215px;flex-shrink:0;
+  position:sticky;top:54px;
+  max-height:calc(100vh - 54px);overflow-y:auto;
+  padding:2.5rem 1.25rem 2.5rem 0;
+  border-right:1px solid rgba(184,150,62,.18);
+}
+.rules-sidebar::-webkit-scrollbar{width:3px}
+.rules-sidebar::-webkit-scrollbar-track{background:transparent}
+.rules-sidebar::-webkit-scrollbar-thumb{background:rgba(184,150,62,.25);border-radius:2px}
+
+.rules-main{flex:1;min-width:0;padding:3rem 0 5rem 2.75rem;max-width:740px}
+
+/* ── TOC ── */
+.toc-label{display:block;font-family:'Metamorphous',serif;font-size:.55rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);padding-bottom:.6rem;border-bottom:1px solid rgba(184,150,62,.2);margin-bottom:.9rem}
+.r-toc{list-style:none}
+.r-toc li{margin-bottom:.05rem}
+.r-toc a{font-family:'Spectral',serif;font-size:.83rem;color:rgba(26,15,10,.48);display:block;padding:.22rem .5rem .22rem .7rem;border-left:2px solid transparent;line-height:1.4;transition:color .15s,border-color .15s}
+.r-toc a:hover{color:var(--gold-d);border-left-color:var(--gold)}
+
+/* ── SECTIONS ── */
+.r-section{margin-bottom:3.75rem;scroll-margin-top:74px}
+.r-h1{
+  font-family:'Metamorphous',cursive;
+  font-size:clamp(1.2rem,3vw,1.6rem);
+  color:var(--ink);line-height:1.2;
+  padding-bottom:.65rem;
+  border-bottom:1px solid rgba(184,150,62,.3);
+  margin-bottom:1.4rem;
+}
+.r-h2{
+  font-family:'Metamorphous',serif;
+  font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold-d);
+  margin:1.9rem 0 .65rem;
+}
+.r-note{
+  background:rgba(184,150,62,.07);
+  border-left:3px solid var(--gold);
+  padding:.75rem 1rem;margin:1.1rem 0;
+  font-size:.92rem;
+}
+.r-note strong{color:var(--gold-d)}
+
+/* ── TABLES ── */
+.r-table{width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:.91rem}
+.r-table th{
+  font-family:'Metamorphous',serif;font-size:.58rem;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--p-light);background:var(--ink);
+  padding:.65rem 1rem;text-align:left;
+}
+.r-table td{padding:.5rem 1rem;border-bottom:1px solid rgba(184,150,62,.13);color:rgba(26,15,10,.8);vertical-align:top}
+.r-table tbody tr:nth-child(odd) td{background:rgba(184,150,62,.05)}
+.r-table tbody tr:last-child td{border-bottom:none}
+
+/* ── KEYWORDS ── */
+.r-kw-list{margin:.75rem 0}
+.r-kw{padding:.8rem 0 .75rem 1.1rem;border-left:2px solid rgba(184,150,62,.32);margin-bottom:.7rem}
+.r-kw-name{font-family:'Metamorphous',serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);display:block;margin-bottom:.28rem}
+.r-kw p{font-size:.92rem;color:rgba(26,15,10,.75);margin:0;line-height:1.6}
+
+/* ── GLOSSARY ── */
+.r-glossary{margin:.75rem 0}
+.r-gl{padding:.5rem 0;border-bottom:1px solid rgba(184,150,62,.13);font-size:.92rem;line-height:1.6;color:rgba(26,15,10,.8)}
+.r-gl:last-child{border-bottom:none}
+.r-gl-term{font-family:'Metamorphous',serif;font-size:.78rem;letter-spacing:.06em;color:var(--gold-d)}
+
+/* ── CARD DIAGRAM PLACEHOLDER ── */
+.r-placeholder{
+  border:2px dashed rgba(184,150,62,.38);
+  background:rgba(184,150,62,.04);
+  padding:4rem 2rem;text-align:center;margin:1.5rem 0;
+}
+.r-placeholder p{
+  font-family:'Metamorphous',serif;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;
+  color:rgba(26,15,10,.28);margin:0;
+}
+
+/* ── ZONE DIAGRAM ── */
+.zone-diag{border:1px solid rgba(184,150,62,.35);overflow:hidden;margin:1.5rem 0}
+.zd-realm{padding:.9rem 1.35rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.zd-opp{background:var(--p-mid);border-bottom:1px solid rgba(184,150,62,.28)}
+.zd-you{background:var(--p-light);border-top:1px solid rgba(184,150,62,.28)}
+.zd-rl{font-family:'Metamorphous',serif;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-d)}
+.zd-rs{font-size:.72rem;color:rgba(26,15,10,.4);letter-spacing:.03em}
+.zd-out{background:var(--ink);display:flex}
+.zd-out-hd{font-family:'Metamorphous',serif;font-size:.5rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(184,150,62,.38);text-align:center;padding:.45rem 1rem 0;background:var(--ink)}
+.zd-z{flex:1;padding:.85rem .9rem;text-align:center}
+.zd-z+.zd-z{border-left:1px solid rgba(184,150,62,.12)}
+.zd-wild{background:#1e2d18}
+.zd-sea{background:#0f1f2d}
+.zd-zn{display:block;font-family:'Metamorphous',serif;font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.25rem}
+.zd-zs{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.8rem;color:rgba(245,236,215,.38)}
+.zd-mid{background:var(--ink);display:flex;align-items:center;gap:.75rem;padding:.4rem 1.35rem;border-top:1px solid rgba(245,236,215,.07);border-bottom:1px solid rgba(245,236,215,.07)}
+.zd-mid::before,.zd-mid::after{content:'';flex:1;height:1px;background:rgba(245,236,215,.1)}
+.zd-mid-label{font-family:'Metamorphous',serif;font-size:.44rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(245,236,215,.18);white-space:nowrap}
+
+/* ── FOOTER NOTE ── */
+.rules-copyright{font-family:'Metamorphous',serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,15,10,.28);margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(184,150,62,.18)}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  .nav-links{display:none;flex-direction:column;position:absolute;top:54px;left:0;right:0;background:var(--ink);border-bottom:1px solid rgba(184,150,62,.28);padding:.75rem 0}
+  .nav-links.open{display:flex}
+  .nav-links a{height:auto;line-height:1;padding:.75rem 1.5rem}
+  .nav-toggle{display:block}
+  .rules-wrap{flex-direction:column;padding:0 1.25rem}
+  .rules-sidebar{width:100%;position:static;max-height:none;overflow:visible;border-right:none;border-bottom:1px solid rgba(184,150,62,.18);padding:1.5rem 0 1.25rem}
+  .r-toc{display:flex;flex-wrap:wrap;gap:.2rem .4rem}
+  .r-toc a{font-size:.76rem;padding:.18rem .45rem;border-left:none;border-bottom:1px solid transparent}
+  .r-toc a:hover{border-bottom-color:var(--gold);background:none}
+  .rules-main{padding:2rem 0 3rem}
+  .zd-realm{flex-direction:column;align-items:flex-start;gap:.25rem}
+  .zd-rs{display:none}
+}
+@media(max-width:480px){
+  .rph-title{font-size:1.8rem}
+  .r-h1{font-size:1.15rem}
+}
+</style>
+</head>
+<body>
+
+<div id="site-nav" data-page="rules"></div>
+
+<header class="rph">
+  <span class="rph-eyebrow">Player's Handbook</span>
+  <h1 class="rph-title">Forge of Fists</h1>
+  <p class="rph-sub">The Land of Almokon — Core Set</p>
+  <p class="rph-by">by Graham Cranfield</p>
+</header>
+
+<div class="rules-wrap">
+
+  <aside class="rules-sidebar">
+    <span class="toc-label">Contents</span>
+    <ul class="r-toc">
+      <li><a href="#story">The Story</a></li>
+      <li><a href="#s1">1. Objective</a></li>
+      <li><a href="#s2">2. Components</a></li>
+      <li><a href="#s3">3. Parts of a Card</a></li>
+      <li><a href="#s4">4. The Play Area</a></li>
+      <li><a href="#s5">5. Setup</a></li>
+      <li><a href="#s6">6. Playing the Game</a></li>
+      <li><a href="#s7">7. Combat</a></li>
+      <li><a href="#s8">8. Bounty</a></li>
+      <li><a href="#s9">9. Card Types</a></li>
+      <li><a href="#s10">10. Keywords</a></li>
+      <li><a href="#s11">11. Deck Construction</a></li>
+      <li><a href="#s12">12. Glossary</a></li>
+    </ul>
+  </aside>
+
+  <main class="rules-main">
+
+    <!-- THE STORY -->
+    <section id="story" class="r-section">
+      <h2 class="r-h1">The Story</h2>
+      <p>The land of Almokon is ruled by the old and wise Emperor Manfred the Most Loved. Unfortunately, Manfred is dying — for he is old — and upon his death he knows his empire will crumble — for he is wise.</p>
+      <p>To maintain peace in Almokon, Manfred must decide, now, who is to wear the crown upon his passing. You are one of many Monarchs vying for his favour. Your ability to rule, to protect, and to grow your realm will determine whether you will be the next Emperor of Almokon.</p>
+    </section>
+
+    <!-- 1. OBJECTIVE -->
+    <section id="s1" class="r-section">
+      <h2 class="r-h1">1. Objective</h2>
+      <p><strong>Win:</strong> Be the first player to reach 21 Bounty Points.</p>
+      <p>Bounty Points are earned primarily by destroying enemy cards. Most cards have a Bounty value printed on them — the more valuable the target, the more Bounty it yields. Some card abilities also award Bounty by other means.</p>
+      <div class="r-note"><strong>Note:</strong> If you are ever required to draw a card from an empty deck, you lose the game. This is an uncommon but valid loss condition.</div>
+    </section>
+
+    <!-- 2. COMPONENTS -->
+    <section id="s2" class="r-section">
+      <h2 class="r-h1">2. Components</h2>
+      <p>This box contains:</p>
+      <ul>
+        <li>1 Rulebook</li>
+        <li>495 cards total:
+          <ul>
+            <li>453 game cards</li>
+            <li>15 double-sided Monarch cards (3 per faction)</li>
+            <li>15 double-sided Capitol cards (3 per faction)</li>
+            <li>12 token cards</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 3. PARTS OF A CARD -->
+    <section id="s3" class="r-section">
+      <h2 class="r-h1">3. The Parts of a Card</h2>
+      <div class="r-placeholder" id="card-diagram-placeholder">
+        <p>Card anatomy diagram — to be inserted</p>
+      </div>
+    </section>
+
+    <!-- 4. THE PLAY AREA -->
+    <section id="s4" class="r-section">
+      <h2 class="r-h1">4. The Play Area</h2>
+      <p>The battlefield is divided into zones. Where a card is located determines what it can do and what can target it.</p>
+
+      <h3 class="r-h2">Your Realm</h3>
+      <p>The area directly in front of you. Your Monarch and Capitol begin here and remain here unless moved by a card effect. Characters, Improvements, Terrain, and Cults also enter play in your Realm unless a card effect specifies otherwise.</p>
+
+      <h3 class="r-h2">The Outland</h3>
+      <p>The area between the two Realms, divided into two sub-zones:</p>
+      <p><strong>Wilderness</strong> — where land-based combat takes place. Land Units are always played directly into the Wilderness. Characters and Monarchs may also move here.</p>
+      <p><strong>Open Sea</strong> — where naval combat takes place. Vessels and Sea Beasts are always played directly into the Open Sea.</p>
+
+      <h3 class="r-h2">Zone Diagram</h3>
+      <div class="zone-diag">
+        <div class="zd-realm zd-opp">
+          <span class="zd-rl">Opponent's Realm</span>
+          <span class="zd-rs">Monarch · Capitol · Characters · Improvements</span>
+        </div>
+        <div class="zd-out-hd">Opponent's Outland</div>
+        <div class="zd-out">
+          <div class="zd-z zd-wild"><span class="zd-zn">Wilderness</span><span class="zd-zs">Land Forces</span></div>
+          <div class="zd-z zd-sea"><span class="zd-zn">Open Sea</span><span class="zd-zs">Naval Forces</span></div>
+        </div>
+        <div class="zd-mid"><span class="zd-mid-label">center line</span></div>
+        <div class="zd-out">
+          <div class="zd-z zd-wild"><span class="zd-zn">Wilderness</span><span class="zd-zs">Land Forces</span></div>
+          <div class="zd-z zd-sea"><span class="zd-zn">Open Sea</span><span class="zd-zs">Naval Forces</span></div>
+        </div>
+        <div class="zd-out-hd">Your Outland</div>
+        <div class="zd-realm zd-you">
+          <span class="zd-rl">Your Realm</span>
+          <span class="zd-rs">Monarch · Capitol · Characters · Improvements</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SETUP -->
+    <section id="s5" class="r-section">
+      <h2 class="r-h1">5. Setup</h2>
+      <ol>
+        <li>Each player selects a Monarch and a Capitol from the same faction. Place both in your Realm — they are already in play and are not part of your deck.</li>
+        <li>Shuffle your 40-card deck and place it face down within reach.</li>
+        <li>Draw 6 cards for your starting hand.</li>
+        <li>Both players gain 2 AP to begin the game. <em>Exception: Casara Valara begins with 4 AP instead.</em></li>
+        <li>Randomly determine who goes first.</li>
+      </ol>
+    </section>
+
+    <!-- 6. PLAYING THE GAME -->
+    <section id="s6" class="r-section">
+      <h2 class="r-h1">6. Playing the Game</h2>
+      <p>Forge of Fists has no traditional turns. Players alternate taking one action at a time. After you take an action, your opponent takes an action, and so on.</p>
+
+      <h3 class="r-h2">Available Actions</h3>
+      <p>On your action, choose one of the following:</p>
+
+      <h3 class="r-h2">Play a Card</h3>
+      <p>Play a card from your hand by paying its AP cost. Cards enter play in the zone indicated at the top right of the card, as follows:</p>
+      <table class="r-table">
+        <thead>
+          <tr><th>Card Type</th><th>Enters Play In</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Monarch</td><td>Realm</td></tr>
+          <tr><td>Capitol</td><td>Realm</td></tr>
+          <tr><td>Character</td><td>Realm</td></tr>
+          <tr><td>Unit (land)</td><td>Wilderness</td></tr>
+          <tr><td>Unit (Vessel / Sea Beast)</td><td>Open Sea</td></tr>
+          <tr><td>Improvement</td><td>Realm</td></tr>
+          <tr><td>Terrain</td><td>Realm</td></tr>
+          <tr><td>Cult</td><td>Realm</td></tr>
+          <tr><td>Event</td><td>Resolves immediately, then discarded</td></tr>
+          <tr><td>Item</td><td>Attached to a card in play</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="r-h2">Attack</h3>
+      <p>Declare an attack with a ready Character, Unit, or Monarch in your Outland. See Section 7: Combat.</p>
+
+      <h3 class="r-h2">Activate an Ability</h3>
+      <p>Pay the AP cost shown on a ready card to use its ability. Some abilities exhaust the card after use; others may be used repeatedly as long as the cost is paid. The card will specify which applies.</p>
+
+      <h3 class="r-h2">Gather</h3>
+      <p>Gain 2 AP. This action is always available.</p>
+
+      <h3 class="r-h2">Ready All</h3>
+      <p>Rotate all your exhausted cards back to their ready position.</p>
+
+      <h3 class="r-h2">Move to Outland</h3>
+      <p>Move a ready Character or Monarch from your Realm to the Wilderness. That card exhausts on arrival unless it has INEXHAUSTIBLE. Movement to the Outland is permanent and one-directional — a card may not return to the Realm unless a specific card effect allows it.</p>
+
+      <h3 class="r-h2">Liquidate</h3>
+      <p>Discard an Event or Item card from your hand to gain AP. The AP value is printed on the card — typically 3–4. The card's ability does not resolve when Liquidated.</p>
+
+      <h3 class="r-h2">Action Points</h3>
+      <p>Action Points (AP) are your primary resource. They accumulate and carry over indefinitely — unspent AP is not lost between actions unless changed by a card effect.</p>
+
+      <h3 class="r-h2">Exhausted and Ready</h3>
+      <p><strong>Exhausted:</strong> When a card exhausts, rotate it 90 degrees to indicate it has been used. An exhausted card cannot attack, activate abilities that require exhausting, or be moved until it is readied.</p>
+      <p><strong>Ready:</strong> When a card is readied, rotate it back upright. The Ready All action readies all your cards at once.</p>
+    </section>
+
+    <!-- 7. COMBAT -->
+    <section id="s7" class="r-section">
+      <h2 class="r-h1">7. Combat</h2>
+      <p>Combat is initiated when you take the Attack action.</p>
+
+      <h3 class="r-h2">Choosing an Attacker</h3>
+      <p>Declare one ready Character, Unit, or Monarch in your Outland as the attacker. It exhausts immediately on declaration.</p>
+
+      <h3 class="r-h2">Targeting Rules</h3>
+      <ul>
+        <li>A card in the Wilderness may only target enemy cards in the Wilderness.</li>
+        <li>If the enemy Wilderness is empty, Wilderness attackers may target any card in the enemy Realm.</li>
+        <li>A card in the Open Sea may only target enemy cards in the Open Sea.</li>
+        <li>If the enemy Open Sea is empty, Open Sea attackers may target any card in the enemy Realm.</li>
+        <li>SALVO ignores zone targeting restrictions entirely — it may target any card in any zone.</li>
+        <li>GUARDIAN applies in all cases — if a Guardian card is present in the target zone, the attack must target the Guardian.</li>
+      </ul>
+
+      <h3 class="r-h2">Resolving Combat</h3>
+      <p>Both the attacker and defender deal damage simultaneously equal to their Wrath values. This damage is subtracted from the target's Vigor.</p>
+      <p>If a card's Vigor reaches zero, it is destroyed and sent to its owner's discard pile. Its Bounty value is awarded to the player who destroyed it.</p>
+      <p>SALVO damage does not trigger return damage from the target.</p>
+    </section>
+
+    <!-- 8. BOUNTY -->
+    <section id="s8" class="r-section">
+      <h2 class="r-h1">8. Bounty</h2>
+      <p>You earn Bounty Points whenever you destroy an enemy card, or through certain card abilities. The Bounty value is printed on the card.</p>
+      <table class="r-table">
+        <thead>
+          <tr><th>Card Type</th><th>Bounty Value</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Monarch</td><td>12</td></tr>
+          <tr><td>Capitol</td><td>10</td></tr>
+          <tr><td>High-value Characters / Units</td><td>3–5</td></tr>
+          <tr><td>Standard Characters / Units</td><td>1–2</td></tr>
+          <tr><td>Improvements</td><td>1–4</td></tr>
+          <tr><td>Tokens</td><td>0–1</td></tr>
+        </tbody>
+      </table>
+      <p>The first player to reach 21 Bounty Points wins immediately. This is checked after every combat resolution, card destruction, and any ability that awards Bounty.</p>
+    </section>
+
+    <!-- 9. CARD TYPES -->
+    <section id="s9" class="r-section">
+      <h2 class="r-h1">9. Card Types</h2>
+
+      <h3 class="r-h2">Monarch</h3>
+      <p>Your ruler. Begins in your Realm. Has special abilities unique to them. Your Monarch may move to the Outland to fight. If your Monarch is destroyed, your opponent earns its Bounty value, but you do not lose the game.</p>
+
+      <h3 class="r-h2">Capitol</h3>
+      <p>Your seat of power. Begins in your Realm. Has special abilities and a high Vigor value. If your Capitol is destroyed, your opponent earns its Bounty value, but you do not lose the game.</p>
+
+      <h3 class="r-h2">Character</h3>
+      <p>Individuals who reside in your Realm. They provide abilities and may be moved to the Outland to fight.</p>
+
+      <h3 class="r-h2">Unit</h3>
+      <p>Combat cards played directly into the Outland. Land Units enter the Wilderness. Vessels and Sea Beasts enter the Open Sea.</p>
+
+      <h3 class="r-h2">Improvement</h3>
+      <p>Buildings and structures in your Realm. Improvements provide abilities and ongoing effects.</p>
+
+      <h3 class="r-h2">Terrain</h3>
+      <p>The landscape of your Realm. Terrain cards are Neutral — they belong to no faction and may be included in any deck. They provide passive effects but cannot attack or defend.</p>
+
+      <h3 class="r-h2">Cult</h3>
+      <p>Faction-aligned cards that provide realm-wide effects. Only one copy of any Cult may be in play per player at a time, though multiple different Cults may be in play simultaneously.</p>
+
+      <h3 class="r-h2">Event</h3>
+      <p>One-time effects played from your hand. After resolving, an Event is discarded. Events may also be Liquidated for AP instead of played for their effect.</p>
+
+      <h3 class="r-h2">Item</h3>
+      <p>Attachments that enhance other cards. An Item must be attached to a legal target when played. The card type the Item may attach to is specified on the Item itself. If the attached card is destroyed, the Item is also destroyed.</p>
+    </section>
+
+    <!-- 10. KEYWORDS -->
+    <section id="s10" class="r-section">
+      <h2 class="r-h1">10. Keywords</h2>
+      <div class="r-kw-list">
+        <div class="r-kw">
+          <span class="r-kw-name">Charge X</span>
+          <p>Announce when declaring this attacker. This card gains +X Wrath and its Vigor is reduced to 1 until the end of combat.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Contemplate X</span>
+          <p>Look at the top X cards of your deck. Put one into your hand. Shuffle the remaining cards back.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Crew</span>
+          <p>This card may be played as an Item attached to a friendly Vessel. While attached, add this card's Wrath and Vigor to the Vessel's. If the Vessel is destroyed, so is this card.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Cultivate X</span>
+          <p>At the beginning of your turn, add X Growth counters to this card.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Exhaust</span>
+          <p>Rotate a card 90 degrees from its ready position. An exhausted card cannot be used for actions that require exhausting.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Forge</span>
+          <p>Search your deck and hand for the specified card and put it into play in the Outland without paying its cost. Forge does not trigger "when played" effects but does trigger "when this card enters play" effects. The Forged card enters ready.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Guardian</span>
+          <p>While this card is in a zone, all attacks directed at that zone must target this card. If multiple Guardians occupy the same zone, the attacker chooses which to target. Guardian only protects cards within its own zone.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Harvest</span>
+          <p>Gain AP equal to the number of Growth counters on this card, then dispose of this card.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Imbue</span>
+          <p>Before playing a card with Imbue, you may discard any number of Characters from your hand. Reduce the card's AP cost by the total Wrath of all discarded Characters. The cost may be reduced to 0.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Inexhaustible</span>
+          <p>Cards with Inexhaustible do not exhaust and cannot be exhausted.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Kinship</span>
+          <p>When a card with Kinship attacks, other cards you control that share at least one subtype with the attacker may activate. Each activating card adds its Wrath to the total attack damage. Only the declared attacker takes return damage and exhausts.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Loyal</span>
+          <p>This card may only be included in a deck whose Monarch shares the same faction. It cannot be used as a Foreigner card.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Ordnance</span>
+          <p>To activate this card's ability, you must first exhaust another friendly Character or Unit in the same zone as this card. This card then exhausts as normal.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Rage</span>
+          <p>When this card destroys any enemy card in combat, it may immediately declare one additional attack. It exhausts after this follow-up attack.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Ready</span>
+          <p>Rotate a card from its exhausted position back upright.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Reflex</span>
+          <p>Cards with Reflex may be played in response to an enemy playing a card or activating a card ability. Cards with a Reflex ability may activate that ability in response to the same. The card or action must be paid for like any other card or action, but playing or activating it does not consume your next turn.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Research X</span>
+          <p>Look at the top X cards of your deck. Return them to the top in any order.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Rush</span>
+          <p>This Unit enters the Outland ready rather than exhausted, and may attack on the same action it is played or Forged.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Salvo X</span>
+          <p>Exhaust this card to deal X damage to any target in any zone. SALVO ignores zone targeting restrictions. SALVO damage does not trigger return damage from the target. Guardian still applies — SALVO must target a Guardian if one is present in the target zone.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Truce</span>
+          <p>When a card with Truce is played, you may immediately take two additional non-combat actions before your opponent responds.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Tutor</span>
+          <p>Search your deck for the specified card, add it to your hand, then shuffle your deck.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Unique</span>
+          <p>Only one copy of this card may be in play per player at a time. You may include up to 3 copies in your deck.</p>
+        </div>
+        <div class="r-kw">
+          <span class="r-kw-name">Veto</span>
+          <p>Cards in your hand with Veto may be played in response to an enemy playing a card or activating a card ability. Cards with a Veto ability may activate that ability in response to the same. The card or action must be paid for like any other card or action, but playing or activating it does not consume your next turn. The Veto cancels the target enemy action. Any AP the enemy spent on their action is lost.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. DECK CONSTRUCTION -->
+    <section id="s11" class="r-section">
+      <h2 class="r-h1">11. Deck Construction</h2>
+      <p>A legal deck consists of your chosen Monarch, your chosen Capitol, and exactly 40 playable cards. Your Monarch and Capitol must be from the same faction.</p>
+
+      <h3 class="r-h2">Faction Rules</h3>
+      <p>Each deck has one Main Faction determined by your Monarch. You may include:</p>
+      <ul>
+        <li>Unlimited cards from your Main Faction</li>
+        <li>Up to 12 Foreigner cards from your two Aligned Factions combined, in any ratio</li>
+        <li>Unlimited Neutral cards</li>
+      </ul>
+
+      <h3 class="r-h2">The Faction Alignment System</h3>
+      <p>The five factions are arranged in a Pentagram of Power. Each faction is aligned with its two neighbours:</p>
+      <table class="r-table">
+        <thead>
+          <tr><th>Faction</th><th>Aligned With</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Conquest</td><td>Community and Diplomacy</td></tr>
+          <tr><td>Community</td><td>Conquest and Creed</td></tr>
+          <tr><td>Creed</td><td>Community and Trade</td></tr>
+          <tr><td>Trade</td><td>Creed and Diplomacy</td></tr>
+          <tr><td>Diplomacy</td><td>Trade and Conquest</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="r-h2">Copy Limits</h3>
+      <ul>
+        <li>Standard cards: up to 3 copies per deck</li>
+        <li>UNIQUE cards: up to 3 copies in deck, but only 1 in play per player at a time</li>
+      </ul>
+
+      <h3 class="r-h2">Capitol Exceptions</h3>
+      <p><strong>Bicara Township</strong> (Diplomacy): Your deck may only contain Main Faction and Neutral cards. No Foreigner cards are permitted.</p>
+      <p><strong>Rahasa</strong> (Diplomacy): In addition to your standard 12 Foreigner slots, you may include up to 6 cards from a completely unaligned faction. These 6 slots are separate from and do not consume your standard Foreigner limit.</p>
+    </section>
+
+    <!-- 12. GLOSSARY -->
+    <section id="s12" class="r-section">
+      <h2 class="r-h1">12. Glossary</h2>
+      <div class="r-glossary">
+        <div class="r-gl"><span class="r-gl-term">Active Player</span> — The player whose action it currently is.</div>
+        <div class="r-gl"><span class="r-gl-term">Bounty</span> — Points earned primarily by destroying enemy cards. First to 21 wins.</div>
+        <div class="r-gl"><span class="r-gl-term">Destroy</span> — An opponent moves a card from the play area to its owner's discard pile.</div>
+        <div class="r-gl"><span class="r-gl-term">Discard</span> — Remove a card from your hand and place it in your discard pile.</div>
+        <div class="r-gl"><span class="r-gl-term">Dispose</span> — Move a card you control from the play area to your discard pile.</div>
+        <div class="r-gl"><span class="r-gl-term">Exhaust</span> — Rotate a card 90 degrees to indicate it has been used.</div>
+        <div class="r-gl"><span class="r-gl-term">Foreigner</span> — A card from an aligned faction included in your deck within the 12-card limit.</div>
+        <div class="r-gl"><span class="r-gl-term">Forge</span> — Put a card from your hand or deck directly into play in the Outland.</div>
+        <div class="r-gl"><span class="r-gl-term">Main Faction</span> — The faction matching your Monarch.</div>
+        <div class="r-gl"><span class="r-gl-term">Neutral</span> — Cards that belong to no faction and may be included in any deck without limit.</div>
+        <div class="r-gl"><span class="r-gl-term">Ready</span> — Rotate a card from its exhausted position back upright.</div>
+        <div class="r-gl"><span class="r-gl-term">Realm</span> — Your home zone, where your Monarch, Capitol, Characters, Improvements, Terrain, and Cults reside.</div>
+        <div class="r-gl"><span class="r-gl-term">Tutor</span> — Search your deck for a specified card and add it to your hand.</div>
+        <div class="r-gl"><span class="r-gl-term">Unique</span> — Only one copy in play per player at a time.</div>
+        <div class="r-gl"><span class="r-gl-term">Wrath</span> — The damage a card deals in combat.</div>
+        <div class="r-gl"><span class="r-gl-term">Vigor</span> — The damage a card can absorb before being destroyed.</div>
+      </div>
+    </section>
+
+    <p class="rules-copyright">Forge of Fists &copy; 2025 Graham Cranfield</p>
+
+  </main>
+</div>
+
+<div id="site-footer"></div>
+<script src="js/components.js"></script>
+</body>
+</html>
