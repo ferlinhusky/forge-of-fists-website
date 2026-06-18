@@ -13,11 +13,9 @@
   <a href="${onIndex ? '#hero' : 'index.html'}" class="nav-brand"><img src="images/FoF-Icon-192.png" alt="" aria-hidden="true" style="height:34px;width:34px;margin-right:.55rem;vertical-align:middle;border-radius:4px">Forge of Fists</a>
   <button class="nav-toggle" aria-label="Menu">☰</button>
   <ul class="nav-links">
-    <li><a href="${r}#what">The Game</a></li>
     <li><a href="${r}#features">Features</a></li>
-    <li><a href="${r}#factions">Factions</a></li>
-    <li><a href="${r}#email">Signup</a></li>
-    <li><a href="${r}#faq">How to Play</a></li>
+    <li><a href="${r}#email">Stay Informed</a></li>
+    <li><a href="${r}#faq">Overview</a></li>
     <li><a href="${r}#author">About</a></li>
     <li><a href="gallery.html"${onGallery ? ' class="nav-active"' : ''}>Card Gallery</a></li>
     <li><a href="rules.html"${onRules ? ' class="nav-active"' : ''}>Rules</a></li>
@@ -38,11 +36,9 @@
   <span class="footer-brand">Forge of Fists</span>
   <p class="footer-tag">A living card game set in the world of Almokon</p>
   <ul class="footer-nav">
-    <li><a href="${r}#what">The Game</a></li>
     <li><a href="${r}#features">Features</a></li>
-    <li><a href="${r}#factions">Factions</a></li>
-    <li><a href="${r}#email">Signup</a></li>
-    <li><a href="${r}#faq">How to Play</a></li>
+    <li><a href="${r}#email">Stay Informed</a></li>
+    <li><a href="${r}#faq">Overview</a></li>
     <li><a href="${r}#author">About</a></li>
     <li><a href="${r}#play">Play Free</a></li>
     <li><a href="rules.html">Rules</a></li>
