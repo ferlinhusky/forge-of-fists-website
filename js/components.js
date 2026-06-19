@@ -50,7 +50,7 @@
   <div class="footer-orn">✦ &nbsp; ✦ &nbsp; ✦</div>
   <div class="footer-social">
     <a href="https://www.instagram.com/grahamcranfield" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    <a href="https://www.facebook.com/skeletonkinglibrary" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://www.facebook.com/herosjourneyhome/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
   </div>
   <p class="footer-copy">
     &copy; 2026 Forge of Fists. All rights reserved.<br>
