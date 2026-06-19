@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -511,7 +512,13 @@ p:last-child{margin-bottom:0}
   border-top:1px solid rgba(184,150,62,.28);
   border-bottom:1px solid rgba(184,150,62,.28);
 }
-.email-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+#email{padding:2.5rem 0 3.5rem}
+.email-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.email-social{margin:1.5rem auto 0;width:fit-content;display:flex;flex-direction:column;align-items:center;gap:1rem;border:1px solid rgba(184,150,62,.38);background:rgba(184,150,62,.08);border-radius:6px;padding:1.1rem 1.5rem}
+.esoc-thumb{width:110px;border-radius:4px;box-shadow:0 3px 12px rgba(0,0,0,.28);display:block;aspect-ratio:640/832;object-fit:cover;cursor:pointer;transition:transform .15s,box-shadow .15s}.esoc-thumb:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.4)}
+.esoc-icons{display:flex;gap:1rem}
+.email-social a{color:#6B4A18;font-size:2rem;display:inline-block;transition:color .2s}.email-social a:hover{color:#B8963E}
+[data-style="clean"]{padding-top:0!important}
 .kit-block{
   border:2px dashed rgba(184,150,62,.32);
   background:rgba(245,236,215,.5);
@@ -648,7 +655,6 @@ p:last-child{margin-bottom:0}
 <!-- ═══════════════════════ WHAT IS FORGE OF FISTS ════════════════════ -->
 <section id="what" class="pad">
   <div class="container">
-    <span class="eyebrow">The Game</span>
     <h2 class="heading heading-ink">What is Forge of Fists?</h2>
 
     <div class="cbox">
@@ -676,8 +682,7 @@ p:last-child{margin-bottom:0}
 <!-- ══════════════════════════════ FEATURES ══════════════════════════ -->
 <section id="features" class="pad">
   <div class="container">
-    <span class="eyebrow">Features</span>
-    <h2 class="heading heading-ink">The Highlights</h2>
+    <h2 class="heading heading-ink">Highlights</h2>
 
     <div class="mechanics">
       <div class="mec">
@@ -707,8 +712,7 @@ p:last-child{margin-bottom:0}
 <!-- ══════════════════════════════ FACTIONS ══════════════════════════ -->
 <section id="factions" class="pad">
   <div class="container">
-    <span class="eyebrow">Factions</span>
-    <h2 class="heading heading-light">The Powers of Almokon</h2>
+    <h2 class="heading heading-light">The Factions of Almokon</h2>
 
     <div class="mechanics">
       <div class="mec f-conquest">
@@ -785,16 +789,22 @@ p:last-child{margin-bottom:0}
   <div class="container">
     <div class="email-grid">
       <div class="email-copy">
-        <span class="eyebrow">Stay Informed</span>
-        <h2 class="heading heading-ink">Early Access</h2>
+        <h2 class="heading heading-ink">Stay Informed</h2>
         <p>
           Follow the game's development and be the first to know when playtesting opens up.
         </p>
-      </div>
-      <div class="email-form-area">
         <!-- KIT EMBED: Replace this block with your Kit (ConvertKit) embed code -->
         <script async data-uid="32f9feb03e" src="https://skeleton-king-library.kit.com/32f9feb03e/index.js"></script>
         <!-- END KIT EMBED -->
+      </div>
+      <div class="email-form-area">
+        <div class="email-social">
+          <img class="esoc-thumb" src="images/cards/erudite-translator.jpg" alt="Erudite Translator" data-name="Erudite Translator">
+          <div class="esoc-icons">
+            <a href="https://www.instagram.com/grahamcranfield" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/herosjourneyhome/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -803,9 +813,8 @@ p:last-child{margin-bottom:0}
 <!-- ══════════════════════════ HOW TO PLAY ════════════════════════════ -->
 <section id="faq" class="pad">
   <div class="container">
-    <span class="eyebrow">How to Play</span>
-    <h2 class="heading heading-ink">A Brief Overview</h2>
-    <p class="overview-lead">Almokon is a land of many kingdoms, each shaped by one of five great forces: Conquest, Community, Creed, Trade or Diplomacy. Lead one, build your kingdom, and destroy who stands against you. The first player to reach 21 Bounty Points wins — and every card you destroy brings you closer to victory.</p>
+    <h2 class="heading heading-ink">How to Play</h2>
+    <p class="overview-lead">Almokon is a land of many kingdoms, each shaped by one of five great factions: Conquest, Community, Creed, Trade or Diplomacy. Choose one, build your kingdom, and destroy all who stand against you. The first player to reach 21 Bounty Points wins — and every card you destroy brings you closer to victory.</p>
 
     <div class="overview-block">
       <h3 class="overview-h"><span class="overview-num">1</span>Choose Your Faction</h3>
@@ -874,7 +883,6 @@ p:last-child{margin-bottom:0}
 <section id="play" class="pad">
   <div class="container">
     <div class="seal">⚔</div>
-    <span class="eyebrow" style="display:block;color:var(--gold-d)">Digital Demo</span>
     <h2 class="heading play-title">Play Free — Right Now</h2>
     <p class="play-lead">
       The full Forge of Fists experience, in your browser. No account required,
@@ -892,8 +900,7 @@ p:last-child{margin-bottom:0}
 <!-- ══════════════════════════ ABOUT THE AUTHOR ═══════════════════════ -->
 <section id="author" class="pad">
   <div class="container">
-    <span class="eyebrow">The Author</span>
-    <h2 class="heading heading-ink">About the Author</h2>
+    <h2 class="heading heading-ink">About the Designer</h2>
     <p>Forge of Fists was created by me, Graham Cranfield. I previously published Hero&rsquo;s Journey Home in 2015 and did not publish many other amazing yet half-completed games in the ensuing years. I live in Richmond, Virginia with my family (the family my wife and I started, that is, not my original family from when I was a child).</p>
     <p>When I&rsquo;m not painting or working on a game, I bind books, paint miniatures and listen to vaporwave. That&rsquo;s incredibly reductive, I probably do other things too.</p>
   </div>
@@ -912,7 +919,7 @@ p:last-child{margin-bottom:0}
 const lb = document.getElementById('faction-lightbox');
 const lbImg = document.getElementById('faction-lightbox-img');
 
-document.querySelectorAll('.mec-card-thumb,.mec-feat-card,.cbox-card').forEach(img => {
+document.querySelectorAll('.mec-card-thumb,.mec-feat-card,.cbox-card,.esoc-thumb').forEach(img => {
   img.addEventListener('click', () => {
     lbImg.src = img.src;
     lbImg.alt = img.dataset.name || img.alt;
