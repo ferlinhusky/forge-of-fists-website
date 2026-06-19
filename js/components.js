@@ -1,4 +1,7 @@
 (function () {
+  const socialStyle = document.createElement('style');
+  socialStyle.textContent = '.footer-social{margin:.9rem 0 .6rem}.footer-social a{color:#B8963E;font-size:1.25rem;margin:0 .5rem;display:inline-block;transition:color .2s}.footer-social a:hover{color:#D4AF6A}';
+  document.head.appendChild(socialStyle);
   const nav = document.getElementById('site-nav');
   const page = nav ? (nav.dataset.page || 'index') : 'index';
   const onIndex   = page === 'index';
@@ -45,6 +48,10 @@
     <li><a href="https://play.forgeoffists.com" target="_blank" rel="noopener">play.forgeoffists.com ↗</a></li>
   </ul>
   <div class="footer-orn">✦ &nbsp; ✦ &nbsp; ✦</div>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/grahamcranfield" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.facebook.com/skeletonkinglibrary" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+  </div>
   <p class="footer-copy">
     &copy; 2026 Forge of Fists. All rights reserved.<br>
     Almokon, its factions, and all associated content are original works of fiction.<br>
