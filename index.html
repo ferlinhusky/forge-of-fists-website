@@ -512,11 +512,12 @@ p:last-child{margin-bottom:0}
   border-top:1px solid rgba(184,150,62,.28);
   border-bottom:1px solid rgba(184,150,62,.28);
 }
+#email{padding:2.5rem 0 3.5rem}
 .email-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.email-social{margin:1.25rem auto 0;width:fit-content;display:flex;align-items:center;gap:1rem;border:1px solid rgba(184,150,62,.32);background:rgba(184,150,62,.06);border-radius:5px;padding:.6rem 1rem}
-.esoc-thumb{width:56px;border-radius:3px;box-shadow:0 2px 8px rgba(0,0,0,.22);display:block;aspect-ratio:640/832;object-fit:cover}
-.esoc-icons{display:flex;gap:.75rem}
-.email-social a{color:#6B4A18;font-size:1.65rem;display:inline-block;transition:color .2s}.email-social a:hover{color:#B8963E}
+.email-social{margin:1.5rem auto 0;width:fit-content;display:flex;align-items:center;gap:1.25rem;border:1px solid rgba(184,150,62,.38);background:rgba(184,150,62,.08);border-radius:6px;padding:1rem 1.5rem}
+.esoc-thumb{width:90px;border-radius:4px;box-shadow:0 3px 12px rgba(0,0,0,.28);display:block;aspect-ratio:640/832;object-fit:cover;cursor:pointer;transition:transform .15s,box-shadow .15s}.esoc-thumb:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.4)}
+.esoc-icons{display:flex;gap:1rem}
+.email-social a{color:#6B4A18;font-size:2rem;display:inline-block;transition:color .2s}.email-social a:hover{color:#B8963E}
 .kit-block{
   border:2px dashed rgba(184,150,62,.32);
   background:rgba(245,236,215,.5);
@@ -797,7 +798,7 @@ p:last-child{margin-bottom:0}
         <script async data-uid="32f9feb03e" src="https://skeleton-king-library.kit.com/32f9feb03e/index.js"></script>
         <!-- END KIT EMBED -->
         <div class="email-social">
-          <img class="esoc-thumb" src="images/cards/erudite-translator.jpg" alt="Erudite Translator">
+          <img class="esoc-thumb" src="images/cards/erudite-translator.jpg" alt="Erudite Translator" data-name="Erudite Translator">
           <div class="esoc-icons">
             <a href="https://www.instagram.com/grahamcranfield" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.facebook.com/herosjourneyhome/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -917,7 +918,7 @@ p:last-child{margin-bottom:0}
 const lb = document.getElementById('faction-lightbox');
 const lbImg = document.getElementById('faction-lightbox-img');
 
-document.querySelectorAll('.mec-card-thumb,.mec-feat-card,.cbox-card').forEach(img => {
+document.querySelectorAll('.mec-card-thumb,.mec-feat-card,.cbox-card,.esoc-thumb').forEach(img => {
   img.addEventListener('click', () => {
     lbImg.src = img.src;
     lbImg.alt = img.dataset.name || img.alt;
