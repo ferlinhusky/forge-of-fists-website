@@ -36,14 +36,14 @@
     footerPlaceholder.outerHTML = `
 <footer id="footer">
   <span class="footer-brand">Forge of Fists</span>
-  <p class="footer-tag">A living card game set in the world of Almokon</p>
+  <p class="footer-tag">A living card game of dark fantasy</p>
   <ul class="footer-nav">
     <li><a href="${r}#features">Highlights</a></li>
     <li><a href="${r}#email">Stay Informed</a></li>
     <li><a href="${r}#faq">How to Play</a></li>
-    <li><a href="${r}#play">Play Free</a></li>
+    <li><a href="gallery.html">Card Gallery</a></li>
     <li><a href="rules.html">Full Rules</a></li>
-    <li><a href="https://play.forgeoffists.com" target="_blank" rel="noopener">play.forgeoffists.com ↗</a></li>
+    <li><a href="https://play.forgeoffists.com" target="_blank" rel="noopener">Play Free ↗</a></li>
   </ul>
   <div class="footer-orn">✦ &nbsp; ✦ &nbsp; ✦</div>
   <div class="footer-social">
