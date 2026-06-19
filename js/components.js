@@ -16,7 +16,7 @@
   <a href="${onIndex ? '#hero' : 'index.html'}" class="nav-brand"><img src="images/FoF-Icon-192.png" alt="" aria-hidden="true" style="height:34px;width:34px;margin-right:.55rem;vertical-align:middle;border-radius:4px">Forge of Fists</a>
   <button class="nav-toggle" aria-label="Menu">☰</button>
   <ul class="nav-links">
-    <li><a href="${r}#features">Features</a></li>
+    <li><a href="${r}#features">Highlights</a></li>
     <li><a href="${r}#email">Stay Informed</a></li>
     <li><a href="${r}#faq">Overview</a></li>
     <li><a href="${r}#author">About</a></li>
@@ -39,7 +39,7 @@
   <span class="footer-brand">Forge of Fists</span>
   <p class="footer-tag">A living card game set in the world of Almokon</p>
   <ul class="footer-nav">
-    <li><a href="${r}#features">Features</a></li>
+    <li><a href="${r}#features">Highlights</a></li>
     <li><a href="${r}#email">Stay Informed</a></li>
     <li><a href="${r}#faq">Overview</a></li>
     <li><a href="${r}#author">About</a></li>
