@@ -147,6 +147,14 @@ em{font-style:italic}
   color:rgba(26,15,10,.28);margin:0;
 }
 
+/* ── CARD DIAGRAM ── */
+.card-diag{display:flex;gap:2.25rem;align-items:flex-start;flex-wrap:wrap;margin:1.5rem 0}
+.card-diag-img{flex-shrink:0;width:min(300px,100%);border-radius:4px;box-shadow:0 4px 18px rgba(0,0,0,.18);display:block}
+.card-diag-legend{flex:1;min-width:190px}
+.cdl-entry{display:flex;gap:.7rem;align-items:baseline;padding:.3rem 0;border-bottom:1px solid rgba(184,150,62,.12);font-size:.9rem;color:rgba(26,15,10,.78);line-height:1.5}
+.cdl-entry:last-child{border-bottom:none}
+.cdl-ltr{font-family:'Metamorphous',serif;font-size:.72rem;letter-spacing:.06em;color:var(--gold-d);flex-shrink:0;width:1rem;text-align:center}
+
 /* ── ZONE DIAGRAM ── */
 .zone-diag{border:1px solid rgba(184,150,62,.35);overflow:hidden;margin:1.5rem 0}
 .zd-realm{padding:.9rem 1.35rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
@@ -259,8 +267,22 @@ em{font-style:italic}
     <!-- 3. PARTS OF A CARD -->
     <section id="s3" class="r-section">
       <h2 class="r-h1">3. The Parts of a Card</h2>
-      <div class="r-placeholder" id="card-diagram-placeholder">
-        <p>Card anatomy diagram — to be inserted</p>
+      <div class="card-diag" id="card-diagram-placeholder">
+        <img class="card-diag-img" src="images/Card-Parts.png" alt="Diagram of a Forge of Fists card with labelled parts">
+        <div class="card-diag-legend">
+          <div class="cdl-entry"><span class="cdl-ltr">A</span><span>AP Cost</span></div>
+          <div class="cdl-entry"><span class="cdl-ltr">B</span><span>Card Type</span></div>
+          <div class="cdl-entry"><span class="cdl-ltr">C</span><span>Card Type Icon</span></div>
+          <div class="cdl-entry"><span class="cdl-ltr">D</span><span>Zone</span></div>
+          <div class="cdl-entry"><span class="cdl-ltr">E</span><span>Bounty Value</span></div>
+          <div class="cdl-entry"><span class="cdl-ltr">F</span><span>Card Name</span></div>
+          <div class="cdl-entry"><span class="cdl-ltr">G</span><span>Subtype</span></div>
+          <div class="cdl-entry"><span class="cdl-ltr">H</span><span>Art</span></div>
+          <div class="cdl-entry"><span class="cdl-ltr">I</span><span>Wrath</span></div>
+          <div class="cdl-entry"><span class="cdl-ltr">J</span><span>Vigor</span></div>
+          <div class="cdl-entry"><span class="cdl-ltr">K</span><span>Ability Text</span></div>
+          <div class="cdl-entry"><span class="cdl-ltr">L</span><span>Card Number</span></div>
+        </div>
       </div>
     </section>
 
