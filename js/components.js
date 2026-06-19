@@ -18,10 +18,9 @@
   <ul class="nav-links">
     <li><a href="${r}#features">Highlights</a></li>
     <li><a href="${r}#email">Stay Informed</a></li>
-    <li><a href="${r}#faq">Overview</a></li>
-    <li><a href="${r}#author">About</a></li>
+    <li><a href="${r}#faq">How to Play</a></li>
     <li><a href="gallery.html"${onGallery ? ' class="nav-active"' : ''}>Card Gallery</a></li>
-    <li><a href="rules.html"${onRules ? ' class="nav-active"' : ''}>Rules</a></li>
+    <li><a href="rules.html"${onRules ? ' class="nav-active"' : ''}>Full Rules</a></li>
     <li><a href="https://play.forgeoffists.com" class="nav-play" target="_blank" rel="noopener">Play Free ↗</a></li>
   </ul>
 </nav>`;
@@ -41,10 +40,9 @@
   <ul class="footer-nav">
     <li><a href="${r}#features">Highlights</a></li>
     <li><a href="${r}#email">Stay Informed</a></li>
-    <li><a href="${r}#faq">Overview</a></li>
-    <li><a href="${r}#author">About</a></li>
+    <li><a href="${r}#faq">How to Play</a></li>
     <li><a href="${r}#play">Play Free</a></li>
-    <li><a href="rules.html">Rules</a></li>
+    <li><a href="rules.html">Full Rules</a></li>
     <li><a href="https://play.forgeoffists.com" target="_blank" rel="noopener">play.forgeoffists.com ↗</a></li>
   </ul>
   <div class="footer-orn">✦ &nbsp; ✦ &nbsp; ✦</div>
